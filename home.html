@@ -1,0 +1,3939 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>متجر المطوع | للأجهزة الكهربائية والمنزلية في السعودية</title>
+  <meta name="description" content="متجر المطوع — أجهزة منزلية وتكييف وثلاجات وغسالات وشاشات بأسعار منافسة، توصيل سريع، وتقسيط تمارا وتابي في السعودية." />
+  <!--
+    IMAGE NOTES (swap later as needed)
+    FROM PROJECT FOLDER:
+      - Logo: images/Logo.webp (header + footer)
+      - Categories: imgi_12_ثلاجات, imgi_13_غسالات, imgi_14_غسالة-أطباق, imgi_15_أجهزة-المطبخ,
+        imgi_16_الشاشات, imgi_17_أجهزة-التكييف, imgi_18_الأجهزة-المدمجة,
+        imgi_19_الأجهزة-المنزلية-الصغيرة, imgi_20_الافران
+      - Banners / lifestyle: imgi_11_3, imgi_8_4, imgi_7_1, imgi_6_2, imgi_9_8, imgi_10_5
+      - Products: imgi_296 (dryer), imgi_304 (Fisher washer), imgi_322 (freezer),
+        imgi_396 (Hisense AC), imgi_504 (Homy AC), imgi_610 (Kelvinator washer),
+        imgi_639 (gas cooker), imgi_80 (Philips coffee), imgi_715 (sandwich),
+        imgi_731 (kettle), imgi_755 (mixer), imgi_794 (fridge webp),
+        imgi_723 (oven), imgi_765 (ice maker)
+    PLACEHOLDERS (neutral CSS boxes — no stock URLs):
+      - Screens/TV product card under SAR 2000 (no dedicated TV cutout in folder)
+      - Payment / Maroof trust badges (styled text badges; no badge asset files)
+      - Tamara/Tabby product-card logos: placeholders at images/tamara-logo.webp & images/tabby-logo.webp (TODO — files not in folder yet)
+  -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet" />
+  <style>
+    @font-face {
+  font-family: "Thmanyah Sans";
+  src: url("./fonts/thmanyahsans-Light.woff2") format("woff2");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Thmanyah Sans";
+  src: url("./fonts/thmanyahsans-Regular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Thmanyah Sans";
+  src: url("./fonts/thmanyahsans-Medium.woff2") format("woff2");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Thmanyah Sans";
+  src: url("./fonts/thmanyahsans-Bold.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Thmanyah Sans";
+  src: url("./fonts/thmanyahsans-Black.woff2") format("woff2");
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+    :root {
+      --brand: rgb(74, 136, 82);
+      --brand-hex: #4a8852;
+      --brand-dark: #2f5c36;
+      --brand-deeper: #1e3d24;
+      --brand-soft: #e8f2ea;
+      --ink: #1a221c;
+      --muted: #5c6b60;
+      --line: #d9e3db;
+      --cream: #F3F6F2;
+      --cream-deep: #F3F6F2;
+      --card: #F3F6F2;
+      --danger: #c44b3a;
+      --gold: #c9a227;
+      --shadow: 0 10px 30px rgba(30, 61, 36, 0.08);
+      --shadow-lg: 0 22px 50px rgba(30, 61, 36, 0.16);
+      --radius: 16px;
+      --shell: 1200px;
+      --font-ar: "Thmanyah Sans", sans-serif;
+      --font-en: "Poppins", sans-serif;
+      --ease: 240ms ease;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: var(--font-ar);
+      color: var(--ink);
+      background: var(--cream);
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+    body.lang-en { font-family: var(--font-en); }
+    body.lang-en .t-ar-only { font-family: var(--font-ar); }
+    img { display: block; max-width: 100%; height: auto; }
+    a { color: inherit; text-decoration: none; }
+    button, input { font: inherit; }
+    button { cursor: pointer; border: 0; background: none; }
+    ul { margin: 0; padding: 0; list-style: none; }
+    .shell { width: min(100% - 2rem, var(--shell)); margin-inline: auto; }
+    .sr-only {
+      position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
+      overflow: hidden; clip: rect(0,0,0,0); border: 0;
+    }
+    .skip {
+      position: absolute; inset-inline-start: 1rem; top: -4rem; z-index: 9999;
+      background: var(--brand); color: #fff; padding: 0.6rem 1rem; border-radius: 8px; font-weight: 700;
+    }
+    .skip:focus { top: 0.75rem; }
+    .num, .en-font { font-family: var(--font-en); }
+
+    /* ===== Top utility bar ===== */
+    .utility {
+      background: var(--brand-deeper);
+      color: rgba(255,255,255,0.92);
+      font-size: 0.82rem;
+      font-weight: 500;
+    }
+    .utility-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      min-height: 38px;
+      flex-wrap: wrap;
+      padding-block: 0.35rem;
+    }
+    .utility-left, .utility-right {
+      display: flex;
+      align-items: center;
+      gap: 0.85rem;
+      flex-wrap: wrap;
+    }
+    .utility-sep { opacity: 0.35; }
+    .utility a:hover { color: #fff; }
+    .lang-toggle {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.2rem;
+      background: rgba(255,255,255,0.1);
+      border-radius: 12px;
+      padding: 0.15rem;
+    }
+    .lang-toggle button {
+      color: rgba(255,255,255,0.75);
+      padding: 0.2rem 0.55rem;
+      border-radius: 10px;
+      font-family: var(--font-en);
+      font-size: 0.75rem;
+      font-weight: 600;
+      transition: background var(--ease), color var(--ease);
+    }
+    .lang-toggle button.is-active {
+      background: var(--brand);
+      color: #fff;
+    }
+    .header-tools .lang-toggle {
+      background: var(--cream);
+      margin-inline-end: 0.15rem;
+    }
+    .header-tools .lang-toggle button {
+      color: var(--muted);
+      padding: 0.35rem 0.6rem;
+    }
+    .header-tools .lang-toggle button.is-active {
+      background: var(--brand);
+      color: #fff;
+    }
+    .icon-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      color: inherit;
+    }
+
+    /* ===== Header ===== */
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(255,255,255,0.96);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--line);
+    }
+    .header-main {
+      display: grid;
+      grid-template-columns: auto 1fr auto;
+      gap: 1rem;
+      align-items: center;
+      padding-block: 0.75rem;
+    }
+    .logo img {
+      height: 46px;
+      width: auto;
+      border-radius: 6px;
+    }
+    .search {
+      display: flex;
+      align-items: stretch;
+      max-width: 640px;
+      width: 100%;
+      margin-inline: auto;
+      background: var(--cream);
+      border: 1px solid transparent;
+      border-radius: 15px;
+      overflow: hidden;
+      transition: border-color var(--ease), box-shadow var(--ease);
+    }
+    .search:focus-within {
+      border-color: var(--brand);
+      box-shadow: 0 0 0 3px rgba(74,136,82,0.15);
+      background: #fff;
+    }
+    .search input {
+      flex: 1;
+      border: 0;
+      outline: 0;
+      background: transparent;
+      padding: 0.75rem 1.1rem;
+      min-width: 0;
+    }
+    .search button {
+      background: var(--brand);
+      color: #fff;
+      padding-inline: 1.1rem;
+      display: grid;
+      place-items: center;
+      transition: background var(--ease);
+    }
+    .search button:hover { background: var(--brand-dark); }
+    .header-tools {
+      display: flex;
+      align-items: center;
+      gap: 0.35rem;
+    }
+    .tool-btn {
+      position: relative;
+      width: 42px;
+      height: 42px;
+      display: grid;
+      place-items: center;
+      border-radius: 50%;
+      color: var(--ink);
+      transition: background var(--ease), color var(--ease);
+    }
+    .tool-btn:hover { background: var(--brand-soft); color: var(--brand-dark); }
+    .cart-badge {
+      position: absolute;
+      top: 4px;
+      inset-inline-end: 4px;
+      min-width: 18px;
+      height: 18px;
+      padding-inline: 4px;
+      border-radius: 999px;
+      background: var(--danger);
+      color: #fff;
+      font-size: 0.65rem;
+      font-weight: 700;
+      font-family: var(--font-en);
+      display: grid;
+      place-items: center;
+    }
+    .menu-btn {
+      display: none;
+      width: 42px;
+      height: 42px;
+      place-items: center;
+      border-radius: 10px;
+      flex-direction: column;
+      gap: 5px;
+    }
+    .menu-btn span {
+      display: block;
+      width: 18px;
+      height: 2px;
+      background: var(--ink);
+      border-radius: 2px;
+    }
+
+    .cat-nav {
+      border-top: 1px solid var(--line);
+      overflow-x: auto;
+      scrollbar-width: none;
+    }
+    .cat-nav::-webkit-scrollbar { display: none; }
+    .cat-nav-track {
+      display: flex;
+      gap: 0.15rem;
+      padding-block: 0.55rem;
+      min-width: max-content;
+    }
+    .cat-nav a {
+      padding: 0.45rem 0.85rem;
+      border-radius: 999px;
+      font-size: 0.88rem;
+      font-weight: 500;
+      white-space: nowrap;
+      color: var(--muted);
+      transition: background var(--ease), color var(--ease);
+    }
+    .cat-nav a:hover {
+      background: var(--brand-soft);
+      color: var(--brand-dark);
+    }
+
+    /* ===== Hero carousel ===== */
+    .hero {
+      position: relative;
+      width: 100%;
+      min-height: calc(100vh - 120px);
+      height: clamp(500px, 64vh, 580px);
+      overflow: hidden;
+      background: var(--brand-deeper);
+      color: #fff;
+      padding: 0;
+    }
+    .hero-slides { position: absolute; inset: 0; }
+    .hero-slide {
+      position: absolute;
+      inset: 0;
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.7s ease, visibility 0.7s ease;
+      display: flex;
+      align-items: center;
+    }
+    .hero-slide.is-active {
+      opacity: 1;
+      visibility: visible;
+      z-index: 1;
+    }
+    .hero-slide-bg {
+      position: absolute;
+      inset: 0;
+      background-size: cover;
+      background-position: center;
+      transform: scale(1.04);
+      transition: transform 6s ease;
+    }
+    .hero-slide.is-active .hero-slide-bg { transform: scale(1); }
+    .hero-slide::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(105deg, rgba(14,28,18,0.78) 0%, rgba(14,28,18,0.55) 45%, rgba(14,28,18,0.35) 100%);
+      z-index: 1;
+    }
+    body.lang-en .hero-slide::after {
+      background: linear-gradient(-105deg, rgba(14,28,18,0.78) 0%, rgba(14,28,18,0.55) 45%, rgba(14,28,18,0.35) 100%);
+    }
+    .hero-slide-inner {
+      position: relative;
+      z-index: 2;
+      width: min(100% - 2rem, var(--shell));
+      margin-inline: auto;
+      max-width: 30rem;
+    }
+    body.lang-ar .hero-slide-inner { margin-inline-end: auto; margin-inline-start: auto; }
+    body.lang-en .hero-slide-inner { margin-inline-start: auto; margin-inline-end: auto; }
+    .hero-slide h1 {
+      margin: 0 0 0.75rem;
+      font-size: clamp(1.85rem, 4.2vw, 3.1rem);
+      font-weight: 800;
+      line-height: 1.25;
+    }
+    .hero-slide p {
+      margin: 0 0 1.4rem;
+      color: rgba(255,255,255,0.88);
+      font-size: 1.05rem;
+      max-width: 34rem;
+    }
+    .hero-slide .btn-brand {
+      width: auto;
+      display: inline-flex;
+      border-radius: 10px;
+      background: var(--brand);
+      padding: 0.9rem 1.5rem;
+    }
+    .hero-dots {
+      position: absolute;
+      z-index: 3;
+      bottom: 1.5rem;
+      inset-inline-start: 50%;
+      display: flex;
+      gap: 0.45rem;
+    }
+    .hero-dots button {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.4);
+      transition: background var(--ease), transform var(--ease);
+    }
+    .hero-dots button.is-active {
+      background: var(--brand);
+      transform: scale(1.2);
+      box-shadow: 0 0 0 3px rgba(74,136,82,0.35);
+    }
+
+    /* Feature icon strip — full bleed */
+    .feature-strip {
+      width: 100%;
+      background: #fff;
+      border-bottom: 1px solid var(--line);
+    }
+    .feature-strip-inner {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      width: 100%;
+    }
+    .feature-item {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.7rem;
+      padding: 1.75rem 0.75rem;
+      min-width: 0;
+    }
+    .feature-item:last-child { border-inline-end: 0; }
+    .feature-item .ico {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: var(--brand-soft);
+      color: var(--brand-dark);
+      display: grid;
+      place-items: center;
+      flex-shrink: 0;
+    }
+    .feature-item .ico svg {
+      width: 20px;
+      height: 20px;
+      stroke: currentColor;
+      fill: none;
+      stroke-width: 1.8;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+    .feature-item strong {
+      font-size: 0.92rem;
+      font-weight: 700;
+      color: var(--ink);
+      line-height: 1.35;
+    }
+
+    /* Limited-time deals */
+    .deals-section {
+      background: var(--brand-deeper);
+      color: #fff;
+      padding: 3.25rem 0;
+    }
+    .deals-head {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1.25rem;
+      margin-bottom: 1.75rem;
+    }
+    .deals-head h2 {
+      margin: 0;
+      font-size: clamp(1.4rem, 2.6vw, 1.9rem);
+      font-weight: 800;
+    }
+    .countdown {
+      display: flex;
+      gap: 0.55rem;
+      direction: ltr;
+    }
+    .countdown div {
+      min-width: 64px;
+      text-align: center;
+      background: rgba(255,255,255,0.1);
+      border: 1px solid rgba(255,255,255,0.16);
+      border-radius: 12px;
+      padding: 0.55rem 0.4rem;
+    }
+    .countdown strong {
+      display: block;
+      font-family: var(--font-en);
+      font-size: 1.35rem;
+      font-weight: 700;
+      line-height: 1.1;
+    }
+    .countdown span {
+      font-size: 0.72rem;
+      color: rgba(255,255,255,0.7);
+    }
+    .deals-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+    }
+    .deal-card {
+      background: #fff;
+      color: var(--ink);
+      border-radius: var(--radius);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+    .deal-card img {
+      width: 100%;
+      aspect-ratio: 1.15;
+      object-fit: contain;
+      background: #fff;
+      padding: 1rem;
+    }
+    .deal-card-body {
+      padding: 1rem 1.1rem 1.2rem;
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+    }
+    .deal-card h3 {
+      margin: 0 0 0.45rem;
+      font-size: 0.98rem;
+      font-weight: 700;
+      line-height: 1.4;
+      min-height: 2.7em;
+    }
+    .deal-price {
+      display: flex;
+      align-items: baseline;
+      gap: 0.5rem;
+      margin-bottom: 0.75rem;
+    }
+    .deal-price strong {
+      font-family: var(--font-en);
+      color: var(--brand-dark);
+      font-size: 1.1rem;
+    }
+    .deal-price s {
+      font-family: var(--font-en);
+      color: var(--muted);
+      font-size: 0.85rem;
+    }
+    .deal-meter {
+      height: 6px;
+      background: var(--cream);
+      border-radius: 999px;
+      overflow: hidden;
+      margin-bottom: 0.4rem;
+    }
+    .deal-meter > span {
+      display: block;
+      height: 100%;
+      background: var(--brand);
+      border-radius: 999px;
+    }
+    .deal-left {
+      font-size: 0.78rem;
+      color: var(--muted);
+      margin-bottom: 0.75rem;
+    }
+    .deal-card-body .btn-brand {
+      margin-top: auto;
+    }
+    .deals-cta {
+      display: flex;
+      justify-content: center;
+    }
+    .deals-cta .btn {
+      background: #fff;
+      color: var(--brand-deeper);
+      border-radius: 10px;
+    }
+    .deals-cta .btn:hover { background: var(--brand-soft); }
+
+    /* Brand logos strip */
+    .brands-section {
+      padding: 2rem 0;
+      background: #F3F6F2;
+      overflow: hidden;
+    }
+    .brands-title {
+      text-align: center;
+      margin-bottom: 2rem;
+      font-size: 1.5rem;
+      font-weight: 800;
+      line-height: 1.3;
+    }
+    .brands-track-wrap {
+      overflow: hidden;
+      direction: ltr;
+      unicode-bidi: isolate;
+    }
+    .brands-track {
+      display: flex;
+      width: max-content;
+      animation: brands-scroll 35s linear infinite;
+      direction: ltr;
+    }
+    .brands-track:hover { animation-play-state: paused; }
+    @keyframes brands-scroll {
+      from { transform: translateX(0); }
+      to { transform: translateX(-50%); }
+    }
+    .brand-slot {
+      flex-shrink: 0;
+      width: 160px;
+      height: 64px;
+      margin-inline-end: 2rem;
+      display: grid;
+      place-items: center;
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      color: var(--muted);
+      font-family: var(--font-en);
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .brand-slot img {
+      max-height: 36px;
+      max-width: 120px;
+      object-fit: contain;
+      filter: grayscale(1);
+      opacity: 0.75;
+      transition: filter 0.3s ease, opacity 0.3s ease, transform 0.3s ease;
+
+    }
+    .brand-slot:hover {
+     transform: translateY(-3px);
+     box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+    }
+    .brand-slot:hover img {
+     filter: grayscale(0);
+     opacity: 1;
+     transform: scale(1.08);
+    }
+
+    /* Experience / shop like nowhere else */
+    .experience {
+      padding: 8.5rem 0;
+      background: #F3F6F2;
+    }
+    .experience-head {
+      text-align: center;
+      max-width: 40rem;
+      margin: 0 auto 2rem;
+    }
+    .experience-head h2 {
+      margin: 0 0 0.65rem;
+      font-size: clamp(1.45rem, 2.8vw, 2rem);
+      font-weight: 800;
+      line-height: 1.3;
+    }
+    .experience-head p {
+      margin: 0;
+      color: var(--muted);
+    }
+    .exp-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1rem;
+      margin-bottom: 1.25rem;
+    }
+    .exp-card {
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 1.5rem 1.2rem;
+      text-align: center;
+    }
+    .exp-card .ico {
+      width: 52px;
+      height: 52px;
+      margin: 0 auto 0.9rem;
+      border-radius: 14px;
+      background: var(--brand-soft);
+      color: var(--brand-dark);
+      display: grid;
+      place-items: center;
+    }
+    .exp-card .ico svg {
+      width: 26px;
+      height: 26px;
+      stroke: currentColor;
+      fill: none;
+      stroke-width: 1.7;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+    .exp-card h3 {
+      margin: 0 0 0.45rem;
+      font-size: 1.02rem;
+      font-weight: 800;
+    }
+    .exp-card p {
+      margin: 0;
+      font-size: 0.88rem;
+      color: var(--muted);
+      line-height: 1.55;
+    }
+    .coverage-bar {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.75rem;
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 1.5rem 1.25rem;
+      font-weight: 600;
+      color: var(--ink);
+    }
+    .coverage-bar svg {
+      width: 22px;
+      height: 22px;
+      color: var(--brand);
+      flex-shrink: 0;
+    }
+
+    /* Newsletter */
+    .newsletter {
+      position: relative;
+      background: #fff;
+      color: var(--ink);
+      padding: 7rem 0;
+      overflow: hidden;
+      margin-bottom: -30px;
+    }
+    .newsletter-inner {
+      display: grid;
+      grid-template-columns: 1.1fr 1fr;
+      gap: 2rem;
+      align-items: center;
+    }
+    .newsletter-copy h2 {
+      margin: 0 0 0.55rem;
+      font-size: clamp(1.4rem, 2.6vw, 1.85rem);
+      font-weight: 800;
+      line-height: 1.3;
+    }
+    .newsletter-copy p {
+      margin: 0;
+      color: var(--muted);
+      max-width: 34rem;
+    }
+    .newsletter-form {
+      display: flex;
+      gap: 0.55rem;
+      background: var(--card);
+      border-radius: 12px;
+      padding: 0.4rem;
+      align-items: stretch;
+    }
+    .newsletter-form input {
+      flex: 1;
+      border: 0;
+      outline: 0;
+      padding: 0.75rem 0.9rem;
+      min-width: 0;
+      background: var(--card);
+      color: var(--ink);
+    }
+    .newsletter-form button {
+      background: var(--brand-dark);
+      color: #fff;
+      border-radius: 10px;
+      padding: 0.75rem 1.15rem;
+      font-weight: 700;
+      white-space: nowrap;
+      transition: background var(--ease);
+    }
+    .newsletter-form button:hover { background: var(--brand-deeper); }
+    .wa-badge {
+      position: absolute;
+      bottom: 2rem;
+      inset-inline-start: max(1rem, calc((100% - var(--shell)) / 2));
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      background: #e8b84a;
+      color: #1a221c;
+      font-weight: 700;
+      font-size: 0.82rem;
+      padding: 0.55rem 0.85rem;
+      border-radius: 10px;
+      box-shadow: var(--shadow);
+    }
+    .wa-badge svg { width: 18px; height: 18px; }
+
+    /* ===== Sections ===== */
+    .section { padding: 3.25rem 0; }
+    .section-head {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+      flex-wrap: wrap;
+    }
+    .section-head h2 {
+      margin: 0;
+      font-size: clamp(1.4rem, 2.5vw, 1.85rem);
+      font-weight: 800;
+      line-height: 1.3;
+    }
+    .section-head p {
+      margin: 0.35rem 0 0;
+      color: var(--muted);
+      max-width: 36rem;
+    }
+    .link-all {
+      color: var(--brand-dark);
+      font-weight: 700;
+      font-size: 0.92rem;
+      white-space: nowrap;
+    }
+    .link-all:hover { color: var(--brand); }
+
+    /* Carousel — track geometry always LTR; language only swaps arrow handlers */
+    .carousel { position: relative; }
+    .carousel-viewport {
+      overflow: hidden;
+      direction: ltr;
+      unicode-bidi: isolate;
+    }
+    .carousel-track {
+      display: flex;
+      flex-direction: row;
+      gap: 1rem;
+      transition: transform 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+      will-change: transform;
+      touch-action: pan-y;
+      direction: ltr;
+    }
+    .carousel-btn {
+      position: absolute;
+      top: 42%;
+      z-index: 2;
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: #fff;
+      border: 1px solid var(--line);
+      box-shadow: var(--shadow);
+      display: grid;
+      place-items: center;
+      color: var(--ink);
+      transition: background var(--ease), color var(--ease), transform var(--ease);
+    }
+    .carousel-btn:hover {
+      background: var(--brand);
+      color: #fff;
+      border-color: var(--brand);
+    }
+    /* Physical sides stay fixed; language swaps which handler each side runs */
+    .carousel-btn.prev { left: -8px; right: auto; }
+    .carousel-btn.next { right: -8px; left: auto; }
+    .carousel-btn svg { width: 18px; height: 18px; }
+    /* Left button always shows ◀, right button always shows ▶ */
+    .carousel-btn.prev svg { transform: none; }
+    .carousel-btn.next svg { transform: scaleX(-1); }
+
+    /* Category cards */
+    .cat-card {
+      flex: 0 0 calc((100% - 4rem) / 5);
+      min-width: 160px;
+      background: #ffffff;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      overflow: hidden;
+      transition: transform var(--ease), box-shadow var(--ease), border-color var(--ease);
+    }
+    .cat-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow);
+      border-color: rgba(74,136,82,0.35);
+    }
+    .cat-card img {
+      width: 100%;
+      aspect-ratio: 1 / 1;
+      object-fit: cover;
+      background: var(--cream-deep);
+    }
+    .cat-card span {
+      display: block;
+      padding: 0.85rem 0.9rem 1rem;
+      font-weight: 700;
+      font-size: 0.95rem;
+      text-align: center;
+    }
+
+    /* Product cards */
+    .product-card {
+      position: relative;
+      flex: 0 0 calc((100% - 2rem) / 3);
+      min-width: 220px;
+      background: #ffffff;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      transition: transform var(--ease), box-shadow var(--ease);
+      /* Isolate from LTR carousel track so badge/text follow page dir */
+      unicode-bidi: isolate;
+      text-align: start;
+    }
+    html[dir="rtl"] .product-card,
+    body.lang-ar .product-card { direction: rtl; }
+    html[dir="ltr"] .product-card,
+    body.lang-en .product-card { direction: ltr; }
+    .product-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow);
+    }
+    .product-media {
+      position: relative;
+      background: #ffffff;
+      padding: 0;
+      min-height: 260px;
+      display: grid;
+      place-items: center;
+      overflow: hidden;
+    }
+    .product-media img {
+      max-height: 300px;
+      width: auto;
+      object-fit: contain;
+      transition: transform 0.4s ease;
+    }
+    .product-card:hover .product-media img { transform: scale(1.04); }
+    /* Badge: logical inset — top-right in RTL, top-left in LTR */
+    .badge {
+      position: absolute;
+      top: 0.75rem;
+      inset-inline-start: 0.75rem;
+      z-index: 5;
+      background: var(--brand);
+      color: #fff;
+      font-size: 0.72rem;
+      font-weight: 700;
+      padding: 0.28rem 0.55rem;
+      border-radius: 8px;
+      letter-spacing: 0.02em;
+      pointer-events: none;
+    }
+    .badge.best { background: var(--brand); }
+    .badge.deal { background: var(--brand); }
+    .product-body {
+      padding: 0.85rem 1rem 1.1rem;
+      display: flex;
+      flex-direction: column;
+      align-items: stretch;
+      gap: 0.35rem;
+      flex: 1;
+      text-align: start;
+    }
+    .product-brand {
+      margin: 0;
+      font-family: var(--font-en);
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--brand-hex);
+      text-align: start;
+    }
+    .product-title {
+      margin: 0;
+      font-size: 0.95rem;
+      font-weight: 700;
+      line-height: 1.4;
+      min-height: 2.7em;
+      text-align: start;
+    }
+    .rating {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: flex-start;
+      gap: 0.35rem;
+      font-size: 0.82rem;
+      color: var(--gold);
+    }
+    .rating .count { color: var(--muted); font-family: var(--font-en); }
+    .price-block {
+      margin-top: 0.25rem;
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      align-items: baseline;
+      justify-content: flex-start;
+      gap: 0.55rem;
+    }
+    .price-now {
+      font-family: var(--font-en);
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--brand-dark);
+    }
+    .price-was {
+      display: inline-flex;
+      flex-direction: row;
+      align-items: center;
+      gap: 0.45rem;
+      margin-top: 0;
+      font-size: 0.82rem;
+    }
+    .price-was s { color: var(--muted); font-family: var(--font-en); }
+    .save { display: none !important; }
+    .btn {
+      display: inline-flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+      gap: 0.4rem;
+      padding: 0.85rem 1.35rem;
+      border-radius: 999px;
+      font-weight: 700;
+      transition: transform var(--ease), background var(--ease), box-shadow var(--ease), color var(--ease);
+    }
+    .btn:hover { transform: translateY(-1px); }
+    .btn-brand {
+      background: var(--brand);
+      color: #fff;
+      width: 100%;
+      border-radius: 12px;
+      padding: 0.75rem 1rem;
+      text-align: center;
+    }
+    .btn-brand:hover { background: var(--brand-dark); }
+    .btn-primary {
+      background: #fff;
+      color: var(--brand-deeper);
+      box-shadow: 0 8px 24px rgba(0,0,0,0.18);
+    }
+    .btn-primary:hover { background: var(--brand-soft); }
+    .btn-ghost {
+      background: transparent;
+      color: #fff;
+      border: 1.5px solid rgba(255,255,255,0.45);
+    }
+    .btn-ghost:hover { background: rgba(255,255,255,0.1); border-color: #fff; }
+    .vat-note {
+      font-size: 0.75rem;
+      color: var(--muted);
+      display:none;
+    }
+    .installments {
+      display: flex;
+      flex-direction: column;
+      align-items: start;
+      gap: 0.35rem;
+      font-size: 0.78rem;
+      color: var(--muted);
+      background: #F3F6F2;
+      border-radius: 8px;
+      padding: 0.45rem 0.55rem;
+      margin-block: 0.25rem 0.5rem;
+      margin-inline: 0;
+      text-align: start;
+    }
+    .installment-main {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: flex-start;
+      gap: 0.5rem;
+    }
+    .installments strong {
+      color: var(--ink);
+      font-family: var(--font-en);
+    }
+    .pay-logos {
+      display: inline-flex;
+      flex-direction: row;
+      align-items: center;
+      gap: 0.4rem;
+    }
+    .pay-logo {
+      height: 17px;
+      width: auto;
+      max-width: 64px;
+      object-fit: contain;
+      display: block;
+      background: rgba(0, 0, 0, 0.04);
+      border-radius: 3px;
+      padding-block: 2px;
+      padding-inline: 4px;
+    }
+    .ph-box {
+      width: 100%;
+      aspect-ratio: 1;
+      max-height: 160px;
+      border-radius: 12px;
+      background: #F3F6F2;
+      border: 1px dashed #b7c6ba;
+      display: grid;
+      place-items: center;
+      color: var(--muted);
+      font-size: 0.8rem;
+      font-weight: 600;
+      text-align: center;
+      padding: 1rem;
+    }
+
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1rem;
+    }
+    .product-grid .product-card {
+      flex: none;
+      min-width: 0;
+      width: 100%;
+    }
+
+    
+    /* Testimonials */
+    .reviews {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+    }
+    .review-card {
+      background: #ffffff;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 1.4rem 1.3rem;
+      box-shadow: 0 4px 16px rgba(30,61,36,0.04);
+      transition: transform var(--ease), box-shadow var(--ease);
+    }
+    .review-card:hover {
+      transform: translateY(-3px);
+      box-shadow: var(--shadow);
+    }
+    .review-stars { color: var(--gold); letter-spacing: 0.08em; margin-bottom: 0.65rem; }
+    .review-card blockquote {
+      margin: 0 0 1.1rem;
+      font-size: 0.98rem;
+      line-height: 1.7;
+      color: var(--ink);
+    }
+    .reviewer {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+    .avatar {
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      background: var(--brand-soft);
+      color: var(--brand-dark);
+      display: grid;
+      place-items: center;
+      font-weight: 800;
+      font-family: var(--font-en);
+    }
+    .reviewer strong { display: block; font-size: 0.95rem; }
+    .reviewer span { color: var(--muted); font-size: 0.82rem; }
+
+    /* Footer */
+    .site-footer {
+      background: var(--brand-deeper);
+      color: rgba(255,255,255,0.88);
+      padding: 3.5rem 0 1.5rem;
+      margin-top: 2rem;
+    }
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.4fr repeat(3, 1fr);
+      gap: 2rem;
+      margin-bottom: 2.5rem;
+    }
+    .footer-brand .logo img {
+      height: 48px;
+      margin-bottom: 1rem;
+      border-radius: 6px;
+    }
+    .footer-brand p {
+      margin: 0 0 1rem;
+      color: rgba(255,255,255,0.7);
+      max-width: 32ch;
+      font-size: 0.95rem;
+    }
+    .footer-contact {
+      display: grid;
+      gap: 0.4rem;
+      font-size: 0.9rem;
+    }
+    .footer-contact a:hover { color: #fff; }
+    .footer-col h4 {
+      margin: 0 0 1rem;
+      font-size: 1rem;
+      font-weight: 800;
+      color: #fff;
+    }
+    .footer-col a {
+      display: block;
+      padding-block: 0.3rem;
+      color: rgba(255,255,255,0.7);
+      font-size: 0.92rem;
+      transition: color var(--ease);
+    }
+    .footer-col a:hover { color: #fff; }
+    .trust-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.65rem;
+      align-items: center;
+      padding: 1.25rem 0;
+      border-top: 1px solid rgba(255,255,255,0.12);
+      border-bottom: 1px solid rgba(255,255,255,0.12);
+      margin-bottom: 1.25rem;
+    }
+    .pay-badge {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 36px;
+      padding: 0.35rem 0.75rem;
+      border-radius: 8px;
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.16);
+      font-family: var(--font-en);
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      color: #fff;
+    }
+    .pay-badge.maroof { color: #9fe0a8; border-color: rgba(159,224,168,0.35); }
+    .copyright {
+      text-align: center;
+      font-size: 0.85rem;
+      color: rgba(255,255,255,0.55);
+    }
+
+    /* WhatsApp */
+    .wa-float {
+      position: fixed;
+      bottom: 1.35rem;
+      inset-inline-end: 1.35rem;
+      z-index: 90;
+      width: 58px;
+      height: 58px;
+      border-radius: 50%;
+      background: #25d366;
+      color: #fff;
+      display: grid;
+      place-items: center;
+      box-shadow: 0 12px 28px rgba(37,211,102,0.4);
+      transition: transform var(--ease), box-shadow var(--ease);
+    }
+    .wa-float:hover {
+      transform: translateY(-3px) scale(1.04);
+      box-shadow: 0 16px 34px rgba(37,211,102,0.5);
+    }
+    .wa-float svg { width: 30px; height: 30px; }
+
+    /* Mobile nav drawer */
+    .drawer-veil {
+      position: fixed;
+      inset: 0;
+      background: rgba(10,20,12,0.45);
+      z-index: 140;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity var(--ease);
+    }
+    .drawer-veil.is-open { opacity: 1; pointer-events: auto; }
+    .drawer {
+      position: fixed;
+      top: 0;
+      inset-inline-start: 0;
+      height: 100%;
+      width: min(86vw, 320px);
+      background: #fff;
+      z-index: 150;
+      transform: translateX(110%);
+      transition: transform var(--ease);
+      padding: 1.25rem;
+      overflow-y: auto;
+      box-shadow: var(--shadow-lg);
+    }
+    html[dir="rtl"] .drawer { transform: translateX(-110%); }
+    .drawer.is-open { transform: translateX(0); }
+    .drawer-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 1rem;
+    }
+    .drawer nav a {
+      display: block;
+      padding: 0.7rem 0.2rem;
+      border-bottom: 1px solid var(--line);
+      font-weight: 600;
+    }
+
+    /* Responsive */
+    @media (max-width: 1100px) {
+      .cat-card { flex-basis: calc((100% - 3rem) / 4); }
+      .product-card { flex-basis: calc((100% - 2rem) / 3); }
+      .product-grid { grid-template-columns: repeat(3, 1fr); }
+      .footer-grid { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 900px) {
+      .hero { height: auto; min-height: 68vh; }
+      .feature-strip-inner { grid-template-columns: 1fr; }
+      .feature-item { justify-content: flex-start; padding-inline: 1.25rem; border-inline-end: 0; border-bottom: 1px solid var(--line); }
+      .feature-item:last-child { border-bottom: 0; }
+      .deals-grid { grid-template-columns: 1fr; }
+      .exp-grid { grid-template-columns: 1fr 1fr; }
+      .newsletter-inner { grid-template-columns: 1fr; }
+      .wa-badge { position: static; margin-top: 1.25rem; display: inline-flex; }
+      .promo-strip { grid-template-columns: 1fr; }
+      .inspire-grid { grid-template-columns: 1fr; }
+      .reviews { grid-template-columns: 1fr; }
+      .cat-card { flex-basis: calc((100% - 1rem) / 2); }
+      .product-card { flex-basis: calc((100% - 1rem) / 2); }
+      .product-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 720px) {
+      .header-main { grid-template-columns: auto 1fr auto; }
+      .search { display: none; }
+      .search-mobile {
+        display: flex;
+        grid-column: 1 / -1;
+        order: 3;
+      }
+      .menu-btn { display: grid; }
+      .utility-inner { justify-content: center; text-align: center; }
+      .utility-left { display: none; }
+      .carousel-btn { display: none; }
+      .footer-grid { grid-template-columns: 1fr; gap: 1.5rem; }
+      .hero { min-height: 560px; }
+    }
+    @media (min-width: 721px) {
+      .search-mobile { display: none !important; }
+    }
+  </style>
+</head>
+<body class="lang-ar">
+  <a class="skip" href="#main" data-ar="تخطي إلى المحتوى" data-en="Skip to content">تخطي إلى المحتوى</a>
+
+  <!-- 1. Top utility bar -->
+  <div class="utility">
+    <div class="shell utility-inner">
+      <div class="utility-left">
+        <span data-ar="أكثر من 18 فرعاً في المنطقة الشرقية والرياض" data-en="18+ showrooms across Eastern Province & Riyadh">أكثر من 18 فرعاً في المنطقة الشرقية والرياض</span>
+        <span class="utility-sep" aria-hidden="true">|</span>
+        <span data-ar="توصيل سريع خلال أيام العمل" data-en="Fast delivery on business days">توصيل سريع خلال أيام العمل</span>
+      </div>
+      <div class="utility-right">
+        <a class="icon-link num" href="tel:920022008" dir="ltr">920022008</a>
+        <a class="icon-link" href="#account" aria-label="Login">
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="12" cy="8" r="3.2"/><path d="M5 19c1.7-3 4-4.5 7-4.5s5.3 1.5 7 4.5"/></svg>
+          <span data-ar="دخول" data-en="Login">دخول</span>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- 2. Header -->
+  <header class="site-header">
+    <div class="shell header-main">
+      <a class="logo" href="home.html" aria-label="Al-Motawa">
+        <img src="images/Logo.webp" alt="Al-Motawa logo / شعار المطوع" width="180" height="46" />
+      </a>
+
+      <form class="search" role="search" action="#" onsubmit="return false;">
+        <label class="sr-only" for="q" data-ar="بحث" data-en="Search">بحث</label>
+        <input id="q" type="search" name="q"
+          data-ar-placeholder="ابحث عن ثلاجة، مكيف سبليت، شاشة 65 بوصة..."
+          data-en-placeholder="Search for a fridge, split AC, 65-inch TV..."
+          placeholder="ابحث عن ثلاجة، مكيف سبليت، شاشة 65 بوصة..." />
+        <button type="submit" aria-label="Search">
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+        </button>
+      </form>
+
+      <div class="header-tools">
+        <div class="lang-toggle" role="group" aria-label="Language">
+          <button type="button" data-set-lang="ar" class="is-active" aria-pressed="true">AR</button>
+          <button type="button" data-set-lang="en" aria-pressed="false">EN</button>
+        </div>
+        <a class="tool-btn" href="#account" aria-label="Account">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="12" cy="8" r="3.2"/><path d="M5 19c1.7-3 4-4.5 7-4.5s5.3 1.5 7 4.5"/></svg>
+        </a>
+        <a class="tool-btn" href="#wishlist" aria-label="Wishlist">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M12 20s-7-4.4-7-9.2A3.8 3.8 0 0 1 12 8a3.8 3.8 0 0 1 7 2.8C19 15.6 12 20 12 20z"/></svg>
+        </a>
+        <a class="tool-btn" href="#cart" aria-label="Cart">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M6 7h15l-1.4 8.5H7.2z"/><path d="M6 7 5 3H2"/><circle cx="9" cy="19.5" r="1.2"/><circle cx="17" cy="19.5" r="1.2"/></svg>
+          <span class="cart-badge" data-cart-count>2</span>
+        </a>
+        <button class="menu-btn" type="button" aria-label="Menu" data-menu-open>
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+
+      <form class="search search-mobile" role="search" action="#" onsubmit="return false;">
+        <input type="search"
+          data-ar-placeholder="ابحث عن ثلاجة، مكيف سبليت، شاشة 65 بوصة..."
+          data-en-placeholder="Search for a fridge, split AC, 65-inch TV..."
+          placeholder="ابحث عن ثلاجة، مكيف سبليت، شاشة 65 بوصة..." />
+        <button type="submit" aria-label="Search">
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+        </button>
+      </form>
+    </div>
+
+    <nav class="cat-nav" aria-label="Categories">
+      <div class="shell cat-nav-track">
+        <a href="#cat-ac" data-ar="أجهزة التكييف" data-en="Air Conditioning">أجهزة التكييف</a>
+        <a href="#cat-builtin" data-ar="الأجهزة المدمجة" data-en="Built-in Appliances">الأجهزة المدمجة</a>
+        <a href="#cat-small" data-ar="الأجهزة المنزلية الصغيرة" data-en="Small Home Appliances">الأجهزة المنزلية الصغيرة</a>
+        <a href="#cat-ovens" data-ar="الأفران" data-en="Ovens">الأفران</a>
+        <a href="#cat-fridge" data-ar="الثلاجات والفريزرات" data-en="Refrigerators & Freezers">الثلاجات والفريزرات</a>
+        <a href="#cat-wash" data-ar="الغسالات والنشافات" data-en="Washers & Dryers">الغسالات والنشافات</a>
+        <a href="#cat-dish" data-ar="غسالة أطباق" data-en="Dishwashers">غسالة أطباق</a>
+        <a href="#cat-kitchen" data-ar="أجهزة المطبخ" data-en="Kitchen Appliances">أجهزة المطبخ</a>
+        <a href="#cat-tv" data-ar="الشاشات" data-en="Screens & TVs">الشاشات</a>
+      </div>
+    </nav>
+  </header>
+
+
+  <main id="main">
+    <!-- 3. Hero carousel -->
+    <section class="hero" aria-label="Hero" data-hero>
+      <div class="hero-slides">
+        <article class="hero-slide is-active" data-hero-slide>
+          <div class="hero-slide-bg" style="background-image:url('images/screen-deals.webp')"></div>
+          <div class="hero-slide-inner">
+            <h1 data-ar="شاشات أكبر… صورة أوضح" data-en="Bigger screens. Clearer picture.">شاشات أكبر… صورة أوضح</h1>
+            <p data-ar="اكتشف أحدث الشاشات والعروض الموسمية — جودة صورة استثنائية لبيت أكثر متعة." data-en="Discover the latest TVs and seasonal deals — exceptional picture quality for a better living room.">اكتشف أحدث الشاشات والعروض الموسمية — جودة صورة استثنائية لبيت أكثر متعة.</p>
+            <a class="btn btn-brand" href="#offers" data-ar="تسوّق الشاشات" data-en="Shop screens">تسوّق الشاشات</a>
+          </div>
+        </article>
+        <article class="hero-slide" data-hero-slide>
+          <div class="hero-slide-bg" style="background-image:url('images/cooling.webp')"></div>
+          <div class="hero-slide-inner">
+            <h1 data-ar="برّد بيتك قبل الصيف" data-en="Cool your home before summer">برّد بيتك قبل الصيف</h1>
+            <p data-ar="مكيفات سبليت أصلية مع خدمة التركيب — اختر القدرة المناسبة لبيتك بأسعار منافسة." data-en="Genuine split ACs with installation service — pick the right capacity at competitive prices.">مكيفات سبليت أصلية مع خدمة التركيب — اختر القدرة المناسبة لبيتك بأسعار منافسة.</p>
+            <a class="btn btn-brand" href="#cat-ac" data-ar="تصفّح التكييف" data-en="Browse air conditioning">تصفّح التكييف</a>
+          </div>
+        </article>
+        <article class="hero-slide" data-hero-slide>
+          <div class="hero-slide-bg" style="background-image:url('images/built-in.webp')"></div>
+          <div class="hero-slide-inner">
+            <h1 data-ar="مطبخ أذكى… بأجهزة موثوقة" data-en="A smarter kitchen with trusted appliances">مطبخ أذكى… بأجهزة موثوقة</h1>
+            <p data-ar="أفران وأجهزة مدمجة ومطبخية من علامات تعتمدها — توصيل سريع وتقسيط مرن." data-en="Ovens, built-ins, and kitchen appliances from brands you trust — fast delivery and flexible installments.">أفران وأجهزة مدمجة ومطبخية من علامات تعتمدها — توصيل سريع وتقسيط مرن.</p>
+            <a class="btn btn-brand" href="#categories" data-ar="استكشف الأقسام" data-en="Explore categories">استكشف الأقسام</a>
+          </div>
+        </article>
+      </div>
+      <div class="hero-dots" data-hero-dots aria-label="Slides"></div>
+    </section>
+
+    <!-- 4. Feature icon strip -->
+    <section class="feature-strip" aria-label="Store benefits">
+      <div class="feature-strip-inner">
+        <div class="feature-item">
+          <span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M3 7h11v8H3z"/><path d="M14 10h4l3 3v2h-7z"/><circle cx="7" cy="18" r="1.6"/><circle cx="17" cy="18" r="1.6"/></svg></span>
+          <strong data-ar="توصيل سريع" data-en="Fast delivery">توصيل سريع</strong>
+        </div>
+        <div class="feature-item">
+          <span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3 5 6v6c0 4.2 2.8 7.2 7 8.5 4.2-1.3 7-4.3 7-8.5V6l-7-3z"/><path d="m9 12 2 2 4-4"/></svg></span>
+          <strong data-ar="ضمان معتمد" data-en="Authorized warranty">ضمان معتمد</strong>
+        </div>
+        <div class="feature-item">
+          <span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="3.5" y="6" width="17" height="12" rx="2"/><path d="M3.5 10h17"/></svg></span>
+          <strong data-ar="دفع آمن وتقسيط" data-en="Secure pay & installments">دفع آمن وتقسيط</strong>
+        </div>
+        <div class="feature-item">
+          <span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M14.7 6.3a4.1 4.1 0 0 0-5.8 5.8L3 18v3h3l5.9-5.9a4.1 4.1 0 0 0 5.8-5.8z"/><circle cx="15.5" cy="8.5" r="1"/></svg></span>
+          <strong data-ar="تركيب التكييف" data-en="AC installation">تركيب التكييف</strong>
+        </div>
+        <div class="feature-item">
+          <span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M3 12a9 9 0 0 1 15-6.7L21 8"/><path d="M21 3v5h-5"/><path d="M21 12a9 9 0 0 1-15 6.7L3 16"/><path d="M3 21v-5h5"/></svg></span>
+          <strong data-ar="استبدال سهل" data-en="Easy exchange">استبدال سهل</strong>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="categories">
+      <div class="shell">
+        <div class="section-head">
+          <div>
+            <h2 data-ar="تسوق حسب الفئة" data-en="Shop by category">تسوق حسب الفئة</h2>
+            <p data-ar="تسعة أقسام تغطي احتياجات المنزل السعودي — من التكييف إلى الشاشات." data-en="Nine categories covering every Saudi home need — from AC to screens.">تسعة أقسام تغطي احتياجات المنزل السعودي — من التكييف إلى الشاشات.</p>
+          </div>
+          <a class="link-all" href="#offers" data-ar="عرض الكل" data-en="View all">عرض الكل</a>
+        </div>
+        <div class="carousel" data-carousel data-visible-desktop="5" data-visible-mobile="2">
+          <button class="carousel-btn prev" type="button" data-prev aria-label="Previous">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M15 5 8 12l7 7"/></svg>
+          </button>
+          <button class="carousel-btn next" type="button" data-next aria-label="Next">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M15 5 8 12l7 7"/></svg>
+          </button>
+          <div class="carousel-viewport">
+            <div class="carousel-track" data-track>
+              <a class="cat-card" id="cat-ac" href="#offers">
+                <img src="images/imgi_17_أجهزة-التكييف.webp" alt="Air Conditioning / أجهزة التكييف" loading="lazy" />
+                <span data-ar="أجهزة التكييف" data-en="Air Conditioning">أجهزة التكييف</span>
+              </a>
+              <a class="cat-card" id="cat-builtin" href="#offers">
+                <img src="images/imgi_18_الأجهزة-المدمجة.webp" alt="Built-in Appliances / الأجهزة المدمجة" loading="lazy" />
+                <span data-ar="الأجهزة المدمجة" data-en="Built-in Appliances">الأجهزة المدمجة</span>
+              </a>
+              <a class="cat-card" id="cat-small" href="#featured-picks">
+                <img src="images/imgi_19_الأجهزة-المنزلية-الصغيرة.webp" alt="Small Home Appliances / الأجهزة المنزلية الصغيرة" loading="lazy" />
+                <span data-ar="الأجهزة المنزلية الصغيرة" data-en="Small Home Appliances">الأجهزة المنزلية الصغيرة</span>
+              </a>
+              <a class="cat-card" id="cat-ovens" href="#offers">
+                <img src="images/imgi_20_الافران.webp" alt="Ovens / الأفران" loading="lazy" />
+                <span data-ar="الأفران" data-en="Ovens">الأفران</span>
+              </a>
+              <a class="cat-card" id="cat-fridge" href="#offers">
+                <img src="images/imgi_12_ثلاجات.webp" alt="Refrigerators & Freezers / الثلاجات والفريزرات" loading="lazy" />
+                <span data-ar="الثلاجات والفريزرات" data-en="Refrigerators & Freezers">الثلاجات والفريزرات</span>
+              </a>
+              <a class="cat-card" id="cat-wash" href="#offers">
+                <img src="images/imgi_13_غسالات.webp" alt="Washers & Dryers / الغسالات والنشافات" loading="lazy" />
+                <span data-ar="الغسالات والنشافات" data-en="Washers & Dryers">الغسالات والنشافات</span>
+              </a>
+              <a class="cat-card" id="cat-dish" href="#offers">
+                <img src="images/imgi_14_غسالة-أطباق.webp" alt="Dishwashers / غسالة أطباق" loading="lazy" />
+                <span data-ar="غسالة أطباق" data-en="Dishwashers">غسالة أطباق</span>
+              </a>
+              <a class="cat-card" id="cat-kitchen" href="#featured-picks">
+                <img src="images/imgi_15_أجهزة-المطبخ.webp" alt="Kitchen Appliances / أجهزة المطبخ" loading="lazy" />
+                <span data-ar="أجهزة المطبخ" data-en="Kitchen Appliances">أجهزة المطبخ</span>
+              </a>
+              <a class="cat-card" id="cat-tv" href="#inspire">
+                <img src="images/imgi_16_الشاشات.webp" alt="Screens & TVs / الشاشات" loading="lazy" />
+                <span data-ar="الشاشات" data-en="Screens & TVs">الشاشات</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. Strongest offers -->
+    <section class="section" id="offers" style="background: #F3F6F2;">
+      <div class="shell">
+        <div class="section-head">
+          <div>
+            <h2 data-ar="الأكثر مبيعًا" data-en="Best Sellers">الأكثر مبيعًا</h2>
+            <p data-ar="خصومات حقيقية على أجهزة مختارة — الأسعار شاملة الضريبة مع خيار التقسيط على 4 دفعات." data-en="Real savings on selected appliances — VAT-inclusive prices with 4-installment options.">خصومات حقيقية على أجهزة مختارة — الأسعار شاملة الضريبة مع خيار التقسيط على 4 دفعات.</p>
+          </div>
+          <a class="link-all" href="#offers" data-ar="جميع العروض" data-en="All deals">جميع العروض</a>
+        </div>
+        <div class="carousel" data-carousel data-visible-desktop="3" data-visible-mobile="2">
+          <button class="carousel-btn prev" type="button" data-prev aria-label="Previous">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M15 5 8 12l7 7"/></svg>
+          </button>
+          <button class="carousel-btn next" type="button" data-next aria-label="Next">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M15 5 8 12l7 7"/></svg>
+          </button>
+          <div class="carousel-viewport">
+            <div class="carousel-track" data-track>
+              <!-- 1 Dryer -->
+              <article class="product-card">
+                <span class="badge" data-ar="وفر 16%" data-en="SAVE 16%">وفر 16%</span>
+                <div class="product-media">
+                  <img src="images/imgi_296_KHP10DW000000.png" alt="Kelvinator 10kg condenser dryer / نشافة كلفينيتور 10 كيلو" loading="lazy" />
+                </div>
+                <div class="product-body">
+                  <p class="product-brand">Kelvinator</p>
+                  <h3 class="product-title" data-ar="نشافة تكثيف 10 كيلو · 14 برنامج · أبيض" data-en="10kg condenser dryer · 14 programs · White">نشافة تكثيف 10 كيلو · 14 برنامج · أبيض</h3>
+                  <div class="rating">★★★★☆ <span class="count">(128)</span></div>
+                  <div class="price-block">
+                    <div class="price-now">1,899 <span data-ar="ر.س" data-en="SAR">ر.س</span></div>
+                    <div class="price-was"><s>2,249</s> <span class="save" data-ar="وفر 350" data-en="Save 350">وفر 350</span></div>
+                  </div>
+                  <p class="vat-note" data-ar="شامل الضريبة" data-en="VAT inclusive">شامل الضريبة</p>
+                  <p class="installments"><span class="installment-main"><span data-ar="4 دفعات بدون فوائد —" data-en="4 interest-free payments —">4 دفعات بدون فوائد —</span> <span class="pay-logos"><img class="pay-logo" src="images/tamara-logo.webp" alt="Tamara" height="17" /><img class="pay-logo" src="images/tabby-logo.webp" alt="Tabby" height="17" /></span></span> <span class="installment-price" data-ar="من <strong>549.75</strong> ر.س / شهر" data-en="from <strong>549.75</strong> SAR / mo">من <strong>549.75</strong> ر.س / شهر</span></p>
+                  <button class="btn btn-brand" type="button" data-add data-ar="أضف إلى السلة" data-en="Add to cart">أضف إلى السلة</button>
+                </div>
+              </article>
+              <!-- 2 Freezer -->
+              <article class="product-card">
+                <span class="badge deal" data-ar="عرض خاص" data-en="DEAL">عرض خاص</span>
+                <div class="product-media">
+                  <img src="images/imgi_322_CHF500DDI_1_1500x1500.png" alt="Hisense chest freezer / فريزر هايسنس أرضي" loading="lazy" />
+                </div>
+                <div class="product-body">
+                  <p class="product-brand">Hisense</p>
+                  <h3 class="product-title" data-ar="فريزر أرضي 500 لتر · إنفرتر · أبيض" data-en="500L chest freezer · Inverter · White">فريزر أرضي 500 لتر · إنفرتر · أبيض</h3>
+                  <div class="rating">★★★★☆ <span class="count">(86)</span></div>
+                  <div class="price-block">
+                    <div class="price-now">2,199 <span data-ar="ر.س" data-en="SAR">ر.س</span></div>
+                    <div class="price-was"><s>2,785</s> <span class="save" data-ar="وفر 586" data-en="Save 586">وفر 586</span></div>
+                  </div>
+                  <p class="vat-note" data-ar="شامل الضريبة" data-en="VAT inclusive">شامل الضريبة</p>
+                  <p class="installments"><span class="installment-main"><span data-ar="4 دفعات بدون فوائد —" data-en="4 interest-free payments —">4 دفعات بدون فوائد —</span> <span class="pay-logos"><img class="pay-logo" src="images/tamara-logo.webp" alt="Tamara" height="17" /><img class="pay-logo" src="images/tabby-logo.webp" alt="Tabby" height="17" /></span></span> <span class="installment-price" data-ar="من <strong>549.75</strong> ر.س / شهر" data-en="from <strong>549.75</strong> SAR / mo">من <strong>549.75</strong> ر.س / شهر</span></p>                  <button class="btn btn-brand" type="button" data-add data-ar="أضف إلى السلة" data-en="Add to cart">أضف إلى السلة</button>
+                </div>
+              </article>
+              <!-- 3 Fisher washer -->
+              <article class="product-card">
+                <span class="badge best" data-ar="الأكثر مبيعاً" data-en="BEST SELLER">الأكثر مبيعاً</span>
+                <div class="product-media">
+                  <img src="images/imgi_304_FAWMTM150GIHDD.png" alt="Fisher top-load washer / غسالة فيشر تعبئة علوية" loading="lazy" />
+                </div>
+                <div class="product-body">
+                  <p class="product-brand">Fisher</p>
+                  <h3 class="product-title" data-ar="غسالة تحميل علوي · إنفرتر Direct Drive" data-en="Top-load washer · Inverter Direct Drive">غسالة تحميل علوي · إنفرتر Direct Drive</h3>
+                  <div class="rating">★★★★☆ <span class="count">(64)</span></div>
+                  <div class="price-block">
+                    <div class="price-now">1,399 <span data-ar="ر.س" data-en="SAR">ر.س</span></div>
+                    <div class="price-was"><s>1,645</s> <span class="save" data-ar="وفر 246" data-en="Save 246">وفر 246</span></div>
+                  </div>
+                  <p class="vat-note" data-ar="شامل الضريبة" data-en="VAT inclusive">شامل الضريبة</p>
+                  <p class="installments"><span class="installment-main"><span data-ar="4 دفعات بدون فوائد —" data-en="4 interest-free payments —">4 دفعات بدون فوائد —</span> <span class="pay-logos"><img class="pay-logo" src="images/tamara-logo.webp" alt="Tamara" height="17" /><img class="pay-logo" src="images/tabby-logo.webp" alt="Tabby" height="17" /></span></span> <span class="installment-price" data-ar="من <strong>349.75</strong> ر.س / شهر" data-en="from <strong>349.75</strong> SAR / mo">من <strong>349.75</strong> ر.س / شهر</span></p>                  <button class="btn btn-brand" type="button" data-add data-ar="أضف إلى السلة" data-en="Add to cart">أضف إلى السلة</button>
+                </div>
+              </article>
+              <!-- 4 Homy AC -->
+              <article class="product-card">
+                <span class="badge" data-ar="وفر 20%" data-en="SAVE 20%">وفر 20%</span>
+                <div class="product-media">
+                  <img src="images/imgi_504_HMTCLSAC18100-2.png" alt="Homy 18100 BTU split AC / مكيف سبليت هومي 18100 وحدة" loading="lazy" />
+                </div>
+                <div class="product-body">
+                  <p class="product-brand">Homy</p>
+                  <h3 class="product-title" data-ar="مكيف سبليت 18100 وحدة · بارد · مع التركيب" data-en="18100 BTU split AC · Cooling · Install available">مكيف سبليت 18100 وحدة · بارد · مع التركيب</h3>
+                  <div class="rating">★★★★★ <span class="count">(211)</span></div>
+                  <div class="price-block">
+                    <div class="price-now">1,599 <span data-ar="ر.س" data-en="SAR">ر.س</span></div>
+                    <div class="price-was"><s>1,999</s> <span class="save" data-ar="وفر 400" data-en="Save 400">وفر 400</span></div>
+                  </div>
+                  <p class="vat-note" data-ar="شامل الضريبة" data-en="VAT inclusive">شامل الضريبة</p>
+                  <p class="installments"><span class="installment-main"><span data-ar="4 دفعات بدون فوائد —" data-en="4 interest-free payments —">4 دفعات بدون فوائد —</span> <span class="pay-logos"><img class="pay-logo" src="images/tamara-logo.webp" alt="Tamara" height="17" /><img class="pay-logo" src="images/tabby-logo.webp" alt="Tabby" height="17" /></span></span> <span class="installment-price" data-ar="من <strong>399.75</strong> ر.س / شهر" data-en="from <strong>399.75</strong> SAR / mo">من <strong>399.75</strong> ر.س / شهر</span></p>                  <button class="btn btn-brand" type="button" data-add data-ar="أضف إلى السلة" data-en="Add to cart">أضف إلى السلة</button>
+                </div>
+              </article>
+              <!-- 5 Hisense AC -->
+              <article class="product-card">
+                <span class="badge deal" data-ar="عرض خاص" data-en="DEAL">عرض خاص</span>
+                <div class="product-media">
+                  <img src="images/imgi_396_HS18CPI23000H.png" alt="Hisense inverter split AC / مكيف سبليت هايسنس إنفرتر" loading="lazy" />
+                </div>
+                <div class="product-body">
+                  <p class="product-brand">Hisense</p>
+                  <h3 class="product-title" data-ar="مكيف سبليت إنفرتر · كفاءة عالية" data-en="Inverter split AC · High efficiency">مكيف سبليت إنفرتر · كفاءة عالية</h3>
+                  <div class="rating">★★★★☆ <span class="count">(97)</span></div>
+                  <div class="price-block">
+                    <div class="price-now">1,749 <span data-ar="ر.س" data-en="SAR">ر.س</span></div>
+                    <div class="price-was"><s>1,901</s> <span class="save" data-ar="وفر 152" data-en="Save 152">وفر 152</span></div>
+                  </div>
+                  <p class="vat-note" data-ar="شامل الضريبة" data-en="VAT inclusive">شامل الضريبة</p>
+                  <p class="installments"><span class="installment-main"><span data-ar="4 دفعات بدون فوائد —" data-en="4 interest-free payments —">4 دفعات بدون فوائد —</span> <span class="pay-logos"><img class="pay-logo" src="images/tamara-logo.webp" alt="Tamara" height="17" /><img class="pay-logo" src="images/tabby-logo.webp" alt="Tabby" height="17" /></span></span> <span class="installment-price" data-ar="من <strong>439.75</strong> ر.س / شهر" data-en="from <strong>439.75</strong> SAR / mo">من <strong>439.75</strong> ر.س / شهر</span></p>                  <button class="btn btn-brand" type="button" data-add data-ar="أضف إلى السلة" data-en="Add to cart">أضف إلى السلة</button>
+                </div>
+              </article>
+              <!-- 6 Kelvinator washer -->
+              <article class="product-card">
+                <span class="badge" data-ar="وفر 12%" data-en="SAVE 12%">وفر 12%</span>
+                <div class="product-media">
+                  <img src="images/imgi_610_KLTDS12D00000-1.png" alt="Kelvinator automatic washer / غسالة كلفينيتور أوتوماتيك" loading="lazy" />
+                </div>
+                <div class="product-body">
+                  <p class="product-brand">Kelvinator</p>
+                  <h3 class="product-title" data-ar="غسالة فول أوتوماتيك · تعبئة علوية" data-en="Fully automatic top-load washer">غسالة فول أوتوماتيك · تعبئة علوية</h3>
+                  <div class="rating">★★★★☆ <span class="count">(54)</span></div>
+                  <div class="price-block">
+                    <div class="price-now">1,499 <span data-ar="ر.س" data-en="SAR">ر.س</span></div>
+                    <div class="price-was"><s>1,704</s> <span class="save" data-ar="وفر 205" data-en="Save 205">وفر 205</span></div>
+                  </div>
+                  <p class="vat-note" data-ar="شامل الضريبة" data-en="VAT inclusive">شامل الضريبة</p>
+                  <p class="installments"><span class="installment-main"><span data-ar="4 دفعات بدون فوائد —" data-en="4 interest-free payments —">4 دفعات بدون فوائد —</span> <span class="pay-logos"><img class="pay-logo" src="images/tamara-logo.webp" alt="Tamara" height="17" /><img class="pay-logo" src="images/tabby-logo.webp" alt="Tabby" height="17" /></span></span> <span class="installment-price" data-ar="من <strong>369.75</strong> ر.س / شهر" data-en="from <strong>369.75</strong> SAR / mo">من <strong>369.75</strong> ر.س / شهر</span></p>                  <button class="btn btn-brand" type="button" data-add data-ar="أضف إلى السلة" data-en="Add to cart">أضف إلى السلة</button>
+                </div>
+              </article>
+              <!-- 7 Gas cooker -->
+              <article class="product-card">
+                <span class="badge best" data-ar="الأكثر مبيعاً" data-en="BEST SELLER">الأكثر مبيعاً</span>
+                <div class="product-media">
+                  <img src="images/imgi_639_KGW9JATSOL000.png" alt="Kelvinator 5-burner gas cooker / فرن غاز كلفينيتور 5 عيون" loading="lazy" />
+                </div>
+                <div class="product-body">
+                  <p class="product-brand">Kelvinator</p>
+                  <h3 class="product-title" data-ar="فرن غاز 5 عيون · 90×60 سم · أمان كامل · ستيل" data-en="5-burner gas cooker · 90×60 cm · Full safety · Steel">فرن غاز 5 عيون · 90×60 سم · أمان كامل · ستيل</h3>
+                  <div class="rating">★★★★☆ <span class="count">(73)</span></div>
+                  <div class="price-block">
+                    <div class="price-now">1,299 <span data-ar="ر.س" data-en="SAR">ر.س</span></div>
+                    <div class="price-was"><s>1,584</s> <span class="save" data-ar="وفر 285" data-en="Save 285">وفر 285</span></div>
+                  </div>
+                  <p class="vat-note" data-ar="شامل الضريبة" data-en="VAT inclusive">شامل الضريبة</p>
+                  <p class="installments"><span class="installment-main"><span data-ar="4 دفعات بدون فوائد —" data-en="4 interest-free payments —">4 دفعات بدون فوائد —</span> <span class="pay-logos"><img class="pay-logo" src="images/tamara-logo.webp" alt="Tamara" height="17" /><img class="pay-logo" src="images/tabby-logo.webp" alt="Tabby" height="17" /></span></span> <span class="installment-price" data-ar="من <strong>299.75</strong> ر.س / شهر" data-en="from <strong>299.75</strong> SAR / mo">من <strong>299.75</strong> ر.س / شهر</span></p>                  <button class="btn btn-brand" type="button" data-add data-ar="أضف إلى السلة" data-en="Add to cart">أضف إلى السلة</button>
+                </div>
+              </article>
+              <!-- 8 Fridge -->
+              <article class="product-card">
+                <span class="badge" data-ar="وفر 10%" data-en="SAVE 10%">وفر 10%</span>
+                <div class="product-media">
+                  <img src="images/imgi_794_RL5N590NAIC00.webp" alt="Hisense upright refrigerator / ثلاجة هايسنس عامودية" loading="lazy" />
+                </div>
+                <div class="product-body">
+                  <p class="product-brand">Hisense</p>
+                  <h3 class="product-title" data-ar="ثلاجة عامودي إنفرتر · 21.1 قدم³" data-en="Upright inverter fridge · 21.1 cu ft">ثلاجة عامودي إنفرتر · 21.1 قدم³</h3>
+                  <div class="rating">★★★★★ <span class="count">(142)</span></div>
+                  <div class="price-block">
+                    <div class="price-now">2,699 <span data-ar="ر.س" data-en="SAR">ر.س</span></div>
+                    <div class="price-was"><s>2,999</s> <span class="save" data-ar="وفر 300" data-en="Save 300">وفر 300</span></div>
+                  </div>
+                  <p class="vat-note" data-ar="شامل الضريبة" data-en="VAT inclusive">شامل الضريبة</p>
+                  <p class="installments"><span class="installment-main"><span data-ar="4 دفعات بدون فوائد —" data-en="4 interest-free payments —">4 دفعات بدون فوائد —</span> <span class="pay-logos"><img class="pay-logo" src="images/tamara-logo.webp" alt="Tamara" height="17" /><img class="pay-logo" src="images/tabby-logo.webp" alt="Tabby" height="17" /></span></span> <span class="installment-price" data-ar="من <strong>679.75</strong> ر.س / شهر" data-en="from <strong>679.75</strong> SAR / mo">من <strong>679.75</strong> ر.س / شهر</span></p>                  <button class="btn btn-brand" type="button" data-add data-ar="أضف إلى السلة" data-en="Add to cart">أضف إلى السلة</button>
+                </div>
+              </article>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    
+
+<!-- AC Service & Installation Spotlight -->
+<section class="ac-service-banner" data-lang-section>
+
+  <div class="ac-service-bg">
+    <img src="images/ac-installation.jpg" alt="AC Installation Service">
+    <div class="ac-service-overlay"></div>
+  </div>
+
+  <div class="ac-service-content">
+
+    <!-- Arabic -->
+    <div class="lang-ar" dir="rtl" lang="ar">
+      <span class="ac-service-badge">خدمة معتمدة من المطوع</span>
+      <h2>ركّب مكيفك بكل سهولة</h2>
+      <p>لا تشيل هم التركيب — نوفر لك خدمة تركيب المكيفات في مدن مختارة بالمنطقة الشرقية، لضمان تركيب احترافي وتجربة تبريد تبدأ من أول يوم.</p>
+      <ul class="ac-service-features">
+        <li>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="10"/></svg>
+          فنيون معتمدون
+        </li>
+        <li>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 8v4l3 3"/><circle cx="12" cy="12" r="10"/></svg>
+          استجابة سريعة
+        </li>
+        <li>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          ضمان على الخدمة
+        </li>
+      </ul>
+      <div class="ac-service-actions">
+        <a href="#" class="ac-btn ac-btn-primary">تسوق المكيفات</a>
+        <a href="#" class="ac-btn ac-btn-secondary">اعرف المزيد</a>
+      </div>
+    </div>
+
+    <!-- English -->
+    <div class="lang-en" dir="ltr" lang="en">
+      <span class="ac-service-badge">Certified Al-Motawa Service</span>
+      <h2>Professional AC Installation</h2>
+      <p>Leave the installation to us. We provide professional AC installation in selected cities across the Eastern Province, so your new AC is ready to cool from day one.</p>
+      <ul class="ac-service-features">
+        <li>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="10"/></svg>
+          Certified Technicians
+        </li>
+        <li>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 8v4l3 3"/><circle cx="12" cy="12" r="10"/></svg>
+          Fast Response
+        </li>
+        <li>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          Service Warranty
+        </li>
+      </ul>
+      <div class="ac-service-actions">
+        <a href="#" class="ac-btn ac-btn-primary">Shop Air Conditioners</a>
+        <a href="#" class="ac-btn ac-btn-secondary">Learn More</a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<style>
+  .ac-service-banner {
+    position: relative;
+    min-height: 420px;
+    border-radius: 16px;
+    overflow: hidden;
+    margin: 48px auto;
+    max-width: 1200px;
+    display: flex;
+    align-items: center;
+    isolation: isolate;
+  }
+
+  .ac-service-bg {
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+  }
+
+  .ac-service-bg img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .ac-service-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(90deg, rgba(10,32,24,0.92) 15%, rgba(10,32,24,0.55) 60%, rgba(10,32,24,0.15) 100%);
+  }
+
+  html[dir="rtl"] .ac-service-overlay {
+    background: linear-gradient(270deg, rgba(10,32,24,0.92) 15%, rgba(10,32,24,0.55) 60%, rgba(10,32,24,0.15) 100%);
+  }
+
+  .ac-service-content {
+    padding: 56px 64px;
+    max-width: 640px;
+    color: #f4f2ec;
+  }
+
+  /* Show only the block matching the page's active language.
+     Toggle by setting <html lang="ar"> or <html lang="en"> — matches your existing language switcher. */
+  .lang-ar, .lang-en { display: none; }
+  html[lang="ar"] .lang-ar { display: block; }
+  html[lang="en"] .lang-en { display: block; }
+
+  .ac-service-badge {
+    display: inline-block;
+    background: rgba(255,255,255,0.12);
+    border: 1px solid rgba(255,255,255,0.25);
+    color: #d9f2e6;
+    font-size: 13px;
+    padding: 6px 14px;
+    border-radius: 999px;
+    margin-bottom: 18px;
+  }
+
+  .ac-service-content h2 {
+    font-size: 32px;
+    line-height: 1.35;
+    margin: 0 0 14px;
+    font-weight: 700;
+    color: #ffffff;
+  }
+
+  .ac-service-content p {
+    font-size: 16px;
+    line-height: 1.7;
+    color: #d7ded9;
+    margin: 0 0 28px;
+  }
+
+  .ac-service-features {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 22px;
+    padding: 0;
+    margin: 0 0 32px;
+  }
+
+  .ac-service-features li {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 14px;
+    color: #eef5f0;
+  }
+
+  .ac-service-features svg {
+    width: 20px;
+    height: 20px;
+    flex-shrink: 0;
+    color: #4caf7d;
+  }
+
+  .ac-service-actions {
+    display: flex;
+    gap: 14px;
+    flex-wrap: wrap;
+  }
+
+  .ac-btn {
+    display: inline-block;
+    padding: 13px 28px;
+    border-radius: 8px;
+    font-size: 15px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: opacity 0.2s ease, background 0.2s ease;
+  }
+
+  .ac-btn-primary {
+    background: #2e7d5b;
+    color: #ffffff;
+  }
+
+  .ac-btn-primary:hover {
+    background: #256a4c;
+  }
+
+  .ac-btn-secondary {
+    background: transparent;
+    color: #ffffff;
+    border: 1px solid rgba(255,255,255,0.5);
+  }
+
+  .ac-btn-secondary:hover {
+    background: rgba(255,255,255,0.1);
+  }
+
+  @media (max-width: 768px) {
+    .ac-service-banner {
+      min-height: 480px;
+    }
+    .ac-service-overlay,
+    html[dir="rtl"] .ac-service-overlay {
+      background: linear-gradient(180deg, rgba(10,32,24,0.35) 0%, rgba(10,32,24,0.92) 55%);
+    }
+    .ac-service-content {
+      padding: 32px 24px;
+      max-width: 100%;
+    }
+    .ac-service-content h2 {
+      font-size: 24px;
+    }
+  }
+</style>
+
+
+
+
+
+
+    <!-- 8. Featured Picks -->
+    <section class="section" id="featured-picks" style="background: #F3F6F2;">
+      <div class="shell">
+        <div class="section-head">
+          <div>
+            <h2 data-ar="اختيارات مميزة لمنزلك" data-en="Featured Picks for you home">اختيارات مميزة لمنزلك</h2>
+            <p data-ar="اكتشف مجموعة مختارة من الأجهزة والشاشات بأسعار مميزة - شامله الضريبه" data-en="Discover a curated selection of appliances and TVs at great prices, including VAT.">اكتشف مجموعة مختارة من الأجهزة والشاشات بأسعار مميزة - شامله الضريبه</p>
+          </div>
+        </div>
+        <div class="carousel" data-carousel data-visible-desktop="3" data-visible-mobile="2">
+          <button class="carousel-btn prev" type="button" data-prev aria-label="Previous">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M15 5 8 12l7 7"/></svg>
+          </button>
+          <button class="carousel-btn next" type="button" data-next aria-label="Next">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M15 5 8 12l7 7"/></svg>
+          </button>
+          <div class="carousel-viewport">
+            <div class="carousel-track" data-track>
+              <article class="product-card">
+                <span class="badge" data-ar="وفر 25%" data-en="SAVE 25%">وفر 25%</span>
+                <div class="product-media">
+                  <img src="images/imgi_731_KT21020000000.png" alt="Lynx glass kettle / غلاية لينكس زجاجية" loading="lazy" />
+                </div>
+                <div class="product-body">
+                  <p class="product-brand">Lynx</p>
+                  <h3 class="product-title" data-ar="غلاية زجاجية بلمسة نحاسية" data-en="Glass kettle with copper accent">غلاية زجاجية بلمسة نحاسية</h3>
+                  <div class="rating">★★★★☆ <span class="count">(77)</span></div>
+                  <div class="price-block">
+                    <div class="price-now">119 <span data-ar="ر.س" data-en="SAR">ر.س</span></div>
+                    <div class="price-was"><s>159</s> <span class="save" data-ar="وفر 40" data-en="Save 40">وفر 40</span></div>
+                  </div>
+                  <p class="vat-note" data-ar="شامل الضريبة" data-en="VAT inclusive">شامل الضريبة</p>
+                  <p class="installments"><span class="installment-main"><span data-ar="4 دفعات بدون فوائد —" data-en="4 interest-free payments —">4 دفعات بدون فوائد —</span> <span class="pay-logos"><img class="pay-logo" src="images/tamara-logo.webp" alt="Tamara" height="17" /><img class="pay-logo" src="images/tabby-logo.webp" alt="Tabby" height="17" /></span></span> <span class="installment-price" data-ar="من <strong>22.75</strong> ر.س / شهر" data-en="from <strong>22.75</strong> SAR / mo">من <strong>22.75</strong> ر.س / شهر</span></p>                  <button class="btn btn-brand" type="button" data-add data-ar="أضف إلى السلة" data-en="Add to cart">أضف إلى السلة</button>
+                </div>
+              </article>
+              <article class="product-card">
+                <span class="badge deal" data-ar="عرض خاص" data-en="DEAL">عرض خاص</span>
+                <div class="product-media">
+                  <img src="images/imgi_755_HR37041100000-1.png" alt="Philips hand mixer / خلاط فيليبس يدوي" loading="lazy" />
+                </div>
+                <div class="product-body">
+                  <p class="product-brand">Philips</p>
+                  <h3 class="product-title" data-ar="خلاط يدوي مع خطافات عجن" data-en="Hand mixer with dough hooks">خلاط يدوي مع خطافات عجن</h3>
+                  <div class="rating">★★★★☆ <span class="count">(61)</span></div>
+                  <div class="price-block">
+                    <div class="price-now">179 <span data-ar="ر.س" data-en="SAR">ر.س</span></div>
+                    <div class="price-was"><s>209</s> <span class="save" data-ar="وفر 30" data-en="Save 30">وفر 30</span></div>
+                  </div>
+                  <p class="vat-note" data-ar="شامل الضريبة" data-en="VAT inclusive">شامل الضريبة</p>
+                  <p class="installments"><span class="installment-main"><span data-ar="4 دفعات بدون فوائد —" data-en="4 interest-free payments —">4 دفعات بدون فوائد —</span> <span class="pay-logos"><img class="pay-logo" src="images/tamara-logo.webp" alt="Tamara" height="17" /><img class="pay-logo" src="images/tabby-logo.webp" alt="Tabby" height="17" /></span></span> <span class="installment-price" data-ar="من <strong>25.75</strong> ر.س / شهر" data-en="from <strong>25.75</strong> SAR / mo">من <strong>25.75</strong> ر.س / شهر</span></p>                  <button class="btn btn-brand" type="button" data-add data-ar="أضف إلى السلة" data-en="Add to cart">أضف إلى السلة</button>
+                </div>
+              </article>
+              <article class="product-card">
+                <span class="badge best" data-ar="الأكثر مبيعاً" data-en="BEST SELLER">الأكثر مبيعاً</span>
+                <div class="product-media">
+                  <img src="images/imgi_80_HD74309000000.png" alt="Philips drip coffee maker / محضرة قهوة فيليبس" loading="lazy" />
+                </div>
+                <div class="product-body">
+                  <p class="product-brand">Philips</p>
+                  <h3 class="product-title" data-ar="محضرة قهوة بالتنقيط · حتى 15 كوب" data-en="Drip coffee maker · up to 15 cups">محضرة قهوة بالتنقيط · حتى 15 كوب</h3>
+                  <div class="rating">★★★★★ <span class="count">(110)</span></div>
+                  <div class="price-block">
+                    <div class="price-now">229 <span data-ar="ر.س" data-en="SAR">ر.س</span></div>
+                    <div class="price-was"><s>273</s> <span class="save" data-ar="وفر 44" data-en="Save 44">وفر 44</span></div>
+                  </div>
+                  <p class="vat-note" data-ar="شامل الضريبة" data-en="VAT inclusive">شامل الضريبة</p>
+                  <p class="installments"><span class="installment-main"><span data-ar="4 دفعات بدون فوائد —" data-en="4 interest-free payments —">4 دفعات بدون فوائد —</span> <span class="pay-logos"><img class="pay-logo" src="images/tamara-logo.webp" alt="Tamara" height="17" /><img class="pay-logo" src="images/tabby-logo.webp" alt="Tabby" height="17" /></span></span> <span class="installment-price" data-ar="من <strong>42.75</strong> ر.س / شهر" data-en="from <strong>42.75</strong> SAR / mo">من <strong>42.75</strong> ر.س / شهر</span></p>                  <button class="btn btn-brand" type="button" data-add data-ar="أضف إلى السلة" data-en="Add to cart">أضف إلى السلة</button>
+                </div>
+              </article>
+              <article class="product-card">
+                <span class="badge" data-ar="وفر 18%" data-en="SAVE 18%">وفر 18%</span>
+                <div class="product-media">
+                  <!-- PLACEHOLDER: no dedicated TV product cutout in images folder -->
+                  <img src="images/85Q63Q0000000-768x768.webp" alt="Television / شاشه" loading="lazy" />
+                </div>
+                <div class="product-body">
+                  <p class="product-brand">Hisense</p>
+                  <h3 class="product-title" data-ar="شاشة LED 43 بوصة · Full HD" data-en="43-inch LED TV · Full HD">شاشة LED 43 بوصة · Full HD</h3>
+                  <div class="rating">★★★★☆ <span class="count">(48)</span></div>
+                  <div class="price-block">
+                    <div class="price-now">1,149 <span data-ar="ر.س" data-en="SAR">ر.س</span></div>
+                    <div class="price-was"><s>1,399</s> <span class="save" data-ar="وفر 250" data-en="Save 250">وفر 250</span></div>
+                  </div>
+                  <p class="vat-note" data-ar="شامل الضريبة" data-en="VAT inclusive">شامل الضريبة</p>
+                  <p class="installments"><span class="installment-main"><span data-ar="4 دفعات بدون فوائد —" data-en="4 interest-free payments —">4 دفعات بدون فوائد —</span> <span class="pay-logos"><img class="pay-logo" src="images/tamara-logo.webp" alt="Tamara" height="17" /><img class="pay-logo" src="images/tabby-logo.webp" alt="Tabby" height="17" /></span></span> <span class="installment-price" data-ar="من <strong>284.75</strong> ر.س / شهر" data-en="from <strong>284.75</strong> SAR / mo">من <strong>284.75</strong> ر.س / شهر</span></p>                   
+                  <button class="btn btn-brand" type="button" data-add data-ar="أضف إلى السلة" data-en="Add to cart">أضف إلى السلة</button>
+                </div>
+              </article>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- Limited-time deals -->
+    <section class="deals-section" id="limited-deals">
+      <div class="shell">
+        <div class="deals-head">
+          <h2 data-ar="خصومات حصرية لفترة محدودة" data-en="Exclusive limited-time discounts">خصومات حصرية لفترة محدودة</h2>
+          <div class="countdown" data-countdown aria-label="Countdown">
+            <div><strong data-cd="days">02</strong><span data-ar="يوم" data-en="Days">يوم</span></div>
+            <div><strong data-cd="hours">14</strong><span data-ar="ساعة" data-en="Hours">ساعة</span></div>
+            <div><strong data-cd="mins">36</strong><span data-ar="دقيقة" data-en="Mins">دقيقة</span></div>
+            <div><strong data-cd="secs">48</strong><span data-ar="ثانية" data-en="Secs">ثانية</span></div>
+          </div>
+        </div>
+        <div class="deals-grid">
+          <article class="deal-card">
+            <img src="images/imgi_504_HMTCLSAC18100-2.png" alt="Homy split AC" loading="lazy" />
+            <div class="deal-card-body">
+              <h3 data-ar="مكيف سبليت هومي 18100 وحدة" data-en="Homy 18100 BTU split AC">مكيف سبليت هومي 18100 وحدة</h3>
+              <div class="deal-price"><strong>1,599 <span data-ar="ر.س" data-en="SAR">ر.س</span></strong><s>1,999</s></div>
+              <div class="deal-meter" aria-hidden="true"><span style="width:68%"></span></div>
+              <p class="deal-left" data-ar="متبقي 32%" data-en="32% left">متبقي 32%</p>
+              <button class="btn btn-brand" type="button" data-add data-ar="أضف إلى السلة" data-en="Add to cart">أضف إلى السلة</button>
+            </div>
+          </article>
+          <article class="deal-card">
+            <img src="images/imgi_304_FAWMTM150GIHDD.png" alt="Fisher washer" loading="lazy" />
+            <div class="deal-card-body">
+              <h3 data-ar="غسالة فيشر تحميل علوي إنفرتر" data-en="Fisher top-load inverter washer">غسالة فيشر تحميل علوي إنفرتر</h3>
+              <div class="deal-price"><strong>1,399 <span data-ar="ر.س" data-en="SAR">ر.س</span></strong><s>1,645</s></div>
+              <div class="deal-meter" aria-hidden="true"><span style="width:45%"></span></div>
+              <p class="deal-left" data-ar="متبقي 55%" data-en="55% left">متبقي 55%</p>
+              <button class="btn btn-brand" type="button" data-add data-ar="أضف إلى السلة" data-en="Add to cart">أضف إلى السلة</button>
+            </div>
+          </article>
+          <article class="deal-card">
+            <img src="images/imgi_639_KGW9JATSOL000.png" alt="Kelvinator cooker" loading="lazy" />
+            <div class="deal-card-body">
+              <h3 data-ar="فرن غاز كلفينيتور 5 عيون" data-en="Kelvinator 5-burner gas cooker">فرن غاز كلفينيتور 5 عيون</h3>
+              <div class="deal-price"><strong>1,299 <span data-ar="ر.س" data-en="SAR">ر.س</span></strong><s>1,584</s></div>
+              <div class="deal-meter" aria-hidden="true"><span style="width:80%"></span></div>
+              <p class="deal-left" data-ar="متبقي 20%" data-en="20% left">متبقي 20%</p>
+              <button class="btn btn-brand" type="button" data-add data-ar="أضف إلى السلة" data-en="Add to cart">أضف إلى السلة</button>
+            </div>
+          </article>
+        </div>
+        <div class="deals-cta">
+          <a class="btn" href="#offers" data-ar="عرض جميع العروض" data-en="View all offers">عرض جميع العروض</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Brand logos -->
+    <section class="brands-section" aria-label="Brands">
+      <div class="brands-title"> 
+        <h2 data-ar="العلامات التجارية التي نتعامل معها" data-en="Our Brands">العلامات التجارية التي نتعامل معها</h2>
+      </div> 
+      <div class="brands-track-wrap">
+        <div class="brands-track" data-brands-track>
+          <div class="brand-slot"><!-- TODO: brand logo --><span>HISENSE</span></div>
+          <div class="brand-slot"><!-- TODO: brand logo --><span>KELVINATOR</span></div>
+          <div class="brand-slot"><!-- TODO: brand logo --><span>HOMY</span></div>
+          <div class="brand-slot"><!-- TODO: brand logo --><span>PHILIPS</span></div>
+          <div class="brand-slot"><!-- TODO: brand logo --><span>FISHER</span></div>
+          <div class="brand-slot"><!-- TODO: brand logo --><span>SAMSUNG</span></div>
+          <div class="brand-slot"><!-- TODO: brand logo --><span>LG</span></div>
+          <div class="brand-slot"><!-- TODO: brand logo --><span>ROYAL</span></div>
+          <!-- duplicate for seamless loop -->
+          <div class="brand-slot" aria-hidden="true"><span>HISENSE</span></div>
+          <div class="brand-slot" aria-hidden="true"><span>KELVINATOR</span></div>
+          <div class="brand-slot" aria-hidden="true"><span>HOMY</span></div>
+          <div class="brand-slot" aria-hidden="true"><span>PHILIPS</span></div>
+          <div class="brand-slot" aria-hidden="true"><span>FISHER</span></div>
+          <div class="brand-slot" aria-hidden="true"><span>SAMSUNG</span></div>
+          <div class="brand-slot" aria-hidden="true"><span>LG</span></div>
+          <div class="brand-slot" aria-hidden="true"><span>ROYAL</span></div>
+          <!-- duplicate for seamless loop -->
+          <div class="brand-slot" aria-hidden="true"><span>HISENSE</span></div>
+          <div class="brand-slot" aria-hidden="true"><span>KELVINATOR</span></div>
+          <div class="brand-slot" aria-hidden="true"><span>HOMY</span></div>
+          <div class="brand-slot" aria-hidden="true"><span>PHILIPS</span></div>
+          <div class="brand-slot" aria-hidden="true"><span>FISHER</span></div>
+          <div class="brand-slot" aria-hidden="true"><span>SAMSUNG</span></div>
+          <div class="brand-slot" aria-hidden="true"><span>LG</span></div>
+          <div class="brand-slot" aria-hidden="true"><span>ROYAL</span></div>
+        </div>
+      </div>
+    </section>
+
+
+
+
+    <!-- Home package builder (merged sizing + budget) -->
+    <section class="section bundle-builder" id="home-package">
+      <div class="shell">
+        <div class="section-head">
+          <div>
+            <h2 data-ar="جهّز منزلك بالكامل" data-en="Build Your Complete Home Package">جهّز منزلك بالكامل</h2>
+            <p data-ar="اختر طريقة التفاعل المفضّلة لديك — عبر النموذج أو بصوتك" data-en="Choose how you'd like to tell us what you need — by form or by voice">اختر طريقة التفاعل المفضّلة لديك — عبر النموذج أو بصوتك</p>
+          </div>
+        </div>
+
+        <div class="bundle-panels">
+          <form class="bundle-form-card" id="bundleForm" novalidate>
+            <div class="guide-field">
+              <label for="bundleBudget" data-ar="ميزانيتك (ريال سعودي)" data-en="Your budget (Saudi Riyal)">ميزانيتك (ريال سعودي)</label>
+              <input
+                class="num"
+                type="number"
+                id="bundleBudget"
+                name="budget"
+                min="1"
+                step="1"
+                inputmode="numeric"
+                data-ar-placeholder="مثال: 6000"
+                data-en-placeholder="e.g. 6000"
+                placeholder="مثال: 6000"
+              />
+            </div>
+
+            <div class="guide-field">
+              <span class="bundle-cats-label" id="bundleCatsLabel" data-ar="الأجهزة التي تحتاجها" data-en="Devices needed">الأجهزة التي تحتاجها</span>
+              <div class="bundle-cats" role="group" aria-labelledby="bundleCatsLabel">
+                <button type="button" class="bundle-cat" data-cat="ac" aria-pressed="false">
+                  <img src="images/imgi_17_أجهزة-التكييف.webp" alt="" width="32" height="32" />
+                  <span data-ar="أجهزة التكييف" data-en="AC / Cooling">أجهزة التكييف</span>
+                </button>
+                <button type="button" class="bundle-cat" data-cat="screens" aria-pressed="false">
+                  <img src="images/imgi_16_الشاشات.webp" alt="" width="32" height="32" />
+                  <span data-ar="الشاشات" data-en="Screens / TVs">الشاشات</span>
+                </button>
+                <button type="button" class="bundle-cat" data-cat="dish" aria-pressed="false">
+                  <img src="images/imgi_14_غسالة-أطباق.webp" alt="" width="32" height="32" />
+                  <span data-ar="غسالة أطباق" data-en="Dishwashers">غسالة أطباق</span>
+                </button>
+                <button type="button" class="bundle-cat" data-cat="wash" aria-pressed="false">
+                  <img src="images/imgi_13_غسالات.webp" alt="" width="32" height="32" />
+                  <span data-ar="الغسالات والنشافات" data-en="Washers &amp; Dryers">الغسالات والنشافات</span>
+                </button>
+                <button type="button" class="bundle-cat" data-cat="fridge" aria-pressed="false">
+                  <img src="images/imgi_12_ثلاجات.webp" alt="" width="32" height="32" />
+                  <span data-ar="الثلاجات والفريزرات" data-en="Refrigerators &amp; Freezers">الثلاجات والفريزرات</span>
+                </button>
+                <button type="button" class="bundle-cat" data-cat="ovens" aria-pressed="false">
+                  <img src="images/imgi_20_الافران.webp" alt="" width="32" height="32" />
+                  <span data-ar="الأفران" data-en="Ovens">الأفران</span>
+                </button>
+              </div>
+            </div>
+
+            <div class="bundle-extra" data-extra="ac">
+              <div class="bundle-extra-inner">
+                <div class="guide-field">
+                  <span class="bundle-cats-label" id="bundleAcTypeLabel" data-ar="نوع المكيف" data-en="AC type">نوع المكيف</span>
+                  <div class="bundle-cats bundle-subcats" role="radiogroup" aria-labelledby="bundleAcTypeLabel">
+                    <button type="button" class="bundle-cat bundle-subcat" data-ac-type="curtain" role="radio" aria-checked="false" aria-pressed="false">
+                      <span data-ar="ستارة هوائية" data-en="Air curtain">ستارة هوائية</span>
+                    </button>
+                    <button type="button" class="bundle-cat bundle-subcat" data-ac-type="split" role="radio" aria-checked="false" aria-pressed="false">
+                      <span data-ar="مكيف جداري" data-en="Split / wall AC">مكيف جداري</span>
+                    </button>
+                    <button type="button" class="bundle-cat bundle-subcat" data-ac-type="window" role="radio" aria-checked="false" aria-pressed="false">
+                      <span data-ar="مكيف شباك" data-en="Window AC">مكيف شباك</span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="bundle-extra" data-extra="ac">
+              <div class="bundle-extra-inner">
+                <div class="guide-field">
+                  <label for="bundleRoom" data-ar="مساحة الغرفة (متر مربع)" data-en="Room size (m²)">مساحة الغرفة (متر مربع)</label>
+                  <input class="num" type="number" id="bundleRoom" min="1" step="1" inputmode="numeric" data-ar-placeholder="مثال: 20" data-en-placeholder="e.g. 20" placeholder="مثال: 20" />
+                </div>
+              </div>
+            </div>
+
+            <div class="bundle-extra" data-extra="ovens">
+              <div class="bundle-extra-inner">
+                <div class="guide-field">
+                  <label for="bundleHousehold" data-ar="عدد أفراد الأسرة" data-en="Household size">عدد أفراد الأسرة</label>
+                  <input class="num" type="number" id="bundleHousehold" min="1" step="1" inputmode="numeric" data-ar-placeholder="مثال: 4" data-en-placeholder="e.g. 4" placeholder="مثال: 4" />
+                </div>
+              </div>
+            </div>
+
+            <div class="bundle-form-actions">
+              <button type="submit" class="btn btn-brand bundle-suggest-btn" data-ar="اقترح لي باقة" data-en="Suggest My Package">اقترح لي باقة</button>
+              <button type="button" class="btn bundle-reshuffle-btn" id="bundleReshuffle" hidden>
+                <span data-ar="اقترح باقة أخرى" data-en="Suggest a different package">اقترح باقة أخرى</span>
+              </button>
+            </div>
+            <div id="bundleFormMsg" class="guide-result" role="status"></div>
+          </form>
+
+          <aside class="bundle-voice-card" id="bundleVoice">
+            <h3 data-ar="فضّل التحدث؟" data-en="Prefer to talk?">فضّل التحدث؟</h3>
+            <p class="bundle-voice-lead" data-ar="اضغط على الميكروفون وأجب عن الأسئلة بصوتك" data-en="Tap the mic and answer each question with your voice">اضغط على الميكروفون وأجب عن الأسئلة بصوتك</p>
+
+            <button
+              class="bundle-mic"
+              type="button"
+              id="bundleMic"
+              aria-label="ابدأ الاستماع"
+            >
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <rect x="9" y="3" width="6" height="11" rx="3" />
+                <path d="M5 11a7 7 0 0 0 14 0" />
+                <path d="M12 18v3" />
+              </svg>
+              <span class="sr-only" data-ar="ابدأ الاستماع" data-en="Start listening">ابدأ الاستماع</span>
+            </button>
+
+            <div class="bundle-voice-fallback" id="bundleVoiceFallback" hidden>
+              <input class="num" type="text" id="bundleVoiceText" data-ar-placeholder="اكتب إجابتك هنا" data-en-placeholder="Type your answer here" placeholder="اكتب إجابتك هنا" />
+              <button class="btn btn-brand" type="button" id="bundleVoiceSend" data-ar="إرسال" data-en="Send">إرسال</button>
+            </div>
+
+            <div class="bundle-voice-copy" id="bundleVoiceCopy">
+              <p class="bundle-voice-q" id="bundleVoiceQuestion"></p>
+              <p class="bundle-voice-a" id="bundleVoiceAnswer" hidden></p>
+            </div>
+
+            <button class="bundle-voice-ready" type="button" id="bundleVoiceReady" hidden>
+              <span data-ar="🎉 باقتك جاهزة!" data-en="🎉 Your package is ready!">🎉 باقتك جاهزة!</span>
+            </button>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <div class="bundle-modal" id="bundleModal" hidden aria-hidden="true">
+      <div class="drawer-veil" data-bundle-veil></div>
+      <div
+        class="bundle-modal-dialog"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="bundleModalTitle"
+        tabindex="-1"
+      >
+        <div class="drawer-top bundle-modal-head">
+          <h3 id="bundleModalTitle" data-ar="الباقات المقترحة لك" data-en="Suggested Bundles for You">الباقات المقترحة لك</h3>
+          <button class="tool-btn bundle-modal-close" type="button" data-bundle-close aria-label="إغلاق">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+              <path d="M6 6l12 12M18 6 6 18" />
+            </svg>
+            <span class="sr-only" data-ar="إغلاق" data-en="Close">إغلاق</span>
+          </button>
+        </div>
+        <div class="bundle-modal-loading" id="bundleLoading">
+          <span class="bundle-spinner" aria-hidden="true"></span>
+          <p data-ar="جاري تجهيز باقتك..." data-en="Preparing your package...">جاري تجهيز باقتك...</p>
+        </div>
+        <div class="bundle-modal-body" id="bundleCardsWrap" hidden>
+          <div class="carousel bundle-carousel" data-bundle-carousel data-visible-desktop="3" data-visible-mobile="1">
+            <button class="carousel-btn prev" type="button" data-prev aria-label="السابق">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M15 5 8 12l7 7"/></svg>
+              <span class="sr-only" data-ar="السابق" data-en="Previous">السابق</span>
+            </button>
+            <button class="carousel-btn next" type="button" data-next aria-label="التالي">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M15 5 8 12l7 7"/></svg>
+              <span class="sr-only" data-ar="التالي" data-en="Next">التالي</span>
+            </button>
+            <div class="carousel-viewport">
+              <div class="carousel-track" data-track id="bundleCards"></div>
+            </div>
+          </div>
+        </div>
+        <div class="bundle-modal-foot" id="bundleModalFoot" hidden>
+          <a class="btn btn-brand" href="#offers" data-bundle-browse data-ar="تصفح الباقة" data-en="Browse Package">تصفح الباقة</a>
+        </div>
+      </div>
+    </div>
+
+<style>
+  .bundle-builder {
+    width: 100%;
+    max-width: none;
+    margin-inline: 0;
+    background: var(--cream);
+  }
+
+  .bundle-panels {
+    display: grid;
+    grid-template-columns: minmax(0, 1.65fr) minmax(260px, 0.9fr);
+    gap: 1.25rem;
+    align-items: stretch;
+  }
+
+  .bundle-form-card,
+  .bundle-voice-card {
+    background: #fff;
+    border: 1px solid var(--brand-soft);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    padding: 2.2rem 2.4rem;
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+  }
+
+  .bundle-voice-card {
+    background: var(--brand-soft);
+    border-color: rgba(74, 136, 82, 0.22);
+    text-align: center;
+  }
+
+  .bundle-voice-card h3 {
+    margin: 0 0 0.35rem;
+    font-size: 1.25rem;
+    font-weight: 800;
+  }
+
+  .bundle-voice-lead {
+    margin: 0 0 1.4rem;
+    color: var(--muted);
+    font-size: 0.92rem;
+  }
+
+  .guide-field {
+    margin-bottom: 16px;
+  }
+
+  .guide-field label,
+  .bundle-cats-label {
+    display: block;
+    font-size: 13px;
+    font-weight: 600;
+    color: #1c2b23;
+    margin-bottom: 8px;
+  }
+
+  .guide-field select,
+  .guide-field input {
+    width: 100%;
+    padding: 11px 14px;
+    border: 1px solid var(--brand-soft);
+    border-radius: 8px;
+    font-size: 14px;
+    outline: none;
+    background: var(--card);
+    box-sizing: border-box;
+    cursor: text;
+  }
+
+  .guide-field select:focus,
+  .guide-field input:focus {
+    border-color: var(--brand);
+  }
+
+  .guide-result {
+    margin-top: 12px;
+    font-size: 14px;
+    color: var(--danger);
+    font-weight: 600;
+    min-height: 20px;
+  }
+
+  .bundle-cats {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  .bundle-cat {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
+    padding-block: 0.35rem;
+    padding-inline-start: 0.35rem;
+    padding-inline-end: 0.85rem;
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    background: #fff;
+    color: var(--ink);
+    font-weight: 600;
+    font-size: 0.82rem;
+    line-height: 1.3;
+    cursor: pointer;
+    transition: background var(--ease), border-color var(--ease), color var(--ease), transform var(--ease);
+  }
+
+  .bundle-cat img,
+  .bundle-cat-ico {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    object-fit: cover;
+    background: var(--cream);
+    flex-shrink: 0;
+  }
+
+  .bundle-cat-ico {
+    display: grid;
+    place-items: center;
+    color: var(--brand-dark);
+  }
+
+  .bundle-cat-ico svg {
+    width: 16px;
+    height: 16px;
+  }
+
+  .bundle-cat:hover {
+    border-color: rgba(74, 136, 82, 0.45);
+    transform: translateY(-1px);
+  }
+
+  .bundle-cat.is-on,
+  .bundle-cat[aria-pressed="true"] {
+    background: var(--brand-soft);
+    border-color: var(--brand);
+    color: var(--brand-deeper);
+  }
+
+  .bundle-subcat {
+    padding-inline: 0.85rem;
+  }
+
+  .bundle-extra {
+    display: grid;
+    grid-template-rows: 0fr;
+    opacity: 0;
+    transition: grid-template-rows 0.32s ease, opacity 0.28s ease;
+  }
+
+  .bundle-extra.is-open {
+    grid-template-rows: 1fr;
+    opacity: 1;
+  }
+
+  .bundle-extra-inner {
+    overflow: hidden;
+    min-height: 0;
+  }
+
+  .bundle-form-actions {
+    margin-top: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 0.65rem;
+  }
+
+  .bundle-suggest-btn {
+    border-radius: 999px;
+    width: 100%;
+    cursor: pointer;
+  }
+
+  .bundle-reshuffle-btn {
+    width: 100%;
+    border-radius: 999px;
+    background: #fff;
+    color: var(--brand-deeper);
+    border: 1.5px solid var(--brand);
+    cursor: pointer;
+  }
+
+  .bundle-reshuffle-btn:hover {
+    background: var(--brand-soft);
+    color: var(--brand-deeper);
+  }
+
+  .bundle-mic {
+    width: 88px;
+    height: 88px;
+    border-radius: 50%;
+    background: var(--brand);
+    color: #fff;
+    display: grid;
+    place-items: center;
+    margin: 0 auto 1.15rem;
+    box-shadow: 0 10px 24px rgba(74, 136, 82, 0.28);
+    transition: transform var(--ease), box-shadow var(--ease), background var(--ease);
+  }
+
+  .bundle-mic svg {
+    width: 34px;
+    height: 34px;
+  }
+
+  .bundle-mic:hover {
+    transform: translateY(-2px);
+    background: var(--brand-dark);
+  }
+
+  .bundle-mic.is-listening {
+    animation: bundle-mic-pulse 1.45s ease-out infinite;
+    background: var(--brand-dark);
+  }
+
+  @keyframes bundle-mic-pulse {
+    0% { box-shadow: 0 0 0 0 rgba(74, 136, 82, 0.55); }
+    70% { box-shadow: 0 0 0 16px rgba(74, 136, 82, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(74, 136, 82, 0); }
+  }
+
+  .bundle-voice-fallback:not([hidden]) {
+    display: flex;
+    gap: 0.45rem;
+    margin-bottom: 1rem;
+  }
+
+  .bundle-voice-fallback input {
+    flex: 1;
+    min-width: 0;
+    padding: 10px 12px;
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    background: #fff;
+  }
+
+  .bundle-voice-fallback .btn {
+    width: auto;
+    padding: 0.65rem 1rem;
+    border-radius: 10px;
+    white-space: nowrap;
+  }
+
+  .bundle-voice-copy {
+    margin-top: auto;
+  }
+
+  .bundle-voice-q {
+    margin: 0;
+    font-weight: 700;
+    font-size: 1rem;
+    line-height: 1.5;
+  }
+
+  .bundle-voice-a {
+    margin: 0.45rem 0 0;
+    color: var(--brand-dark);
+    font-size: 0.9rem;
+  }
+
+  .bundle-voice-ready {
+    margin-top: auto;
+    width: 100%;
+    padding: 1rem 1.1rem;
+    border-radius: var(--radius);
+    background: #fff;
+    border: 1px solid var(--brand);
+    color: var(--brand-deeper);
+    font-weight: 800;
+    font-size: 1.05rem;
+    box-shadow: var(--shadow);
+    transition: transform var(--ease), background var(--ease);
+  }
+
+  .bundle-voice-ready:hover {
+    transform: translateY(-2px);
+    background: #fff;
+  }
+
+  .bundle-modal {
+    position: fixed;
+    inset: 0;
+    z-index: 160;
+    display: grid;
+    place-items: center;
+    padding: 1.25rem;
+    pointer-events: none;
+  }
+
+  .bundle-modal[hidden] {
+    display: none !important;
+    pointer-events: none !important;
+  }
+
+  .bundle-modal.is-open {
+    pointer-events: auto;
+  }
+
+  .bundle-modal .drawer-veil {
+    z-index: 160;
+  }
+
+  .bundle-modal-dialog {
+    position: relative;
+    z-index: 161;
+    width: min(100%, 980px);
+    max-height: min(88vh, 920px);
+    background: #fff;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow-lg);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    opacity: 0;
+    transform: translateY(12px);
+    transition: transform var(--ease), opacity var(--ease);
+  }
+
+  .bundle-modal.is-open .bundle-modal-dialog {
+    opacity: 1;
+    transform: none;
+  }
+
+  .bundle-modal-head {
+    margin-bottom: 0;
+    padding: 1.15rem 1.25rem;
+    border-bottom: 1px solid var(--line);
+    flex-shrink: 0;
+    gap: 1rem;
+  }
+
+  .bundle-modal-head h3 {
+    margin: 0;
+    font-size: clamp(1.15rem, 2vw, 1.45rem);
+    font-weight: 800;
+    line-height: 1.3;
+  }
+
+  .bundle-modal-close {
+    width: 42px;
+    height: 42px;
+    flex-shrink: 0;
+  }
+
+  .bundle-modal-close svg {
+    width: 18px;
+    height: 18px;
+  }
+
+  .bundle-modal-loading {
+    display: none;
+    place-items: center;
+    gap: 0.85rem;
+    padding: 3.5rem 1.5rem;
+    text-align: center;
+    color: var(--ink);
+    font-weight: 700;
+  }
+
+  .bundle-modal-loading.is-on {
+    display: grid;
+  }
+
+  .bundle-modal-loading p {
+    margin: 0;
+  }
+
+  .bundle-spinner {
+    width: 36px;
+    height: 36px;
+    border: 3px solid var(--brand-soft);
+    border-top-color: var(--brand);
+    border-radius: 50%;
+    animation: bundle-spin 0.7s linear infinite;
+  }
+
+  @keyframes bundle-spin {
+    to { transform: rotate(360deg); }
+  }
+
+  .bundle-modal-body {
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding: 1.15rem 1.25rem 1.4rem;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .bundle-carousel {
+    padding-inline: 1.35rem;
+  }
+
+  .bundle-carousel .carousel-btn.prev { left: 0; }
+  .bundle-carousel .carousel-btn.next { right: 0; }
+
+  .bundle-carousel .carousel-track {
+    align-items: stretch;
+  }
+
+  .bundle-modal-foot {
+    padding: 0 1.25rem 1.25rem;
+    flex-shrink: 0;
+  }
+
+  .bundle-modal-foot .btn {
+    width: 100%;
+    border-radius: 999px;
+  }
+
+  .bundle-modal-body .product-card {
+    flex: 0 0 calc((100% - 2rem) / 3);
+    width: auto;
+    min-width: 0;
+    max-width: calc((100% - 2rem) / 3);
+  }
+
+  .bundle-modal-body .product-media {
+    min-height: 160px;
+  }
+
+  .bundle-modal-body .product-media img {
+    max-height: 180px;
+  }
+
+  .bundle-modal-body .product-title {
+    min-height: 0;
+  }
+
+  @media (max-width: 900px) {
+    .bundle-panels {
+      grid-template-columns: 1fr;
+    }
+    .bundle-form-card,
+    .bundle-voice-card {
+      padding: 32px 24px;
+    }
+    .bundle-modal {
+      padding: 0;
+    }
+    .bundle-modal-dialog {
+      width: 100%;
+      height: 100%;
+      max-height: 100%;
+      border-radius: 0;
+    }
+    .bundle-modal-body .product-card {
+      flex-basis: 100%;
+      max-width: 100%;
+    }
+    .bundle-modal .carousel-btn {
+      display: grid;
+    }
+  }
+</style>
+
+<script>
+  (function initHomePackage() {
+    var PRODUCTS = [
+      { id: "ac-split-18100", category: "ac", acType: "split", name: { ar: "مكيف جداري سبليت 18100 وحدة · مع التركيب", en: "18100 BTU split wall AC · with install" }, rating: "★★★★★", reviews: 211, price: 1599, image: "images/imgi_504_HMTCLSAC18100-2.png" },
+      { id: "ac-split-inverter", category: "ac", acType: "split", name: { ar: "مكيف جداري إنفرتر · كفاءة عالية", en: "Inverter split wall AC · high efficiency" }, rating: "★★★★☆", reviews: 97, price: 1749, image: "images/imgi_396_HS18CPI23000H.png" },
+      { id: "ac-split-24000", category: "ac", acType: "split", name: { ar: "مكيف جداري سبليت 24000 وحدة · بارد", en: "24000 BTU split wall AC · cooling" }, rating: "★★★★☆", reviews: 86, price: 1899, image: "images/imgi_504_HMTCLSAC18100-2.png" },
+      { id: "ac-window-18000", category: "ac", acType: "window", name: { ar: "مكيف شباك 18000 وحدة · بارد", en: "18000 BTU window AC · cooling" }, rating: "★★★★☆", reviews: 54, price: 999, image: "images/imgi_396_HS18CPI23000H.png" },
+      { id: "ac-window-24000", category: "ac", acType: "window", name: { ar: "مكيف شباك 24000 وحدة · مع التركيب", en: "24000 BTU window AC · with install" }, rating: "★★★★☆", reviews: 41, price: 1299, image: "images/imgi_396_HS18CPI23000H.png" },
+      { id: "ac-window-12000", category: "ac", acType: "window", name: { ar: "مكيف شباك 12000 وحدة · توفير طاقة", en: "12000 BTU window AC · energy saving" }, rating: "★★★★☆", reviews: 33, price: 799, image: "images/imgi_17_أجهزة-التكييف.webp" },
+      { id: "ac-curtain-90", category: "ac", acType: "curtain", name: { ar: "ستارة هوائية 90 سم · تجاري/منزلي", en: "90 cm air curtain · home/commercial" }, rating: "★★★★☆", reviews: 38, price: 899, image: "images/imgi_17_أجهزة-التكييف.webp" },
+      { id: "ac-curtain-120", category: "ac", acType: "curtain", name: { ar: "ستارة هوائية 120 سم · تدفق عالي", en: "120 cm air curtain · high flow" }, rating: "★★★★☆", reviews: 29, price: 1199, image: "images/imgi_17_أجهزة-التكييف.webp" },
+      { id: "ac-curtain-150", category: "ac", acType: "curtain", name: { ar: "ستارة هوائية 150 سم · مدخل واسع", en: "150 cm air curtain · wide entrance" }, rating: "★★★★☆", reviews: 22, price: 1499, image: "images/imgi_17_أجهزة-التكييف.webp" },
+      { id: "tv-43", category: "screens", name: { ar: "شاشة LED 43 بوصة · Full HD", en: "43-inch LED TV · Full HD" }, rating: "★★★★☆", reviews: 73, price: 1099, image: "images/85Q63Q0000000-768x768.webp" },
+      { id: "tv-55", category: "screens", name: { ar: "شاشة LED 55 بوصة · 4K", en: "55-inch LED TV · 4K" }, rating: "★★★★☆", reviews: 91, price: 1899, image: "images/85Q63Q0000000-768x768.webp" },
+      { id: "tv-65", category: "screens", name: { ar: "شاشة LED 65 بوصة · 4K", en: "65-inch LED TV · 4K" }, rating: "★★★★★", reviews: 64, price: 2499, image: "images/imgi_16_الشاشات.webp" },
+      { id: "tv-32", category: "screens", name: { ar: "شاشة LED 32 بوصة · HD", en: "32-inch LED TV · HD" }, rating: "★★★★☆", reviews: 48, price: 699, image: "images/imgi_16_الشاشات.webp" },
+      { id: "dish-12", category: "dish", name: { ar: "غسالة أطباق 12 مكان · ستيل", en: "12-place dishwasher · Steel" }, rating: "★★★★☆", reviews: 64, price: 1149, image: "images/imgi_14_غسالة-أطباق.webp" },
+      { id: "dish-14", category: "dish", name: { ar: "غسالة أطباق 14 مكان · إنفرتر", en: "14-place dishwasher · Inverter" }, rating: "★★★★★", reviews: 52, price: 1399, image: "images/imgi_14_غسالة-أطباق.webp" },
+      { id: "dish-8", category: "dish", name: { ar: "غسالة أطباق مدمجة 8 مكان", en: "Built-in dishwasher · 8 place" }, rating: "★★★★☆", reviews: 37, price: 999, image: "images/imgi_14_غسالة-أطباق.webp" },
+      { id: "wash-fisher", category: "wash", name: { ar: "غسالة تحميل علوي · إنفرتر Direct Drive", en: "Top-load washer · Inverter Direct Drive" }, rating: "★★★★☆", reviews: 64, price: 1399, image: "images/imgi_304_FAWMTM150GIHDD.png" },
+      { id: "wash-kelvinator", category: "wash", name: { ar: "غسالة فول أوتوماتيك · تعبئة علوية", en: "Fully automatic top-load washer" }, rating: "★★★★☆", reviews: 54, price: 1499, image: "images/imgi_610_KLTDS12D00000-1.png" },
+      { id: "dry-10kg", category: "wash", name: { ar: "نشافة تكثيف 10 كيلو · 14 برنامج", en: "10kg condenser dryer · 14 programs" }, rating: "★★★★☆", reviews: 128, price: 1899, image: "images/imgi_296_KHP10DW000000.png" },
+      { id: "wash-7kg", category: "wash", name: { ar: "غسالة 7 كيلو · توفير مياه", en: "7kg washer · water saving" }, rating: "★★★★☆", reviews: 44, price: 1099, image: "images/imgi_13_غسالات.webp" },
+      { id: "fridge-upright", category: "fridge", name: { ar: "ثلاجة عامودي إنفرتر · 21.1 قدم³", en: "Upright inverter fridge · 21.1 cu ft" }, rating: "★★★★★", reviews: 142, price: 2699, image: "images/imgi_794_RL5N590NAIC00.webp" },
+      { id: "freezer-500", category: "fridge", name: { ar: "فريزر أرضي 500 لتر · إنفرتر", en: "500L chest freezer · Inverter" }, rating: "★★★★☆", reviews: 86, price: 2199, image: "images/imgi_322_CHF500DDI_1_1500x1500.png" },
+      { id: "fridge-18", category: "fridge", name: { ar: "ثلاجة 18 قدم³ · نو فروست", en: "18 cu ft fridge · no frost" }, rating: "★★★★☆", reviews: 71, price: 1899, image: "images/imgi_12_ثلاجات.webp" },
+      { id: "freezer-300", category: "fridge", name: { ar: "فريزر عامودي 300 لتر", en: "300L upright freezer" }, rating: "★★★★☆", reviews: 39, price: 1599, image: "images/imgi_322_CHF500DDI_1_1500x1500.png" },
+      { id: "oven-gas-5", category: "ovens", name: { ar: "فرن غاز 5 عيون · 90×60 سم", en: "5-burner gas cooker · 90×60 cm" }, rating: "★★★★☆", reviews: 73, price: 1299, image: "images/imgi_639_KGW9JATSOL000.png" },
+      { id: "oven-electric-60", category: "ovens", name: { ar: "فرن كهربائي مدمج · 60 سم", en: "Built-in electric oven · 60 cm" }, rating: "★★★★☆", reviews: 58, price: 899, image: "images/imgi_20_الافران.webp" },
+      { id: "oven-gas-4", category: "ovens", name: { ar: "فرن غاز 4 عيون · ستيل", en: "4-burner gas cooker · Steel" }, rating: "★★★★☆", reviews: 47, price: 999, image: "images/imgi_639_KGW9JATSOL000.png" },
+      { id: "oven-electric-90", category: "ovens", name: { ar: "فرن كهربائي 90 سم · شواية", en: "90 cm electric oven · grill" }, rating: "★★★★★", reviews: 36, price: 1499, image: "images/imgi_20_الافران.webp" }
+    ];
+
+    var QUESTIONS = {
+      budget: {
+        ar: "ما هي ميزانيتك التقريبية؟",
+        en: "What is your approximate budget?"
+      },
+      budgetRetry: {
+        ar: "لم نتعرف على رقم الميزانية. حاول مرة أخرى.",
+        en: "We didn’t catch a budget number. Please try again."
+      },
+      devices: {
+        ar: "ما هي الأجهزة التي تحتاجها؟ تكييف، شاشات، غسالة أطباق، غسالات ونشافات، ثلاجات، أو أفران.",
+        en: "Which appliances do you need? AC, screens, dishwashers, washers and dryers, refrigerators, or ovens."
+      },
+      devicesRetry: {
+        ar: "لم نتعرف على جهاز. حاول مرة أخرى: تكييف، شاشات، غسالة أطباق، غسالات، ثلاجات، أو أفران.",
+        en: "We didn’t catch a device. Try again: AC, screens, dishwashers, washers, refrigerators, or ovens."
+      },
+      acType: {
+        ar: "أي نوع من المكيفات تفضل؟ ستارة هوائية، مكيف جداري، أم مكيف شباك؟",
+        en: "Which type of AC do you prefer? Air curtain, split/wall AC, or window AC?"
+      },
+      acTypeRetry: {
+        ar: "لم نتعرف على نوع المكيف. حاول مرة أخرى: ستارة هوائية، مكيف جداري، أو مكيف شباك.",
+        en: "We didn’t catch an AC type. Try again: air curtain, split/wall AC, or window AC."
+      },
+      room: {
+        ar: "ما هي مساحة الغرفة بالمتر المربع؟",
+        en: "What is the room size in square meters?"
+      },
+      household: {
+        ar: "كم عدد أفراد الأسرة؟",
+        en: "How many people are in the household?"
+      }
+    };
+
+    var CAT_KEYS = {
+      ac: ["تكييف", "مكيف", "مكيفات", "air condition", "cooling", "ac"],
+      screens: ["شاشات", "شاشة", "تلفزيون", "tv", "screen", "television"],
+      dish: ["أطباق", "اطباق", "صحون", "dishwasher", "dish washer"],
+      wash: ["غسالات", "غسالة", "نشافات", "نشافة", "dryer", "laundry", "washing machine", "washers"],
+      fridge: ["ثلاجات", "ثلاجة", "فريزر", "فريزرات", "fridge", "refrigerator", "freezer"],
+      ovens: ["أفران", "افران", "فرن", "oven"]
+    };
+
+    var AC_TYPE_KEYS = {
+      curtain: ["ستارة", "curtain", "air curtain"],
+      split: ["جداري", "سبليت", "split", "wall"],
+      window: ["شباك", "window"]
+    };
+
+    var form = document.getElementById("bundleForm");
+    var budgetInput = document.getElementById("bundleBudget");
+    var formMsg = document.getElementById("bundleFormMsg");
+    var modal = document.getElementById("bundleModal");
+    var veil = modal && modal.querySelector("[data-bundle-veil]");
+    var dialog = modal && modal.querySelector(".bundle-modal-dialog");
+    var closeBtn = modal && modal.querySelector("[data-bundle-close]");
+    var cardsWrap = document.getElementById("bundleCardsWrap");
+    var cards = document.getElementById("bundleCards");
+    var carouselRoot = modal && modal.querySelector("[data-bundle-carousel]");
+    var loading = document.getElementById("bundleLoading");
+    var foot = document.getElementById("bundleModalFoot");
+    var micBtn = document.getElementById("bundleMic");
+    var fallback = document.getElementById("bundleVoiceFallback");
+    var voiceText = document.getElementById("bundleVoiceText");
+    var voiceSend = document.getElementById("bundleVoiceSend");
+    var qEl = document.getElementById("bundleVoiceQuestion");
+    var aEl = document.getElementById("bundleVoiceAnswer");
+    var readyBtn = document.getElementById("bundleVoiceReady");
+    var reshuffleBtn = document.getElementById("bundleReshuffle");
+    if (!form || !modal || !cards || !micBtn) return;
+
+    var lastAnswers = null;
+    var lastFocus = null;
+    var closeTimer = null;
+    var loadTimer = null;
+    var suggestionOffset = 0;
+    var hasSuggested = false;
+    var recognition = null;
+    var micStream = null;
+    var micPermission = "prompt";
+    var SpeechEngine = window.SpeechRecognition || window.webkitSpeechRecognition;
+    var voiceSupported = !!SpeechEngine;
+
+    var voice = {
+      queue: ["budget", "devices"],
+      step: 0,
+      listening: false,
+      done: false,
+      answers: emptyAnswers()
+    };
+
+    function emptyAnswers() {
+      return { budget: 0, cats: [], acType: "", roomM2: 0, household: 0 };
+    }
+
+    function isAr() {
+      return document.documentElement.lang !== "en";
+    }
+
+    function t(field) {
+      if (!field || typeof field !== "object") return field || "";
+      return isAr() ? field.ar : field.en;
+    }
+
+    function fmt(n) {
+      return Number(n).toLocaleString("en-US");
+    }
+
+    function currencyLabel() {
+      return isAr() ? "ر.س" : "SAR";
+    }
+
+    function setFormMsg(ar, en) {
+      if (!ar) {
+        formMsg.removeAttribute("data-ar");
+        formMsg.removeAttribute("data-en");
+        formMsg.textContent = "";
+        return;
+      }
+      formMsg.setAttribute("data-ar", ar);
+      formMsg.setAttribute("data-en", en);
+      formMsg.textContent = isAr() ? ar : en;
+    }
+
+    function selectedCats() {
+      return Array.prototype.map.call(
+        form.querySelectorAll(".bundle-cat[data-cat][aria-pressed='true']"),
+        function (btn) { return btn.getAttribute("data-cat"); }
+      );
+    }
+
+    function selectedAcType() {
+      var el = form.querySelector("[data-ac-type][aria-pressed='true']");
+      return el ? el.getAttribute("data-ac-type") : "";
+    }
+
+    function clearAcType() {
+      form.querySelectorAll("[data-ac-type]").forEach(function (btn) {
+        btn.setAttribute("aria-pressed", "false");
+        btn.setAttribute("aria-checked", "false");
+        btn.classList.remove("is-on");
+      });
+    }
+
+    function syncExtras() {
+      var cats = selectedCats();
+      form.querySelectorAll("[data-extra]").forEach(function (el) {
+        el.classList.toggle("is-open", cats.indexOf(el.getAttribute("data-extra")) !== -1);
+      });
+      if (cats.indexOf("ac") === -1) clearAcType();
+    }
+
+    function collectFormAnswers() {
+      var roomEl = document.getElementById("bundleRoom");
+      var houseEl = document.getElementById("bundleHousehold");
+      return {
+        budget: parseFloat(budgetInput.value) || 0,
+        cats: selectedCats(),
+        acType: selectedAcType(),
+        roomM2: roomEl ? (parseFloat(roomEl.value) || 0) : 0,
+        household: houseEl ? (parseFloat(houseEl.value) || 0) : 0
+      };
+    }
+
+    function rankCategoryPool(answers, cat) {
+      var budget = answers.budget;
+      var acType = answers.acType || "";
+      var pool = PRODUCTS.filter(function (p) { return p.category === cat; });
+      if (cat === "ac" && acType) {
+        var typed = pool.filter(function (p) { return p.acType === acType; });
+        if (typed.length) pool = typed;
+      }
+      return pool.slice().sort(function (a, b) {
+        var aUnder = a.price <= budget ? 1 : 0;
+        var bUnder = b.price <= budget ? 1 : 0;
+        if (aUnder !== bUnder) return bUnder - aUnder;
+        var aSize = 0;
+        var bSize = 0;
+        if (answers.roomM2 >= 25 && cat === "ac") {
+          if (a.price >= 1500) aSize = 0.3;
+          if (b.price >= 1500) bSize = 0.3;
+        }
+        if (answers.household >= 5 && cat === "ovens") {
+          if (a.price >= 1200) aSize += 0.2;
+          if (b.price >= 1200) bSize += 0.2;
+        }
+        if (bSize !== aSize) return bSize - aSize;
+        return Math.abs(a.price - budget) - Math.abs(b.price - budget);
+      }).map(function (p) {
+        return { product: p };
+      });
+    }
+
+    function pickProducts(answers) {
+      var cats = answers.cats || [];
+      if (!cats.length) return [];
+      return cats.map(function (cat) {
+        var pool = rankCategoryPool(answers, cat);
+        if (!pool.length) return null;
+        return pool[suggestionOffset % pool.length];
+      }).filter(function (row) { return row; });
+    }
+
+    function renderBundles(answers) {
+      var lang = isAr() ? "ar" : "en";
+      var picks = pickProducts(answers);
+      cards.innerHTML = picks.map(function (row) {
+        var p = row.product;
+        return (
+          "<article class=\"product-card bundle-card\">" +
+            "<div class=\"product-media\">" +
+              "<img src=\"" + p.image + "\" alt=\"" + t(p.name) + "\" loading=\"lazy\" />" +
+            "</div>" +
+            "<div class=\"product-body\">" +
+              "<h3 class=\"product-title\" data-ar=\"" + p.name.ar + "\" data-en=\"" + p.name.en + "\">" + t(p.name) + "</h3>" +
+              "<div class=\"rating\">" + p.rating + " <span class=\"count\">(" + p.reviews + ")</span></div>" +
+              "<div class=\"price-block\">" +
+                "<div class=\"price-now\">" + fmt(p.price) +
+                  " <span data-ar=\"ر.س\" data-en=\"SAR\">" + currencyLabel() + "</span></div>" +
+              "</div>" +
+              "<button class=\"btn btn-brand\" type=\"button\" data-add-product data-product-id=\"" + p.id + "\" data-ar=\"أضف إلى السلة\" data-en=\"Add to cart\">" +
+                (lang === "ar" ? "أضف إلى السلة" : "Add to cart") +
+              "</button>" +
+            "</div>" +
+          "</article>"
+        );
+      }).join("");
+
+      requestAnimationFrame(function () {
+        if (carouselRoot && carouselRoot._carouselApi) carouselRoot._carouselApi.refresh();
+      });
+    }
+
+    function revealReshuffle() {
+      hasSuggested = true;
+      if (reshuffleBtn) reshuffleBtn.hidden = false;
+    }
+
+    function initBundleCarousel(root) {
+      if (!root || root._carouselApi) return;
+      var track = root.querySelector("[data-track]");
+      var prev = root.querySelector("[data-prev]");
+      var next = root.querySelector("[data-next]");
+      if (!track) return;
+      var index = 0;
+      var startX = 0;
+      var deltaX = 0;
+      var dragging = false;
+
+      function items() {
+        return Array.prototype.slice.call(track.children);
+      }
+
+      function visibleCount() {
+        var desktop = Number(root.getAttribute("data-visible-desktop") || 3);
+        var mobile = Number(root.getAttribute("data-visible-mobile") || 1);
+        return window.innerWidth <= 900 ? mobile : desktop;
+      }
+
+      function maxIndex() {
+        return Math.max(0, items().length - visibleCount());
+      }
+
+      function gap() {
+        var style = getComputedStyle(track);
+        return parseFloat(style.gap) || 16;
+      }
+
+      function itemStep() {
+        var list = items();
+        if (!list[0]) return 0;
+        return list[0].getBoundingClientRect().width + gap();
+      }
+
+      function apply() {
+        index = Math.min(Math.max(0, index), maxIndex());
+        track.style.transform = "translateX(" + (-index * itemStep()) + "px)";
+      }
+
+      function go(delta) {
+        index += delta;
+        apply();
+      }
+
+      function stepPrev() { go(-1); }
+      function stepNext() { go(1); }
+
+      function bindArrows() {
+        if (!prev || !next) return;
+        var rtl = document.body.classList.contains("lang-ar");
+        prev.onclick = rtl ? stepNext : stepPrev;
+        next.onclick = rtl ? stepPrev : stepNext;
+      }
+      bindArrows();
+      root._bindArrows = bindArrows;
+
+      track.addEventListener("touchstart", function (e) {
+        dragging = true;
+        startX = e.touches[0].clientX;
+        deltaX = 0;
+        track.style.transition = "none";
+      }, { passive: true });
+
+      track.addEventListener("touchmove", function (e) {
+        if (!dragging) return;
+        deltaX = e.touches[0].clientX - startX;
+      }, { passive: true });
+
+      track.addEventListener("touchend", function () {
+        if (!dragging) return;
+        dragging = false;
+        track.style.transition = "";
+        if (Math.abs(deltaX) > 40) {
+          if (deltaX < 0) stepNext();
+          else stepPrev();
+        } else {
+          apply();
+        }
+      });
+
+      window.addEventListener("resize", apply);
+      root._carouselApi = {
+        refresh: function () {
+          index = 0;
+          apply();
+        }
+      };
+      apply();
+    }
+
+    function isOpen() {
+      return modal.classList.contains("is-open");
+    }
+
+    function syncCloseLabel() {
+      closeBtn.setAttribute("aria-label", isAr() ? "إغلاق" : "Close");
+      micBtn.setAttribute("aria-label", isAr() ? "ابدأ الاستماع" : "Start listening");
+      if (carouselRoot) {
+        var prev = carouselRoot.querySelector("[data-prev]");
+        var next = carouselRoot.querySelector("[data-next]");
+        if (prev) prev.setAttribute("aria-label", isAr() ? "السابق" : "Previous");
+        if (next) next.setAttribute("aria-label", isAr() ? "التالي" : "Next");
+        if (carouselRoot._bindArrows) carouselRoot._bindArrows();
+      }
+    }
+
+    function focusables() {
+      return Array.prototype.filter.call(
+        dialog.querySelectorAll("button, [href], input, select, textarea, [tabindex]:not([tabindex='-1'])"),
+        function (el) { return !el.disabled && !el.hidden && el.offsetParent !== null; }
+      );
+    }
+
+    function openModal() {
+      lastFocus = document.activeElement;
+      clearTimeout(closeTimer);
+      modal.hidden = false;
+      modal.setAttribute("aria-hidden", "false");
+      document.body.style.overflow = "hidden";
+      syncCloseLabel();
+      requestAnimationFrame(function () {
+        modal.classList.add("is-open");
+        veil.classList.add("is-open");
+        closeBtn.focus();
+      });
+    }
+
+    function closeModal() {
+      if (modal.hidden && !isOpen()) return;
+      modal.classList.remove("is-open");
+      veil.classList.remove("is-open");
+      modal.setAttribute("aria-hidden", "true");
+      document.body.style.overflow = "";
+      if (lastAnswers) revealReshuffle();
+      closeTimer = setTimeout(function () {
+        modal.hidden = true;
+        if (lastFocus && typeof lastFocus.focus === "function") lastFocus.focus();
+      }, 240);
+    }
+
+    function openResults(answers, rotate) {
+      lastAnswers = answers;
+      if (rotate) suggestionOffset += 1;
+      else suggestionOffset = 0;
+      loading.classList.add("is-on");
+      if (cardsWrap) cardsWrap.hidden = true;
+      foot.hidden = true;
+      cards.innerHTML = "";
+      openModal();
+      clearTimeout(loadTimer);
+      loadTimer = setTimeout(function () {
+        renderBundles(answers);
+        loading.classList.remove("is-on");
+        if (cardsWrap) cardsWrap.hidden = false;
+        foot.hidden = false;
+        requestAnimationFrame(function () {
+          requestAnimationFrame(function () {
+            if (carouselRoot && carouselRoot._carouselApi) carouselRoot._carouselApi.refresh();
+          });
+        });
+      }, 700);
+    }
+
+    form.querySelectorAll(".bundle-cat[data-cat]").forEach(function (btn) {
+      btn.addEventListener("click", function () {
+        var on = btn.getAttribute("aria-pressed") !== "true";
+        btn.setAttribute("aria-pressed", on ? "true" : "false");
+        btn.classList.toggle("is-on", on);
+        syncExtras();
+      });
+    });
+
+    form.querySelectorAll("[data-ac-type]").forEach(function (btn) {
+      btn.addEventListener("click", function () {
+        var on = btn.getAttribute("aria-pressed") !== "true";
+        form.querySelectorAll("[data-ac-type]").forEach(function (other) {
+          var active = on && other === btn;
+          other.setAttribute("aria-pressed", active ? "true" : "false");
+          other.setAttribute("aria-checked", active ? "true" : "false");
+          other.classList.toggle("is-on", active);
+        });
+      });
+    });
+
+    form.addEventListener("submit", function (e) {
+      e.preventDefault();
+      var answers = collectFormAnswers();
+      if (!answers.budget || answers.budget <= 0) {
+        setFormMsg("الرجاء إدخال ميزانية صحيحة.", "Please enter a valid budget.");
+        budgetInput.focus();
+        return;
+      }
+      if (!answers.cats.length) {
+        setFormMsg("الرجاء اختيار جهاز واحد على الأقل.", "Please select at least one device.");
+        return;
+      }
+      setFormMsg("", "");
+      openResults(answers);
+    });
+
+    closeBtn.addEventListener("click", closeModal);
+    veil.addEventListener("click", closeModal);
+    foot.querySelector("[data-bundle-browse]").addEventListener("click", function () {
+      closeModal();
+    });
+
+    dialog.addEventListener("keydown", function (e) {
+      if (e.key !== "Tab" || !isOpen()) return;
+      var els = focusables();
+      if (!els.length) return;
+      var first = els[0];
+      var last = els[els.length - 1];
+      if (e.shiftKey && document.activeElement === first) {
+        e.preventDefault();
+        last.focus();
+      } else if (!e.shiftKey && document.activeElement === last) {
+        e.preventDefault();
+        first.focus();
+      }
+    });
+
+    document.addEventListener("keydown", function (e) {
+      if (e.key === "Escape" && isOpen()) {
+        e.preventDefault();
+        closeModal();
+      }
+    });
+
+    cards.addEventListener("click", function (e) {
+      var addBtn = e.target.closest("[data-add-product]");
+      if (!addBtn) return;
+      addBtn.textContent = isAr() ? "تمت الإضافة" : "Added";
+      addBtn.disabled = true;
+      setTimeout(function () {
+        addBtn.textContent = isAr()
+          ? (addBtn.getAttribute("data-ar") || "أضف إلى السلة")
+          : (addBtn.getAttribute("data-en") || "Add to cart");
+        addBtn.disabled = false;
+      }, 900);
+    });
+
+    if (reshuffleBtn) {
+      reshuffleBtn.addEventListener("click", function () {
+        if (!lastAnswers) return;
+        openResults(lastAnswers, true);
+      });
+    }
+
+    function firstNumber(text) {
+      var match = String(text).replace(/,/g, "").match(/(\d+(?:\.\d+)?)/);
+      return match ? parseFloat(match[1]) : 0;
+    }
+
+    function containsKey(haystack, key) {
+      var k = String(key).toLowerCase();
+      if (k.length <= 3) {
+        return new RegExp("(^|[^a-z0-9\u0600-\u06FF])" + k.replace(/[.*+?^${}()|[\]\\]/g, "\\$&") + "([^a-z0-9\u0600-\u06FF]|$)", "i").test(haystack);
+      }
+      return haystack.indexOf(k) !== -1;
+    }
+
+    function parseCats(text) {
+      var lower = String(text).toLowerCase();
+      var found = [];
+      Object.keys(CAT_KEYS).forEach(function (id) {
+        var hit = CAT_KEYS[id].some(function (key) {
+          return containsKey(lower, key);
+        });
+        if (id === "wash" && /(^|[^a-z])washer([^a-z]|$)/.test(lower)) hit = true;
+        if (hit) found.push(id);
+      });
+      return found;
+    }
+
+    function parseAcType(text) {
+      var lower = String(text).toLowerCase();
+      var found = "";
+      Object.keys(AC_TYPE_KEYS).forEach(function (id) {
+        var hit = AC_TYPE_KEYS[id].some(function (key) {
+          return lower.indexOf(key.toLowerCase()) !== -1;
+        });
+        if (hit) found = id;
+      });
+      return found;
+    }
+
+    function applyVoiceAnswer(id, text) {
+      if (id === "budget") voice.answers.budget = firstNumber(text);
+      if (id === "devices") voice.answers.cats = parseCats(text);
+      if (id === "acType") voice.answers.acType = parseAcType(text);
+      if (id === "room") voice.answers.roomM2 = firstNumber(text);
+      if (id === "household") voice.answers.household = firstNumber(text);
+    }
+
+    function appendFollowups() {
+      var cats = voice.answers.cats;
+      if (cats.indexOf("ac") !== -1) {
+        if (voice.queue.indexOf("acType") === -1) voice.queue.push("acType");
+        if (voice.queue.indexOf("room") === -1) voice.queue.push("room");
+      }
+      if (cats.indexOf("ovens") !== -1 && voice.queue.indexOf("household") === -1) voice.queue.push("household");
+    }
+
+    function setVoicePrompt(field) {
+      qEl.hidden = false;
+      qEl.setAttribute("data-ar", field.ar);
+      qEl.setAttribute("data-en", field.en);
+      qEl.textContent = t(field);
+    }
+
+    function showQuestion() {
+      var id = voice.queue[voice.step];
+      var q = QUESTIONS[id];
+      if (!q) return;
+      setVoicePrompt(q);
+      readyBtn.hidden = true;
+    }
+
+    function showReady() {
+      voice.done = true;
+      qEl.hidden = true;
+      aEl.hidden = true;
+      readyBtn.hidden = false;
+      stopListening();
+    }
+
+    function setListening(on) {
+      voice.listening = on;
+      micBtn.classList.toggle("is-listening", on);
+    }
+
+    function stopListening() {
+      setListening(false);
+      if (recognition) {
+        try { recognition.stop(); } catch (err) {}
+      }
+    }
+
+    function onVoiceAnswer(text) {
+      var id = voice.queue[voice.step];
+      applyVoiceAnswer(id, text);
+      aEl.hidden = false;
+      aEl.textContent = text;
+      if (id === "devices") {
+        if (!voice.answers.cats.length) {
+          setVoicePrompt(QUESTIONS.devicesRetry);
+          return;
+        }
+        appendFollowups();
+      }
+      if (id === "acType" && !voice.answers.acType) {
+        setVoicePrompt(QUESTIONS.acTypeRetry);
+        return;
+      }
+      if (id === "budget" && !voice.answers.budget) {
+        setVoicePrompt(QUESTIONS.budgetRetry);
+        return;
+      }
+      setTimeout(function () {
+        aEl.hidden = true;
+        voice.step += 1;
+        if (voice.step >= voice.queue.length) showReady();
+        else showQuestion();
+      }, 700);
+    }
+
+    function watchMicPermission() {
+      if (!navigator.permissions || !navigator.permissions.query) {
+        return Promise.resolve(micPermission);
+      }
+      try {
+        return navigator.permissions.query({ name: "microphone" }).then(function (status) {
+          micPermission = status.state;
+          status.onchange = function () { micPermission = status.state; };
+          return status.state;
+        }).catch(function () {
+          return micPermission;
+        });
+      } catch (err) {
+        return Promise.resolve(micPermission);
+      }
+    }
+
+    function ensureMicStream() {
+      if (micStream && micStream.active) return Promise.resolve(micStream);
+      if (!navigator.mediaDevices || !navigator.mediaDevices.getUserMedia) {
+        return Promise.resolve(null);
+      }
+      return navigator.mediaDevices.getUserMedia({ audio: true }).then(function (stream) {
+        micStream = stream;
+        micPermission = "granted";
+        return stream;
+      });
+    }
+
+    function prepareMic() {
+      return watchMicPermission().then(function (state) {
+        if (state === "granted") {
+          if (micStream && micStream.active) return micStream;
+          return null;
+        }
+        if (state === "denied") return Promise.reject(new Error("denied"));
+        return ensureMicStream();
+      });
+    }
+
+    function ensureRecognition() {
+      if (!voiceSupported) return null;
+      if (recognition) {
+        recognition.lang = isAr() ? "ar-SA" : "en-US";
+        return recognition;
+      }
+      recognition = new SpeechEngine();
+      recognition.interimResults = false;
+      recognition.maxAlternatives = 1;
+      recognition.continuous = false;
+      recognition.lang = isAr() ? "ar-SA" : "en-US";
+      recognition.onresult = function (e) {
+        var text = (e.results[0] && e.results[0][0] && e.results[0][0].transcript) || "";
+        if (text) onVoiceAnswer(text.trim());
+      };
+      recognition.onerror = function () { setListening(false); };
+      recognition.onend = function () { setListening(false); };
+      return recognition;
+    }
+
+    function startListening() {
+      if (!voiceSupported || voice.done) return;
+      var rec = ensureRecognition();
+      if (!rec) return;
+      rec.lang = isAr() ? "ar-SA" : "en-US";
+      prepareMic().then(function () {
+        try {
+          rec.start();
+          setListening(true);
+        } catch (err) {
+          setListening(true);
+        }
+      }).catch(function () {
+        setListening(false);
+      });
+    }
+
+    if (voiceSupported) {
+      ensureRecognition();
+    } else {
+      micBtn.hidden = true;
+      fallback.hidden = false;
+    }
+
+    if (carouselRoot) initBundleCarousel(carouselRoot);
+
+    showQuestion();
+
+    micBtn.addEventListener("click", function () {
+      if (voice.done) return;
+      if (voice.listening) stopListening();
+      else startListening();
+    });
+
+    voiceSend.addEventListener("click", function () {
+      var text = (voiceText.value || "").trim();
+      if (!text || voice.done) return;
+      voiceText.value = "";
+      onVoiceAnswer(text);
+    });
+
+    voiceText.addEventListener("keydown", function (e) {
+      if (e.key === "Enter") {
+        e.preventDefault();
+        voiceSend.click();
+      }
+    });
+
+    readyBtn.addEventListener("click", function () {
+      if (!voice.answers.budget || !voice.answers.cats.length) return;
+      openResults(voice.answers);
+    });
+
+    document.querySelectorAll("[data-set-lang]").forEach(function (btn) {
+      btn.addEventListener("click", function () {
+        setTimeout(function () {
+          syncCloseLabel();
+          if (!voice.done) showQuestion();
+          if (isOpen() && lastAnswers) renderBundles(lastAnswers);
+          if (voice.listening) {
+            stopListening();
+            setTimeout(startListening, 180);
+          }
+        }, 0);
+      });
+    });
+  })();
+</script>
+
+    <!-- Experience -->
+    <section class="experience" id="why">
+      <div class="shell">
+        <div class="experience-head">
+          <h2 data-ar="تجربة تسوق لا مثيل لها في المملكة" data-en="A shopping experience like nowhere else in the Kingdom">تجربة تسوق لا مثيل لها في المملكة</h2>
+          <p data-ar="من التوصيل إلى التركيب والضمان — صممنا كل خطوة لتكون أسهل وأوضح لبيتك." data-en="From delivery to installation and warranty — every step is designed to be clearer and easier for your home.">من التوصيل إلى التركيب والضمان — صممنا كل خطوة لتكون أسهل وأوضح لبيتك.</p>
+        </div>
+        <div class="exp-grid">
+          <article class="exp-card">
+            <div class="ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M14.7 6.3a4.1 4.1 0 0 0-5.8 5.8L3 18v3h3l5.9-5.9a4.1 4.1 0 0 0 5.8-5.8z"/><circle cx="15.5" cy="8.5" r="1"/></svg></div>
+            <h3 data-ar="تركيب بمقاس مناسب" data-en="Custom-fit installation">تركيب بمقاس مناسب</h3>
+            <p data-ar="خدمة تركيب احترافية للتكييف والأجهزة الكبيرة عند الطلب." data-en="Professional installation for AC and large appliances on request.">خدمة تركيب احترافية للتكييف والأجهزة الكبيرة عند الطلب.</p>
+          </article>
+          <article class="exp-card">
+            <div class="ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M3 12a9 9 0 0 1 15-6.7L21 8"/><path d="M21 3v5h-5"/><path d="M21 12a9 9 0 0 1-15 6.7L3 16"/><path d="M3 21v-5h5"/></svg></div>
+            <h3 data-ar="استبدال سهل" data-en="Easy exchange">استبدال سهل</h3>
+            <p data-ar="سياسة واضحة لإرجاع واستبدال الأجهزة المؤهلة دون تعقيد." data-en="A clear returns and exchange policy for eligible products.">سياسة واضحة لإرجاع واستبدال الأجهزة المؤهلة دون تعقيد.</p>
+          </article>
+          <article class="exp-card">
+            <div class="ico" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="3.5" y="6" width="17" height="12" rx="2"/><path d="M3.5 10h17"/><path d="M12 14v2"/></svg></div>
+            <h3 data-ar="الدفع عند الاستلام" data-en="Cash on delivery">الدفع عند الاستلام</h3>
+            <p data-ar="خيارات دفع مرنة تشمل البطاقات وتمارا وتابي والدفع عند الاستلام حيث يتوفر." data-en="Flexible payments including cards, Tamara, Tabby, and cash on delivery where available.">خيارات دفع مرنة تشمل البطاقات وتمارا وتابي والدفع عند الاستلام حيث يتوفر.</p>
+          </article>
+          <article class="exp-card">
+            <div class="ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M3 7h11v8H3z"/><path d="M14 10h4l3 3v2h-7z"/><circle cx="7" cy="18" r="1.6"/><circle cx="17" cy="18" r="1.6"/></svg></div>
+            <h3 data-ar="توصيل سريع عبر المملكة" data-en="Fast delivery across the Kingdom">توصيل سريع عبر المملكة</h3>
+            <p data-ar="توصيل موثوق للمنطقة الشرقية والرياض خلال أيام العمل." data-en="Reliable delivery across the Eastern Province and Riyadh on business days.">توصيل موثوق للمنطقة الشرقية والرياض خلال أيام العمل.</p>
+          </article>
+        </div>
+        <div class="coverage-bar">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M12 21s7-5.2 7-11a7 7 0 1 0-14 0c0 5.8 7 11 7 11z"/><circle cx="12" cy="10" r="2.4"/></svg>
+          <span data-ar="نغطي المنطقة الشرقية والرياض — أكثر من 18 فرعاً لخدمتك" data-en="We cover the Eastern Province & Riyadh — 18+ showrooms ready to serve you">نغطي المنطقة الشرقية والرياض — أكثر من 18 فرعاً لخدمتك</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="reviews">
+      <div class="shell">
+        <div class="section-head">
+          <div>
+            <h2 data-ar="ماذا يقول عملاؤنا" data-en="What our customers say">ماذا يقول عملاؤنا</h2>
+            <p data-ar="آراء حقيقية من عملاء اشتروا من متجر المطوع أونلاين وفي الصالات." data-en="Real feedback from customers who shopped Al-Motawa online and in-store.">آراء حقيقية من عملاء اشتروا من متجر المطوع أونلاين وفي الصالات.</p>
+          </div>
+        </div>
+        <div class="reviews">
+          <article class="review-card">
+            <div class="review-stars" aria-label="5 stars">★★★★★</div>
+            <blockquote data-ar="طلبت مكيف سبليت أونلاين، والتوصيل والتركيب وصلا في الموعد. الأسعار منافسة والصالة في الخبر مرتبة جداً." data-en="Ordered a split AC online — delivery and installation arrived on time. Competitive prices, and the Khobar showroom is very well organized.">طلبت مكيف سبليت أونلاين، والتوصيل والتركيب وصلا في الموعد. الأسعار منافسة والصالة في الخبر مرتبة جداً.</blockquote>
+            <div class="reviewer">
+              <div class="avatar">ف</div>
+              <div>
+                <strong data-ar="فهد العتيبي" data-en="Fahad Al-Otaibi">فهد العتيبي</strong>
+                <span data-ar="الخبر" data-en="Al Khobar">الخبر</span>
+              </div>
+            </div>
+          </article>
+          <article class="review-card">
+            <div class="review-stars" aria-label="5 stars">★★★★★</div>
+            <blockquote data-ar="اشتريت غسالة وثلاجة من المطوع. التقسيط عبر تابي سهّل عليّ، والدعم رد بسرعة على الواتساب." data-en="Bought a washer and fridge from Al-Motawa. Tabby installments made it easy, and WhatsApp support replied quickly.">اشتريت غسالة وثلاجة من المطوع. التقسيط عبر تابي سهّل عليّ، والدعم رد بسرعة على الواتساب.</blockquote>
+            <div class="reviewer">
+              <div class="avatar">ن</div>
+              <div>
+                <strong data-ar="نورة الشمري" data-en="Noura Al-Shammari">نورة الشمري</strong>
+                <span data-ar="الدمام" data-en="Dammam">الدمام</span>
+              </div>
+            </div>
+          </article>
+          <article class="review-card">
+            <div class="review-stars" aria-label="5 stars">★★★★★</div>
+            <blockquote data-ar="تجربة شراء مريحة من الموقع. الأجهزة أصلية والأسعار واضحة شاملة الضريبة — أنصح فيه للعائلات." data-en="Smooth online shopping. Genuine appliances and clear VAT-inclusive pricing — I recommend it for families.">تجربة شراء مريحة من الموقع. الأجهزة أصلية والأسعار واضحة شاملة الضريبة — أنصح فيه للعائلات.</blockquote>
+            <div class="reviewer">
+              <div class="avatar">ع</div>
+              <div>
+                <strong data-ar="عبدالله القحطاني" data-en="Abdullah Al-Qahtani">عبدالله القحطاني</strong>
+                <span data-ar="الأحساء" data-en="Al-Ahsa">الأحساء</span>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Newsletter -->
+    <section class="newsletter" id="newsletter">
+      <div class="shell newsletter-inner">
+        <div class="newsletter-copy">
+          <h2 data-ar="اشترك لتصلك أقوى العروض أولاً" data-en="Subscribe to get the best deals first">اشترك لتصلك أقوى العروض أولاً</h2>
+          <p data-ar="نشرات أسبوعية بعروض التكييف والأجهزة المنزلية والشاشات — بدون رسائل مزعجة." data-en="Weekly updates on AC, home appliances, and screen offers — no spam.">نشرات أسبوعية بعروض التكييف والأجهزة المنزلية والشاشات — بدون رسائل مزعجة.</p>
+        </div>
+        <form class="newsletter-form" action="#" onsubmit="return false;">
+          <label class="sr-only" for="newsletter-email" data-ar="البريد الإلكتروني" data-en="Email">البريد الإلكتروني</label>
+          <input id="newsletter-email" type="email" name="email"
+            data-ar-placeholder="أدخل بريدك الإلكتروني"
+            data-en-placeholder="Enter your email"
+            placeholder="أدخل بريدك الإلكتروني" required />
+          <button type="submit" data-ar="اشترك" data-en="Subscribe">اشترك</button>
+        </form>
+      </div>
+      
+    </section>
+
+  </main>
+
+  <!-- 11. Footer -->
+  <footer class="site-footer" id="contact">
+    <div class="shell">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a class="logo" href="home.html">
+            <img src="images/Logo.webp" alt="Al-Motawa logo / شعار المطوع" width="180" height="48" />
+          </a>
+          <p data-ar="متجر المطوع — وجهتك للأجهزة الكهربائية والمنزلية في السعودية. أسعار منافسة، توصيل سريع، وخدمة موثوقة منذ عقود." data-en="Al-Motawa Store — your destination for electrical and home appliances in Saudi Arabia. Competitive prices, fast delivery, and trusted service for decades.">متجر المطوع — وجهتك للأجهزة الكهربائية والمنزلية في السعودية. أسعار منافسة، توصيل سريع، وخدمة موثوقة منذ عقود.</p>
+          <div class="footer-contact">
+            <a class="num" href="tel:920022008" dir="ltr">920022008</a>
+            <a class="num" href="tel:+966596215631" dir="ltr">+966 59 621 5631</a>
+            <a href="mailto:info@almotawaonline.com">info@almotawaonline.com</a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4 data-ar="تعرّف علينا" data-en="Get to know us">تعرّف علينا</h4>
+          <a href="#why" data-ar="من نحن" data-en="About us">من نحن</a>
+          <a href="#reviews" data-ar="آراء العملاء" data-en="Customer reviews">آراء العملاء</a>
+          <a href="#" data-ar="فروعنا" data-en="Our branches">فروعنا</a>
+          <a href="#" data-ar="الوظائف" data-en="Careers">الوظائف</a>
+        </div>
+        <div class="footer-col">
+          <h4 data-ar="التسوّق" data-en="Shopping">التسوّق</h4>
+          <a href="#categories" data-ar="الأقسام" data-en="Categories">الأقسام</a>
+          <a href="#offers" data-ar="العروض" data-en="Offers">العروض</a>
+          <a href="#featured-picks" data-ar="اختيارات مميزة" data-en="Featured picks">اختيارات مميزة</a>
+          <a href="#" data-ar="العلامات التجارية" data-en="Brands">العلامات التجارية</a>
+        </div>
+        <div class="footer-col">
+          <h4 data-ar="الخدمات" data-en="Services">الخدمات</h4>
+          <a href="#" data-ar="التوصيل والشحن" data-en="Delivery & shipping">التوصيل والشحن</a>
+          <a href="#" data-ar="تركيب التكييف" data-en="AC installation">تركيب التكييف</a>
+          <a href="#" data-ar="الاستبدال والإرجاع" data-en="Exchange & returns">الاستبدال والإرجاع</a>
+          <a href="#" data-ar="الدعم الفني" data-en="Support">الدعم الفني</a>
+        </div>
+      </div>
+
+      <div class="trust-row" aria-label="Payment methods">
+        <!-- PLACEHOLDER badges: no asset files for payment logos in project folder -->
+        <span class="pay-badge">mada</span>
+        <span class="pay-badge">VISA</span>
+        <span class="pay-badge">Mastercard</span>
+        <span class="pay-badge">Tamara</span>
+        <span class="pay-badge">Tabby</span>
+        <span class="pay-badge maroof" data-ar="معروف ✓ متجر موثّق" data-en="Maroof ✓ Verified store">معروف ✓ متجر موثّق</span>
+      </div>
+
+      <p class="copyright">
+        <span class="num">© 2026</span>
+        <span data-ar="شركة المطوع التجارية — جميع الحقوق محفوظة" data-en="Al-Motawa Trading Company — All rights reserved">شركة المطوع التجارية — جميع الحقوق محفوظة</span>
+      </p>
+    </div>
+  </footer>
+
+  <a class="wa-float" href="https://wa.me/966596215631" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
+    <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"> <path d="M20.52 3.48A11.83 11.83 0 0 0 12.08 0C5.55 0 .24 5.31.24 11.84c0 2.09.55 4.13 1.59 5.93L.14 24l6.38-1.67a11.84 11.84 0 0 0 5.56 1.41h.01c6.53 0 11.84-5.31 11.84-11.84 0-3.17-1.23-6.15-3.41-8.42ZM12.09 21.75h-.01a9.87 9.87 0 0 1-5.03-1.38l-.36-.21-3.79.99 1.01-3.69-.23-.38a9.86 9.86 0 0 1-1.51-5.24C2.17 6.39 6.62 1.94 12.08 1.94a9.83 9.83 0 0 1 7.01 2.91 9.84 9.84 0 0 1 2.9 7.01c0 5.46-4.45 9.89-9.9 9.89Zm5.42-7.4c-.3-.15-1.77-.87-2.04-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.65.07-.3-.15-1.27-.47-2.42-1.5-.9-.8-1.5-1.78-1.67-2.08-.17-.3-.02-.46.13-.61.14-.14.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.07-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.49s1.07 2.89 1.22 3.09c.15.2 2.1 3.21 5.08 4.5.71.31 1.26.49 1.69.63.71.23 1.36.2 1.87.12.57-.08 1.77-.72 2.02-1.42.25-.7.25-1.3.17-1.42-.07-.12-.27-.2-.57-.35Z"/> </svg>  </a>
+
+  <script>
+    (function () {
+      const html = document.documentElement;
+      const body = document.body;
+      const STORAGE_KEY = "almotawa-lang";
+
+      function applyLang(lang) {
+        const isAr = lang === "ar";
+        html.lang = isAr ? "ar" : "en";
+        html.dir = isAr ? "rtl" : "ltr";
+        body.classList.toggle("lang-ar", isAr);
+        body.classList.toggle("lang-en", !isAr);
+
+        document.querySelectorAll("[data-ar][data-en]").forEach((el) => {
+          const value = isAr ? el.getAttribute("data-ar") : el.getAttribute("data-en");
+          if (value == null) return;
+          if (/<[a-z][\s\S]*>/i.test(value)) {
+            el.innerHTML = value;
+          } else {
+            el.textContent = value;
+          }
+        });
+
+        document.querySelectorAll("[data-ar-placeholder][data-en-placeholder]").forEach((el) => {
+          el.placeholder = isAr
+            ? el.getAttribute("data-ar-placeholder")
+            : el.getAttribute("data-en-placeholder");
+        });
+
+        document.querySelectorAll("[data-set-lang]").forEach((btn) => {
+          const active = btn.getAttribute("data-set-lang") === lang;
+          btn.classList.toggle("is-active", active);
+          btn.setAttribute("aria-pressed", active ? "true" : "false");
+        });
+
+        localStorage.setItem(STORAGE_KEY, lang);
+        document.querySelectorAll("[data-carousel]").forEach((c) => {
+          if (c._bindArrows) c._bindArrows();
+          if (c._carouselApi) c._carouselApi.refresh();
+        });
+      }
+
+      document.querySelectorAll("[data-set-lang]").forEach((btn) => {
+        btn.addEventListener("click", () => applyLang(btn.getAttribute("data-set-lang")));
+      });
+
+      const saved = localStorage.getItem(STORAGE_KEY);
+      applyLang(saved === "en" ? "en" : "ar");
+
+      /* Mobile drawer */
+      const drawer = document.querySelector("[data-drawer]");
+      const veil = document.querySelector("[data-veil]");
+      function openMenu() {
+        drawer.classList.add("is-open");
+        veil.hidden = false;
+        requestAnimationFrame(() => veil.classList.add("is-open"));
+        drawer.setAttribute("aria-hidden", "false");
+      }
+      function closeMenu() {
+        drawer.classList.remove("is-open");
+        veil.classList.remove("is-open");
+        drawer.setAttribute("aria-hidden", "true");
+        setTimeout(() => { veil.hidden = true; }, 240);
+      }
+      document.querySelector("[data-menu-open]")?.addEventListener("click", openMenu);
+      document.querySelector("[data-menu-close]")?.addEventListener("click", closeMenu);
+      veil?.addEventListener("click", closeMenu);
+      drawer?.querySelectorAll("a").forEach((a) => a.addEventListener("click", closeMenu));
+
+      /* Cart badge bump on add */
+      let cartCount = 2;
+      const badge = document.querySelector("[data-cart-count]");
+      document.querySelectorAll("[data-add]").forEach((btn) => {
+        btn.addEventListener("click", () => {
+          cartCount += 1;
+          if (badge) badge.textContent = String(cartCount);
+          const label = body.classList.contains("lang-en") ? "Added" : "تمت الإضافة";
+          const original = btn.textContent;
+          btn.textContent = label;
+          btn.disabled = true;
+          setTimeout(() => {
+            btn.textContent = original;
+            btn.disabled = false;
+          }, 900);
+        });
+      });
+
+      /* Hero carousel */
+      (function initHero() {
+        const root = document.querySelector("[data-hero]");
+        if (!root) return;
+        const slides = Array.from(root.querySelectorAll("[data-hero-slide]"));
+        const dotsWrap = root.querySelector("[data-hero-dots]");
+        let index = 0;
+        let timer;
+        slides.forEach((_, i) => {
+          const b = document.createElement("button");
+          b.type = "button";
+          b.setAttribute("aria-label", "Slide " + (i + 1));
+          if (i === 0) b.classList.add("is-active");
+          b.addEventListener("click", () => go(i, true));
+          dotsWrap.appendChild(b);
+        });
+        const dots = Array.from(dotsWrap.children);
+        function go(i, user) {
+          index = (i + slides.length) % slides.length;
+          slides.forEach((s, n) => s.classList.toggle("is-active", n === index));
+          dots.forEach((d, n) => d.classList.toggle("is-active", n === index));
+          if (user) restart();
+        }
+        function next() { go(index + 1); }
+        function restart() {
+          clearInterval(timer);
+          timer = setInterval(next, 5500);
+        }
+        restart();
+      })();
+
+      /* Countdown — ends in ~2.5 days from page load */
+      (function initCountdown() {
+        const root = document.querySelector("[data-countdown]");
+        if (!root) return;
+        const end = Date.now() + (2 * 24 + 14) * 60 * 60 * 1000 + 36 * 60 * 1000;
+        const els = {
+          days: root.querySelector('[data-cd="days"]'),
+          hours: root.querySelector('[data-cd="hours"]'),
+          mins: root.querySelector('[data-cd="mins"]'),
+          secs: root.querySelector('[data-cd="secs"]'),
+        };
+        function tick() {
+          let diff = Math.max(0, end - Date.now());
+          const days = Math.floor(diff / 86400000); diff -= days * 86400000;
+          const hours = Math.floor(diff / 3600000); diff -= hours * 3600000;
+          const mins = Math.floor(diff / 60000); diff -= mins * 60000;
+          const secs = Math.floor(diff / 1000);
+          const pad = (n) => String(n).padStart(2, "0");
+          if (els.days) els.days.textContent = pad(days);
+          if (els.hours) els.hours.textContent = pad(hours);
+          if (els.mins) els.mins.textContent = pad(mins);
+          if (els.secs) els.secs.textContent = pad(secs);
+        }
+        tick();
+        setInterval(tick, 1000);
+      })();
+
+      /* Carousels */
+      function initCarousel(root) {
+        const track = root.querySelector("[data-track]");
+        const prev = root.querySelector("[data-prev]");
+        const next = root.querySelector("[data-next]");
+        const items = Array.from(track.children);
+        let index = 0;
+        let startX = 0;
+        let deltaX = 0;
+        let dragging = false;
+
+        function visibleCount() {
+          const desktop = Number(root.dataset.visibleDesktop || 4);
+          const mobile = Number(root.dataset.visibleMobile || 2);
+          return window.innerWidth <= 900 ? mobile : desktop;
+        }
+
+        function maxIndex() {
+          return Math.max(0, items.length - visibleCount());
+        }
+
+        function gap() {
+          const style = getComputedStyle(track);
+          return parseFloat(style.gap) || 16;
+        }
+
+        function itemStep() {
+          if (!items[0]) return 0;
+          return items[0].getBoundingClientRect().width + gap();
+        }
+
+        function apply() {
+          index = Math.min(Math.max(0, index), maxIndex());
+          /* Always LTR translate math — never flip for page RTL */
+          track.style.transform = `translateX(${-index * itemStep()}px)`;
+        }
+
+        function go(delta) {
+          index += delta;
+          apply();
+        }
+
+        function stepPrev() { go(-1); }
+        function stepNext() { go(1); }
+
+        /* EN: left(prev)=previous, right(next)=next
+           AR: left(prev)=next, right(next)=previous — swap handlers only */
+        function bindArrows() {
+          if (!prev || !next) return;
+          const isAr = body.classList.contains("lang-ar");
+          prev.onclick = isAr ? stepNext : stepPrev;
+          next.onclick = isAr ? stepPrev : stepNext;
+        }
+        bindArrows();
+        root._bindArrows = bindArrows;
+
+        track.addEventListener("touchstart", (e) => {
+          dragging = true;
+          startX = e.touches[0].clientX;
+          deltaX = 0;
+          track.style.transition = "none";
+        }, { passive: true });
+
+        track.addEventListener("touchmove", (e) => {
+          if (!dragging) return;
+          deltaX = e.touches[0].clientX - startX;
+        }, { passive: true });
+
+        track.addEventListener("touchend", () => {
+          if (!dragging) return;
+          dragging = false;
+          track.style.transition = "";
+          const threshold = 40;
+          if (Math.abs(deltaX) > threshold) {
+            /* Track is LTR: swipe left = next, swipe right = previous */
+            if (deltaX < 0) stepNext();
+            else stepPrev();
+          } else {
+            apply();
+          }
+        });
+
+        window.addEventListener("resize", apply);
+        root._carouselApi = {
+          refresh() { apply(); }
+        };
+        apply();
+      }
+
+      document.querySelectorAll("[data-carousel]").forEach(initCarousel);
+    })();
+  </script>
+</body>
+</html>
