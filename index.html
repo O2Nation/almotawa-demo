@@ -2712,6 +2712,35 @@
     align-items: stretch;
   }
 
+  .bundle-carousel.is-static {
+    padding-inline: 0;
+  }
+
+  .bundle-carousel.is-static .carousel-btn {
+    display: none !important;
+  }
+
+  .bundle-carousel.is-static .carousel-viewport {
+    overflow: visible;
+    direction: inherit;
+  }
+
+  .bundle-carousel.is-static .carousel-track {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    transform: none !important;
+    will-change: auto;
+    direction: inherit;
+    width: 100%;
+  }
+
+  .bundle-carousel.is-static .product-card {
+    flex: none;
+    width: auto;
+    min-width: 0;
+    max-width: none;
+  }
+
   .bundle-modal-foot {
     padding: 0 1.25rem 1.25rem;
     flex-shrink: 0;
@@ -2762,7 +2791,7 @@
       flex-basis: 100%;
       max-width: 100%;
     }
-    .bundle-modal .carousel-btn {
+    .bundle-modal .bundle-carousel:not(.is-static) .carousel-btn {
       display: grid;
     }
   }
@@ -3030,9 +3059,23 @@
         );
       }).join("");
 
+      setCarouselMode(picks.length);
       requestAnimationFrame(function () {
         if (carouselRoot && carouselRoot._carouselApi) carouselRoot._carouselApi.refresh();
       });
+    }
+
+    function setCarouselMode(count) {
+      if (!carouselRoot) return;
+      var enable = count > 3;
+      carouselRoot.classList.toggle("is-static", !enable);
+      var prev = carouselRoot.querySelector("[data-prev]");
+      var next = carouselRoot.querySelector("[data-next]");
+      if (prev) prev.hidden = !enable;
+      if (next) next.hidden = !enable;
+      if (carouselRoot._carouselApi && carouselRoot._carouselApi.setEnabled) {
+        carouselRoot._carouselApi.setEnabled(enable);
+      }
     }
 
     function revealReshuffle() {
@@ -3050,6 +3093,7 @@
       var startX = 0;
       var deltaX = 0;
       var dragging = false;
+      var enabled = true;
 
       function items() {
         return Array.prototype.slice.call(track.children);
@@ -3077,11 +3121,16 @@
       }
 
       function apply() {
+        if (!enabled) {
+          track.style.transform = "";
+          return;
+        }
         index = Math.min(Math.max(0, index), maxIndex());
         track.style.transform = "translateX(" + (-index * itemStep()) + "px)";
       }
 
       function go(delta) {
+        if (!enabled) return;
         index += delta;
         apply();
       }
@@ -3099,6 +3148,7 @@
       root._bindArrows = bindArrows;
 
       track.addEventListener("touchstart", function (e) {
+        if (!enabled) return;
         dragging = true;
         startX = e.touches[0].clientX;
         deltaX = 0;
@@ -3106,7 +3156,7 @@
       }, { passive: true });
 
       track.addEventListener("touchmove", function (e) {
-        if (!dragging) return;
+        if (!dragging || !enabled) return;
         deltaX = e.touches[0].clientX - startX;
       }, { passive: true });
 
@@ -3114,6 +3164,10 @@
         if (!dragging) return;
         dragging = false;
         track.style.transition = "";
+        if (!enabled) {
+          apply();
+          return;
+        }
         if (Math.abs(deltaX) > 40) {
           if (deltaX < 0) stepNext();
           else stepPrev();
@@ -3125,6 +3179,11 @@
       window.addEventListener("resize", apply);
       root._carouselApi = {
         refresh: function () {
+          index = 0;
+          apply();
+        },
+        setEnabled: function (on) {
+          enabled = !!on;
           index = 0;
           apply();
         }
