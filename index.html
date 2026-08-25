@@ -503,6 +503,7 @@
       margin-bottom: 1.5rem;
     }
     .deal-card {
+      position: relative;
       background: #fff;
       color: var(--ink);
       border-radius: var(--radius);
@@ -920,6 +921,16 @@
     .product-card:hover {
       transform: translateY(-4px);
       box-shadow: var(--shadow);
+    }
+    .product-card-hit {
+      position: absolute;
+      inset: 0;
+      z-index: 2;
+    }
+    .product-card .btn,
+    .deal-card .btn {
+      position: relative;
+      z-index: 3;
     }
     .product-media {
       position: relative;
@@ -2225,7 +2236,7 @@
             </div>
 
             <div class="bundle-form-actions">
-              <button type="submit" class="btn btn-brand bundle-suggest-btn" data-ar="اقترح لي باقة" data-en="Suggest My Package">اقترح لي باقة</button>
+            <button type="submit" class="btn btn-brand bundle-suggest-btn" data-ar="اقترح لي باقة" data-en="Suggest My Package">اقترح لي باقة</button>
               <button type="button" class="btn bundle-reshuffle-btn" id="bundleReshuffle" hidden>
                 <span data-ar="اقترح باقة أخرى" data-en="Suggest a different package">اقترح باقة أخرى</span>
               </button>
@@ -3041,6 +3052,7 @@
         var p = row.product;
         return (
           "<article class=\"product-card bundle-card\">" +
+            "<a class=\"product-card-hit\" href=\"product.html\" aria-label=\"" + t(p.name) + "\"></a>" +
             "<div class=\"product-media\">" +
               "<img src=\"" + p.image + "\" alt=\"" + t(p.name) + "\" loading=\"lazy\" />" +
             "</div>" +
@@ -3510,7 +3522,7 @@
     function ensureRecognition() {
       if (!voiceSupported) return null;
       if (recognition) {
-        recognition.lang = isAr() ? "ar-SA" : "en-US";
+      recognition.lang = isAr() ? "ar-SA" : "en-US";
         return recognition;
       }
       recognition = new SpeechEngine();
@@ -3535,8 +3547,8 @@
       prepareMic().then(function () {
         try {
           rec.start();
-          setListening(true);
-        } catch (err) {
+        setListening(true);
+      } catch (err) {
           setListening(true);
         }
       }).catch(function () {
@@ -3842,6 +3854,16 @@
             btn.disabled = false;
           }, 900);
         });
+      });
+
+      document.querySelectorAll(".product-card, .deal-card").forEach((card) => {
+        if (card.querySelector(".product-card-hit")) return;
+        const link = document.createElement("a");
+        link.className = "product-card-hit";
+        link.href = "product.html";
+        const title = card.querySelector(".product-title, h3");
+        if (title) link.setAttribute("aria-label", title.textContent.trim());
+        card.appendChild(link);
       });
 
       /* Hero carousel */
