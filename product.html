@@ -286,6 +286,7 @@
     .carousel-track {
       display: flex;
       flex-direction: row;
+      align-items: stretch;
       gap: 1rem;
       transition: transform 0.45s cubic-bezier(0.22, 1, 0.36, 1);
       will-change: transform;
@@ -319,24 +320,28 @@
       transform: none !important;
       display: grid;
       grid-template-columns: repeat(3, minmax(0, 1fr));
+      align-items: stretch;
       gap: 2rem;
     }
     .carousel.is-static .product-card {
       flex: none;
       min-width: 0;
       width: auto;
+      height: 100%;
     }
     .product-card {
       position: relative;
       flex: 0 0 calc((100% - 2rem) / 3);
       min-width: 220px;
-      background: #fff;
+      height: 100%;
+      align-self: stretch;
+      background: #ffffff;
       border: 1px solid var(--line);
-      border-radius: 16px;
+      border-radius: var(--radius);
       overflow: hidden;
       display: flex;
       flex-direction: column;
-      transition: box-shadow var(--ease);
+      transition: transform var(--ease), box-shadow var(--ease);
       unicode-bidi: isolate;
       text-align: start;
     }
@@ -344,42 +349,74 @@
     body.lang-ar .product-card { direction: rtl; }
     html[dir="ltr"] .product-card,
     body.lang-en .product-card { direction: ltr; }
-    .product-card:hover { box-shadow: 0 10px 24px rgba(28, 28, 28, 0.06); }
-    .product-card:focus-visible {
-      outline: 2px solid var(--brand);
-      outline-offset: 3px;
+    .product-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow);
+    }
+    .product-card-hit {
+      position: absolute;
+      inset: 0;
+      z-index: 2;
+    }
+    .product-card .btn {
+      position: relative;
+      z-index: 3;
     }
     .product-media {
       position: relative;
       background: #ffffff;
-      min-height: 220px;
+      padding: 0;
+      min-height: 260px;
       display: grid;
       place-items: center;
       overflow: hidden;
-      padding: 1.35rem 1.15rem 0.85rem;
     }
     .product-media img {
-      max-height: 200px;
+      max-height: 300px;
       width: auto;
       object-fit: contain;
+      transition: transform 0.4s ease;
+    }
+    .product-card:hover .product-media img { transform: scale(1.04); }
+    .badge {
+      position: absolute;
+      top: 0.75rem;
+      inset-inline-start: 0.75rem;
+      z-index: 5;
+      background: var(--brand);
+      color: #fff;
+      font-size: 0.72rem;
+      font-weight: 700;
+      padding: 0.28rem 0.55rem;
+      border-radius: 8px;
+      letter-spacing: 0.02em;
+      pointer-events: none;
     }
     .product-body {
-      padding: 0.95rem 1.1rem 1.15rem;
+      padding: 0.85rem 1rem 1.1rem;
       display: flex;
       flex-direction: column;
       align-items: stretch;
-      gap: 0.4rem;
+      gap: 0.35rem;
       flex: 1;
+      min-height: 0;
       text-align: start;
-      background: #fff;
+    }
+    .product-brand {
+      margin: 0;
+      font-family: var(--font-en);
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--brand-hex);
+      text-align: start;
     }
     .product-title {
       margin: 0;
-      font-family: var(--font-ar);
-      font-size: 0.98rem;
+      font-size: 0.95rem;
       font-weight: 700;
-      line-height: 1.45;
-      color: var(--ink);
+      line-height: 1.4;
       text-align: start;
     }
     .rating {
@@ -424,9 +461,62 @@
       font-family: var(--font-en);
       font-size: 1.15rem;
       font-weight: 700;
-      color: var(--brand);
+      color: var(--brand-dark);
     }
-    .price-was s { color: var(--muted); font-family: var(--font-en); font-size: 0.82rem; }
+    .price-was {
+      display: inline-flex;
+      flex-direction: row;
+      align-items: center;
+      gap: 0.45rem;
+      margin-top: 0;
+      font-size: 0.82rem;
+    }
+    .price-was s { color: var(--muted); font-family: var(--font-en); }
+    .save { display: none !important; }
+    .vat-note { font-size: 0.75rem; color: var(--muted); display: none; }
+    .installments {
+      display: flex;
+      flex-direction: column;
+      align-items: start;
+      gap: 0.35rem;
+      font-size: 0.78rem;
+      color: var(--muted);
+      background: #F3F6F2;
+      border-radius: 8px;
+      padding: 0.45rem 0.55rem;
+      margin-top: auto;
+      margin-bottom: 0.5rem;
+      margin-inline: 0;
+      text-align: start;
+    }
+    .installment-main {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: flex-start;
+      gap: 0.5rem;
+    }
+    .installments strong {
+      color: var(--ink);
+      font-family: var(--font-en);
+    }
+    .pay-logos {
+      display: inline-flex;
+      flex-direction: row;
+      align-items: center;
+      gap: 0.4rem;
+    }
+    .pay-logo {
+      height: 17px;
+      width: auto;
+      max-width: 64px;
+      object-fit: contain;
+      display: block;
+      background: rgba(0, 0, 0, 0.04);
+      border-radius: 3px;
+      padding-block: 2px;
+      padding-inline: 4px;
+    }
     .btn {
       display: inline-flex;
       flex-direction: row;
@@ -436,17 +526,21 @@
       padding: 0.85rem 1.35rem;
       border-radius: 999px;
       font-weight: 700;
-      transition: background var(--ease), box-shadow var(--ease), color var(--ease);
+      transition: transform var(--ease), background var(--ease), box-shadow var(--ease), color var(--ease);
     }
+    .btn:hover { transform: translateY(-1px); }
     .btn:disabled { opacity: 0.55; cursor: not-allowed; }
     .btn-brand {
       background: var(--brand);
       color: #fff;
       width: 100%;
+      border-radius: 12px;
       padding: 0.75rem 1rem;
       text-align: center;
-      border-radius: 12px;
-      margin-top: 0.25rem;
+    }
+    .product-card .btn-brand {
+      margin-top: 0;
+      flex-shrink: 0;
     }
     .btn-brand:hover { background: var(--brand-dark); }
 
@@ -744,7 +838,7 @@
     }
     .pdp-brand-logo {
       display: block;
-      max-height: 24px;
+      max-height: 40px;
       width: auto;
       object-fit: contain;
     }
@@ -1127,7 +1221,7 @@
     .pdp-spec-list { display: grid; gap: 0.2rem; }
     .pdp-spec-row {
       display: grid;
-      grid-template-columns: auto 1fr auto;
+      grid-template-columns: auto 1.2fr 1fr;
       gap: 0.85rem;
       align-items: center;
       padding: 0.8rem 0.9rem;
@@ -1145,7 +1239,7 @@
     .pdp-spec-icon svg { width: 18px; height: 18px; }
     .pdp-spec-key {
       margin: 0;
-      color: var(--muted);
+      color: var(--ink);
       font-size: 0.86rem;
       font-weight: 500;
     }
@@ -1153,8 +1247,8 @@
       margin: 0;
       font-weight: 600;
       font-size: 0.92rem;
-      text-align: end;
-      color: var(--ink);
+      text-align: right;
+      color: var(--muted) !important;
     }
 
     #related {
@@ -1231,6 +1325,7 @@
       html { scroll-behavior: auto; }
       .pdp-main-img img,
       .product-card,
+      .product-media img,
       .carousel-track,
       .btn,
       .carousel-btn,
@@ -1246,17 +1341,11 @@
         opacity: 1;
         transform: none;
       }
-      .product-card:hover { box-shadow: none; }
-      .pdp-trust,
-      .pdp-trust li {
-        opacity: 1;
+      .product-card:hover {
         transform: none;
+        box-shadow: none;
       }
-      .pdp-main-img img.is-out {
-        opacity: 1;
-        transform: none;
-      }
-      .product-card:hover { box-shadow: none; }
+      .product-card:hover .product-media img { transform: none; }
     }
   </style>
 </head>
@@ -1570,12 +1659,12 @@
     };
 
     const RELATED = [
-      { name: { ar: "فرن كهربائي مدمج · 60 سم", en: "Built-in electric oven · 60 cm" }, rating: "★★★★☆", reviews: 58, price: 899, image: "images/cooker.webp" },
-      { name: { ar: "غسالة أطباق 12 مكان · ستيل", en: "12-place dishwasher · Steel" }, rating: "★★★★☆", reviews: 64, price: 1149, image: "images/dishwasher.webp" },
-      { name: { ar: "ثلاجة عامودي إنفرتر · 21.1 قدم³", en: "Upright inverter fridge · 21.1 cu ft" }, rating: "★★★★★", reviews: 142, price: 2699, image: "images/imgi_794_RL5N590NAIC00.webp" },
-      { name: { ar: "غسالة تحميل علوي · إنفرتر", en: "Top-load washer · Inverter" }, rating: "★★★★☆", reviews: 64, price: 1399, image: "images/imgi_304_FAWMTM150GIHDD.png" },
-      { name: { ar: "نشافة تكثيف 10 كيلو · 14 برنامج", en: "10kg condenser dryer · 14 programs" }, rating: "★★★★☆", reviews: 128, price: 1899, image: "images/imgi_296_KHP10DW000000.png" },
-      { name: { ar: "مكيف جداري سبليت 18100 وحدة", en: "18100 BTU split wall AC" }, rating: "★★★★★", reviews: 211, price: 1599, image: "images/imgi_504_HMTCLSAC18100-2.png" }
+      { name: { ar: "فرن كهربائي مدمج · 60 سم", en: "Built-in electric oven · 60 cm" }, brand: "Kelvinator", rating: "★★★★☆", reviews: 58, price: 899, priceWas: 1099, image: "images/cooker.webp" },
+      { name: { ar: "غسالة أطباق 12 مكان · ستيل", en: "12-place dishwasher · Steel" }, brand: "Hisense", rating: "★★★★☆", reviews: 64, price: 1149, priceWas: 1399, image: "images/dishwasher.webp" },
+      { name: { ar: "ثلاجة عامودي إنفرتر · 21.1 قدم³", en: "Upright inverter fridge · 21.1 cu ft" }, brand: "Hisense", rating: "★★★★★", reviews: 142, price: 2699, priceWas: 2999, image: "images/imgi_794_RL5N590NAIC00.webp" },
+      { name: { ar: "غسالة تحميل علوي · إنفرتر", en: "Top-load washer · Inverter" }, brand: "Fisher", rating: "★★★★☆", reviews: 64, price: 1399, priceWas: 1645, image: "images/imgi_304_FAWMTM150GIHDD.png" },
+      { name: { ar: "نشافة تكثيف 10 كيلو · 14 برنامج", en: "10kg condenser dryer · 14 programs" }, brand: "Kelvinator", rating: "★★★★☆", reviews: 128, price: 1899, priceWas: 2249, image: "images/imgi_296_KHP10DW000000.png" },
+      { name: { ar: "مكيف جداري سبليت 18100 وحدة", en: "18100 BTU split wall AC" }, brand: "Homy", rating: "★★★★★", reviews: 211, price: 1599, priceWas: 1999, image: "images/imgi_504_HMTCLSAC18100-2.png" }
     ];
 
     (function () {
@@ -1737,14 +1826,38 @@
           "</div>";
 
         document.getElementById("pdpRelated").innerHTML = RELATED.map(function (p) {
+          const discount = p.priceWas && p.priceWas > p.price;
+          const saved = discount ? Math.round(p.priceWas - p.price) : 0;
+          const pctOff = discount ? Math.round((1 - p.price / p.priceWas) * 100) : 0;
+          const monthly = (p.price / 4).toFixed(2);
           return (
             "<article class=\"product-card\">" +
+              "<a class=\"product-card-hit\" href=\"product.html\" aria-label=\"" + p.name.ar + "\"></a>" +
+              (discount ? "<span class=\"badge\" data-ar=\"وفر " + pctOff + "%\" data-en=\"SAVE " + pctOff + "%\">وفر " + pctOff + "%</span>" : "") +
               "<div class=\"product-media\"><img src=\"" + p.image + "\" alt=\"" + p.name.ar + "\" loading=\"lazy\" /></div>" +
               "<div class=\"product-body\">" +
+                "<p class=\"product-brand\">" + (p.brand || "") + "</p>" +
                 "<h3 class=\"product-title\" data-ar=\"" + p.name.ar + "\" data-en=\"" + p.name.en + "\">" + p.name.ar + "</h3>" +
                 "<div class=\"rating\">" + p.rating + " <span class=\"count\">(" + p.reviews + ")</span></div>" +
-                "<div class=\"price-block\"><div class=\"price-now\">" + priceHtml(p.price) + "</div></div>" +
-                "<a class=\"btn btn-brand\" href=\"product.html\" data-ar=\"عرض المنتج\" data-en=\"View product\">عرض المنتج</a>" +
+                "<div class=\"price-block\">" +
+                  "<div class=\"price-now\">" + priceHtml(p.price) + "</div>" +
+                  (discount ? "<div class=\"price-was\"><s>" + fmt(p.priceWas) + "</s> <span class=\"save\" data-ar=\"وفر " + saved + "\" data-en=\"Save " + saved + "\">وفر " + saved + "</span></div>" : "") +
+                "</div>" +
+                "<p class=\"vat-note\" data-ar=\"شامل الضريبة\" data-en=\"VAT inclusive\">شامل الضريبة</p>" +
+                "<p class=\"installments\">" +
+                  "<span class=\"installment-main\">" +
+                    "<span data-ar=\"4 دفعات بدون فوائد —\" data-en=\"4 interest-free payments —\">4 دفعات بدون فوائد —</span> " +
+                    "<span class=\"pay-logos\">" +
+                      "<img class=\"pay-logo\" src=\"images/tamara-logo.webp\" alt=\"Tamara\" height=\"17\" />" +
+                      "<img class=\"pay-logo\" src=\"images/tabby-logo.webp\" alt=\"Tabby\" height=\"17\" />" +
+                    "</span>" +
+                  "</span> " +
+                  "<span class=\"installment-price\">" +
+                    "<span data-ar=\"من\" data-en=\"from\">من</span> <strong>" + monthly + "</strong> " + riyalSymbol() +
+                    " <span data-ar=\"/ شهر\" data-en=\"/ mo\">/ شهر</span>" +
+                  "</span>" +
+                "</p>" +
+                "<button class=\"btn btn-brand\" type=\"button\" data-add data-ar=\"أضف إلى السلة\" data-en=\"Add to cart\">أضف إلى السلة</button>" +
               "</div>" +
             "</article>"
           );
