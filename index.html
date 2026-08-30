@@ -538,6 +538,9 @@
       margin-bottom: 0.75rem;
     }
     .deal-price strong {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.15em;
       font-family: var(--font-en);
       color: var(--brand-dark);
       font-size: 1.1rem;
@@ -1012,10 +1015,29 @@
       gap: 0.55rem;
     }
     .price-now {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.15em;
       font-family: var(--font-en);
       font-size: 1.15rem;
       font-weight: 700;
       color: var(--brand-dark);
+    }
+    .riyal-symbol {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 0.92em;
+      height: 1em;
+      margin-inline: 0.15em 0;
+      flex-shrink: 0;
+      vertical-align: -0.12em;
+    }
+    .riyal-symbol svg {
+      width: 100%;
+      height: 100%;
+      display: block;
+      fill: currentColor;
     }
     .price-was {
       display: inline-flex;
@@ -1089,6 +1111,12 @@
     .installments strong {
       color: var(--ink);
       font-family: var(--font-en);
+    }
+    .installment-price {
+      display: inline-flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 0.2em;
     }
     .pay-logos {
       display: inline-flex;
@@ -1594,11 +1622,11 @@
                   <h3 class="product-title" data-ar="نشافة تكثيف 10 كيلو · 14 برنامج · أبيض" data-en="10kg condenser dryer · 14 programs · White">نشافة تكثيف 10 كيلو · 14 برنامج · أبيض</h3>
                   <div class="rating">★★★★☆ <span class="count">(128)</span></div>
                   <div class="price-block">
-                    <div class="price-now">1,899 <span data-ar="ر.س" data-en="SAR">ر.س</span></div>
+                    <div class="price-now">1,899 <span class="riyal-symbol" aria-label="SAR"><svg viewBox="0 0 1124.14 1256.39" focusable="false"><path d="M699.62,1113.02h0c-20.06,44.48-33.32,92.75-38.4,143.37l424.51-90.24c20.06-44.47,33.31-92.75,38.4-143.37l-424.51,90.24Z"/><path d="M1085.73,895.8c20.06-44.47,33.32-92.75,38.4-143.37l-330.68,70.33v-135.2l292.27-62.11c20.06-44.47,33.32-92.75,38.4-143.37l-330.68,70.27V66.13c-50.67,28.45-95.67,66.32-132.25,110.99v403.35l-132.25,28.11V0c-50.67,28.44-95.67,66.32-132.25,110.99v525.69l-295.91,62.88c-20.06,44.47-33.33,92.75-38.42,143.37l334.33-71.05v170.26l-358.3,76.14c-20.06,44.47-33.32,92.75-38.4,143.37l375.04-79.7c30.53-6.35,56.77-24.4,73.83-49.24l68.78-101.97v-.02c7.14-10.55,11.3-23.27,11.3-36.97v-149.98l132.25-28.11v270.4l424.53-90.28Z"/></svg></span></div>
                     <div class="price-was"><s>2,249</s> <span class="save" data-ar="وفر 350" data-en="Save 350">وفر 350</span></div>
                   </div>
                   <p class="vat-note" data-ar="شامل الضريبة" data-en="VAT inclusive">شامل الضريبة</p>
-                  <p class="installments"><span class="installment-main"><span data-ar="4 دفعات بدون فوائد —" data-en="4 interest-free payments —">4 دفعات بدون فوائد —</span> <span class="pay-logos"><img class="pay-logo" src="images/tamara-logo.webp" alt="Tamara" height="17" /><img class="pay-logo" src="images/tabby-logo.webp" alt="Tabby" height="17" /></span></span> <span class="installment-price" data-ar="من <strong>549.75</strong> ر.س / شهر" data-en="from <strong>549.75</strong> SAR / mo">من <strong>549.75</strong> ر.س / شهر</span></p>
+                  <p class="installments"><span class="installment-main"><span data-ar="4 دفعات بدون فوائد —" data-en="4 interest-free payments —">4 دفعات بدون فوائد —</span> <span class="pay-logos"><img class="pay-logo" src="images/tamara-logo.webp" alt="Tamara" height="17" /><img class="pay-logo" src="images/tabby-logo.webp" alt="Tabby" height="17" /></span></span> <span class="installment-price"><span data-ar="من" data-en="from">من</span> <strong>549.75</strong> <span class="riyal-symbol" aria-label="SAR"><svg viewBox="0 0 1124.14 1256.39" focusable="false"><path d="M699.62,1113.02h0c-20.06,44.48-33.32,92.75-38.4,143.37l424.51-90.24c20.06-44.47,33.31-92.75,38.4-143.37l-424.51,90.24Z"/><path d="M1085.73,895.8c20.06-44.47,33.32-92.75,38.4-143.37l-330.68,70.33v-135.2l292.27-62.11c20.06-44.47,33.32-92.75,38.4-143.37l-330.68,70.27V66.13c-50.67,28.45-95.67,66.32-132.25,110.99v403.35l-132.25,28.11V0c-50.67,28.44-95.67,66.32-132.25,110.99v525.69l-295.91,62.88c-20.06,44.47-33.33,92.75-38.42,143.37l334.33-71.05v170.26l-358.3,76.14c-20.06,44.47-33.32,92.75-38.4,143.37l375.04-79.7c30.53-6.35,56.77-24.4,73.83-49.24l68.78-101.97v-.02c7.14-10.55,11.3-23.27,11.3-36.97v-149.98l132.25-28.11v270.4l424.53-90.28Z"/></svg></span> <span data-ar="/ شهر" data-en="/ mo">/ شهر</span></span></p>
                   <button class="btn btn-brand" type="button" data-add data-ar="أضف إلى السلة" data-en="Add to cart">أضف إلى السلة</button>
                 </div>
               </article>
@@ -1613,11 +1641,11 @@
                   <h3 class="product-title" data-ar="فريزر أرضي 500 لتر · إنفرتر · أبيض" data-en="500L chest freezer · Inverter · White">فريزر أرضي 500 لتر · إنفرتر · أبيض</h3>
                   <div class="rating">★★★★☆ <span class="count">(86)</span></div>
                   <div class="price-block">
-                    <div class="price-now">2,199 <span data-ar="ر.س" data-en="SAR">ر.س</span></div>
+                    <div class="price-now">2,199 <span class="riyal-symbol" aria-label="SAR"><svg viewBox="0 0 1124.14 1256.39" focusable="false"><path d="M699.62,1113.02h0c-20.06,44.48-33.32,92.75-38.4,143.37l424.51-90.24c20.06-44.47,33.31-92.75,38.4-143.37l-424.51,90.24Z"/><path d="M1085.73,895.8c20.06-44.47,33.32-92.75,38.4-143.37l-330.68,70.33v-135.2l292.27-62.11c20.06-44.47,33.32-92.75,38.4-143.37l-330.68,70.27V66.13c-50.67,28.45-95.67,66.32-132.25,110.99v403.35l-132.25,28.11V0c-50.67,28.44-95.67,66.32-132.25,110.99v525.69l-295.91,62.88c-20.06,44.47-33.33,92.75-38.42,143.37l334.33-71.05v170.26l-358.3,76.14c-20.06,44.47-33.32,92.75-38.4,143.37l375.04-79.7c30.53-6.35,56.77-24.4,73.83-49.24l68.78-101.97v-.02c7.14-10.55,11.3-23.27,11.3-36.97v-149.98l132.25-28.11v270.4l424.53-90.28Z"/></svg></span></div>
                     <div class="price-was"><s>2,785</s> <span class="save" data-ar="وفر 586" data-en="Save 586">وفر 586</span></div>
                   </div>
                   <p class="vat-note" data-ar="شامل الضريبة" data-en="VAT inclusive">شامل الضريبة</p>
-                  <p class="installments"><span class="installment-main"><span data-ar="4 دفعات بدون فوائد —" data-en="4 interest-free payments —">4 دفعات بدون فوائد —</span> <span class="pay-logos"><img class="pay-logo" src="images/tamara-logo.webp" alt="Tamara" height="17" /><img class="pay-logo" src="images/tabby-logo.webp" alt="Tabby" height="17" /></span></span> <span class="installment-price" data-ar="من <strong>549.75</strong> ر.س / شهر" data-en="from <strong>549.75</strong> SAR / mo">من <strong>549.75</strong> ر.س / شهر</span></p>                  <button class="btn btn-brand" type="button" data-add data-ar="أضف إلى السلة" data-en="Add to cart">أضف إلى السلة</button>
+                  <p class="installments"><span class="installment-main"><span data-ar="4 دفعات بدون فوائد —" data-en="4 interest-free payments —">4 دفعات بدون فوائد —</span> <span class="pay-logos"><img class="pay-logo" src="images/tamara-logo.webp" alt="Tamara" height="17" /><img class="pay-logo" src="images/tabby-logo.webp" alt="Tabby" height="17" /></span></span> <span class="installment-price"><span data-ar="من" data-en="from">من</span> <strong>549.75</strong> <span class="riyal-symbol" aria-label="SAR"><svg viewBox="0 0 1124.14 1256.39" focusable="false"><path d="M699.62,1113.02h0c-20.06,44.48-33.32,92.75-38.4,143.37l424.51-90.24c20.06-44.47,33.31-92.75,38.4-143.37l-424.51,90.24Z"/><path d="M1085.73,895.8c20.06-44.47,33.32-92.75,38.4-143.37l-330.68,70.33v-135.2l292.27-62.11c20.06-44.47,33.32-92.75,38.4-143.37l-330.68,70.27V66.13c-50.67,28.45-95.67,66.32-132.25,110.99v403.35l-132.25,28.11V0c-50.67,28.44-95.67,66.32-132.25,110.99v525.69l-295.91,62.88c-20.06,44.47-33.33,92.75-38.42,143.37l334.33-71.05v170.26l-358.3,76.14c-20.06,44.47-33.32,92.75-38.4,143.37l375.04-79.7c30.53-6.35,56.77-24.4,73.83-49.24l68.78-101.97v-.02c7.14-10.55,11.3-23.27,11.3-36.97v-149.98l132.25-28.11v270.4l424.53-90.28Z"/></svg></span> <span data-ar="/ شهر" data-en="/ mo">/ شهر</span></span></p>                  <button class="btn btn-brand" type="button" data-add data-ar="أضف إلى السلة" data-en="Add to cart">أضف إلى السلة</button>
                 </div>
               </article>
               <!-- 3 Fisher washer -->
@@ -1631,11 +1659,11 @@
                   <h3 class="product-title" data-ar="غسالة تحميل علوي · إنفرتر Direct Drive" data-en="Top-load washer · Inverter Direct Drive">غسالة تحميل علوي · إنفرتر Direct Drive</h3>
                   <div class="rating">★★★★☆ <span class="count">(64)</span></div>
                   <div class="price-block">
-                    <div class="price-now">1,399 <span data-ar="ر.س" data-en="SAR">ر.س</span></div>
+                    <div class="price-now">1,399 <span class="riyal-symbol" aria-label="SAR"><svg viewBox="0 0 1124.14 1256.39" focusable="false"><path d="M699.62,1113.02h0c-20.06,44.48-33.32,92.75-38.4,143.37l424.51-90.24c20.06-44.47,33.31-92.75,38.4-143.37l-424.51,90.24Z"/><path d="M1085.73,895.8c20.06-44.47,33.32-92.75,38.4-143.37l-330.68,70.33v-135.2l292.27-62.11c20.06-44.47,33.32-92.75,38.4-143.37l-330.68,70.27V66.13c-50.67,28.45-95.67,66.32-132.25,110.99v403.35l-132.25,28.11V0c-50.67,28.44-95.67,66.32-132.25,110.99v525.69l-295.91,62.88c-20.06,44.47-33.33,92.75-38.42,143.37l334.33-71.05v170.26l-358.3,76.14c-20.06,44.47-33.32,92.75-38.4,143.37l375.04-79.7c30.53-6.35,56.77-24.4,73.83-49.24l68.78-101.97v-.02c7.14-10.55,11.3-23.27,11.3-36.97v-149.98l132.25-28.11v270.4l424.53-90.28Z"/></svg></span></div>
                     <div class="price-was"><s>1,645</s> <span class="save" data-ar="وفر 246" data-en="Save 246">وفر 246</span></div>
                   </div>
                   <p class="vat-note" data-ar="شامل الضريبة" data-en="VAT inclusive">شامل الضريبة</p>
-                  <p class="installments"><span class="installment-main"><span data-ar="4 دفعات بدون فوائد —" data-en="4 interest-free payments —">4 دفعات بدون فوائد —</span> <span class="pay-logos"><img class="pay-logo" src="images/tamara-logo.webp" alt="Tamara" height="17" /><img class="pay-logo" src="images/tabby-logo.webp" alt="Tabby" height="17" /></span></span> <span class="installment-price" data-ar="من <strong>349.75</strong> ر.س / شهر" data-en="from <strong>349.75</strong> SAR / mo">من <strong>349.75</strong> ر.س / شهر</span></p>                  <button class="btn btn-brand" type="button" data-add data-ar="أضف إلى السلة" data-en="Add to cart">أضف إلى السلة</button>
+                  <p class="installments"><span class="installment-main"><span data-ar="4 دفعات بدون فوائد —" data-en="4 interest-free payments —">4 دفعات بدون فوائد —</span> <span class="pay-logos"><img class="pay-logo" src="images/tamara-logo.webp" alt="Tamara" height="17" /><img class="pay-logo" src="images/tabby-logo.webp" alt="Tabby" height="17" /></span></span> <span class="installment-price"><span data-ar="من" data-en="from">من</span> <strong>349.75</strong> <span class="riyal-symbol" aria-label="SAR"><svg viewBox="0 0 1124.14 1256.39" focusable="false"><path d="M699.62,1113.02h0c-20.06,44.48-33.32,92.75-38.4,143.37l424.51-90.24c20.06-44.47,33.31-92.75,38.4-143.37l-424.51,90.24Z"/><path d="M1085.73,895.8c20.06-44.47,33.32-92.75,38.4-143.37l-330.68,70.33v-135.2l292.27-62.11c20.06-44.47,33.32-92.75,38.4-143.37l-330.68,70.27V66.13c-50.67,28.45-95.67,66.32-132.25,110.99v403.35l-132.25,28.11V0c-50.67,28.44-95.67,66.32-132.25,110.99v525.69l-295.91,62.88c-20.06,44.47-33.33,92.75-38.42,143.37l334.33-71.05v170.26l-358.3,76.14c-20.06,44.47-33.32,92.75-38.4,143.37l375.04-79.7c30.53-6.35,56.77-24.4,73.83-49.24l68.78-101.97v-.02c7.14-10.55,11.3-23.27,11.3-36.97v-149.98l132.25-28.11v270.4l424.53-90.28Z"/></svg></span> <span data-ar="/ شهر" data-en="/ mo">/ شهر</span></span></p>                  <button class="btn btn-brand" type="button" data-add data-ar="أضف إلى السلة" data-en="Add to cart">أضف إلى السلة</button>
                 </div>
               </article>
               <!-- 4 Homy AC -->
@@ -1649,11 +1677,11 @@
                   <h3 class="product-title" data-ar="مكيف سبليت 18100 وحدة · بارد · مع التركيب" data-en="18100 BTU split AC · Cooling · Install available">مكيف سبليت 18100 وحدة · بارد · مع التركيب</h3>
                   <div class="rating">★★★★★ <span class="count">(211)</span></div>
                   <div class="price-block">
-                    <div class="price-now">1,599 <span data-ar="ر.س" data-en="SAR">ر.س</span></div>
+                    <div class="price-now">1,599 <span class="riyal-symbol" aria-label="SAR"><svg viewBox="0 0 1124.14 1256.39" focusable="false"><path d="M699.62,1113.02h0c-20.06,44.48-33.32,92.75-38.4,143.37l424.51-90.24c20.06-44.47,33.31-92.75,38.4-143.37l-424.51,90.24Z"/><path d="M1085.73,895.8c20.06-44.47,33.32-92.75,38.4-143.37l-330.68,70.33v-135.2l292.27-62.11c20.06-44.47,33.32-92.75,38.4-143.37l-330.68,70.27V66.13c-50.67,28.45-95.67,66.32-132.25,110.99v403.35l-132.25,28.11V0c-50.67,28.44-95.67,66.32-132.25,110.99v525.69l-295.91,62.88c-20.06,44.47-33.33,92.75-38.42,143.37l334.33-71.05v170.26l-358.3,76.14c-20.06,44.47-33.32,92.75-38.4,143.37l375.04-79.7c30.53-6.35,56.77-24.4,73.83-49.24l68.78-101.97v-.02c7.14-10.55,11.3-23.27,11.3-36.97v-149.98l132.25-28.11v270.4l424.53-90.28Z"/></svg></span></div>
                     <div class="price-was"><s>1,999</s> <span class="save" data-ar="وفر 400" data-en="Save 400">وفر 400</span></div>
                   </div>
                   <p class="vat-note" data-ar="شامل الضريبة" data-en="VAT inclusive">شامل الضريبة</p>
-                  <p class="installments"><span class="installment-main"><span data-ar="4 دفعات بدون فوائد —" data-en="4 interest-free payments —">4 دفعات بدون فوائد —</span> <span class="pay-logos"><img class="pay-logo" src="images/tamara-logo.webp" alt="Tamara" height="17" /><img class="pay-logo" src="images/tabby-logo.webp" alt="Tabby" height="17" /></span></span> <span class="installment-price" data-ar="من <strong>399.75</strong> ر.س / شهر" data-en="from <strong>399.75</strong> SAR / mo">من <strong>399.75</strong> ر.س / شهر</span></p>                  <button class="btn btn-brand" type="button" data-add data-ar="أضف إلى السلة" data-en="Add to cart">أضف إلى السلة</button>
+                  <p class="installments"><span class="installment-main"><span data-ar="4 دفعات بدون فوائد —" data-en="4 interest-free payments —">4 دفعات بدون فوائد —</span> <span class="pay-logos"><img class="pay-logo" src="images/tamara-logo.webp" alt="Tamara" height="17" /><img class="pay-logo" src="images/tabby-logo.webp" alt="Tabby" height="17" /></span></span> <span class="installment-price"><span data-ar="من" data-en="from">من</span> <strong>399.75</strong> <span class="riyal-symbol" aria-label="SAR"><svg viewBox="0 0 1124.14 1256.39" focusable="false"><path d="M699.62,1113.02h0c-20.06,44.48-33.32,92.75-38.4,143.37l424.51-90.24c20.06-44.47,33.31-92.75,38.4-143.37l-424.51,90.24Z"/><path d="M1085.73,895.8c20.06-44.47,33.32-92.75,38.4-143.37l-330.68,70.33v-135.2l292.27-62.11c20.06-44.47,33.32-92.75,38.4-143.37l-330.68,70.27V66.13c-50.67,28.45-95.67,66.32-132.25,110.99v403.35l-132.25,28.11V0c-50.67,28.44-95.67,66.32-132.25,110.99v525.69l-295.91,62.88c-20.06,44.47-33.33,92.75-38.42,143.37l334.33-71.05v170.26l-358.3,76.14c-20.06,44.47-33.32,92.75-38.4,143.37l375.04-79.7c30.53-6.35,56.77-24.4,73.83-49.24l68.78-101.97v-.02c7.14-10.55,11.3-23.27,11.3-36.97v-149.98l132.25-28.11v270.4l424.53-90.28Z"/></svg></span> <span data-ar="/ شهر" data-en="/ mo">/ شهر</span></span></p>                  <button class="btn btn-brand" type="button" data-add data-ar="أضف إلى السلة" data-en="Add to cart">أضف إلى السلة</button>
                 </div>
               </article>
               <!-- 5 Hisense AC -->
@@ -1667,11 +1695,11 @@
                   <h3 class="product-title" data-ar="مكيف سبليت إنفرتر · كفاءة عالية" data-en="Inverter split AC · High efficiency">مكيف سبليت إنفرتر · كفاءة عالية</h3>
                   <div class="rating">★★★★☆ <span class="count">(97)</span></div>
                   <div class="price-block">
-                    <div class="price-now">1,749 <span data-ar="ر.س" data-en="SAR">ر.س</span></div>
+                    <div class="price-now">1,749 <span class="riyal-symbol" aria-label="SAR"><svg viewBox="0 0 1124.14 1256.39" focusable="false"><path d="M699.62,1113.02h0c-20.06,44.48-33.32,92.75-38.4,143.37l424.51-90.24c20.06-44.47,33.31-92.75,38.4-143.37l-424.51,90.24Z"/><path d="M1085.73,895.8c20.06-44.47,33.32-92.75,38.4-143.37l-330.68,70.33v-135.2l292.27-62.11c20.06-44.47,33.32-92.75,38.4-143.37l-330.68,70.27V66.13c-50.67,28.45-95.67,66.32-132.25,110.99v403.35l-132.25,28.11V0c-50.67,28.44-95.67,66.32-132.25,110.99v525.69l-295.91,62.88c-20.06,44.47-33.33,92.75-38.42,143.37l334.33-71.05v170.26l-358.3,76.14c-20.06,44.47-33.32,92.75-38.4,143.37l375.04-79.7c30.53-6.35,56.77-24.4,73.83-49.24l68.78-101.97v-.02c7.14-10.55,11.3-23.27,11.3-36.97v-149.98l132.25-28.11v270.4l424.53-90.28Z"/></svg></span></div>
                     <div class="price-was"><s>1,901</s> <span class="save" data-ar="وفر 152" data-en="Save 152">وفر 152</span></div>
                   </div>
                   <p class="vat-note" data-ar="شامل الضريبة" data-en="VAT inclusive">شامل الضريبة</p>
-                  <p class="installments"><span class="installment-main"><span data-ar="4 دفعات بدون فوائد —" data-en="4 interest-free payments —">4 دفعات بدون فوائد —</span> <span class="pay-logos"><img class="pay-logo" src="images/tamara-logo.webp" alt="Tamara" height="17" /><img class="pay-logo" src="images/tabby-logo.webp" alt="Tabby" height="17" /></span></span> <span class="installment-price" data-ar="من <strong>439.75</strong> ر.س / شهر" data-en="from <strong>439.75</strong> SAR / mo">من <strong>439.75</strong> ر.س / شهر</span></p>                  <button class="btn btn-brand" type="button" data-add data-ar="أضف إلى السلة" data-en="Add to cart">أضف إلى السلة</button>
+                  <p class="installments"><span class="installment-main"><span data-ar="4 دفعات بدون فوائد —" data-en="4 interest-free payments —">4 دفعات بدون فوائد —</span> <span class="pay-logos"><img class="pay-logo" src="images/tamara-logo.webp" alt="Tamara" height="17" /><img class="pay-logo" src="images/tabby-logo.webp" alt="Tabby" height="17" /></span></span> <span class="installment-price"><span data-ar="من" data-en="from">من</span> <strong>439.75</strong> <span class="riyal-symbol" aria-label="SAR"><svg viewBox="0 0 1124.14 1256.39" focusable="false"><path d="M699.62,1113.02h0c-20.06,44.48-33.32,92.75-38.4,143.37l424.51-90.24c20.06-44.47,33.31-92.75,38.4-143.37l-424.51,90.24Z"/><path d="M1085.73,895.8c20.06-44.47,33.32-92.75,38.4-143.37l-330.68,70.33v-135.2l292.27-62.11c20.06-44.47,33.32-92.75,38.4-143.37l-330.68,70.27V66.13c-50.67,28.45-95.67,66.32-132.25,110.99v403.35l-132.25,28.11V0c-50.67,28.44-95.67,66.32-132.25,110.99v525.69l-295.91,62.88c-20.06,44.47-33.33,92.75-38.42,143.37l334.33-71.05v170.26l-358.3,76.14c-20.06,44.47-33.32,92.75-38.4,143.37l375.04-79.7c30.53-6.35,56.77-24.4,73.83-49.24l68.78-101.97v-.02c7.14-10.55,11.3-23.27,11.3-36.97v-149.98l132.25-28.11v270.4l424.53-90.28Z"/></svg></span> <span data-ar="/ شهر" data-en="/ mo">/ شهر</span></span></p>                  <button class="btn btn-brand" type="button" data-add data-ar="أضف إلى السلة" data-en="Add to cart">أضف إلى السلة</button>
                 </div>
               </article>
               <!-- 6 Kelvinator washer -->
@@ -1685,11 +1713,11 @@
                   <h3 class="product-title" data-ar="غسالة فول أوتوماتيك · تعبئة علوية" data-en="Fully automatic top-load washer">غسالة فول أوتوماتيك · تعبئة علوية</h3>
                   <div class="rating">★★★★☆ <span class="count">(54)</span></div>
                   <div class="price-block">
-                    <div class="price-now">1,499 <span data-ar="ر.س" data-en="SAR">ر.س</span></div>
+                    <div class="price-now">1,499 <span class="riyal-symbol" aria-label="SAR"><svg viewBox="0 0 1124.14 1256.39" focusable="false"><path d="M699.62,1113.02h0c-20.06,44.48-33.32,92.75-38.4,143.37l424.51-90.24c20.06-44.47,33.31-92.75,38.4-143.37l-424.51,90.24Z"/><path d="M1085.73,895.8c20.06-44.47,33.32-92.75,38.4-143.37l-330.68,70.33v-135.2l292.27-62.11c20.06-44.47,33.32-92.75,38.4-143.37l-330.68,70.27V66.13c-50.67,28.45-95.67,66.32-132.25,110.99v403.35l-132.25,28.11V0c-50.67,28.44-95.67,66.32-132.25,110.99v525.69l-295.91,62.88c-20.06,44.47-33.33,92.75-38.42,143.37l334.33-71.05v170.26l-358.3,76.14c-20.06,44.47-33.32,92.75-38.4,143.37l375.04-79.7c30.53-6.35,56.77-24.4,73.83-49.24l68.78-101.97v-.02c7.14-10.55,11.3-23.27,11.3-36.97v-149.98l132.25-28.11v270.4l424.53-90.28Z"/></svg></span></div>
                     <div class="price-was"><s>1,704</s> <span class="save" data-ar="وفر 205" data-en="Save 205">وفر 205</span></div>
                   </div>
                   <p class="vat-note" data-ar="شامل الضريبة" data-en="VAT inclusive">شامل الضريبة</p>
-                  <p class="installments"><span class="installment-main"><span data-ar="4 دفعات بدون فوائد —" data-en="4 interest-free payments —">4 دفعات بدون فوائد —</span> <span class="pay-logos"><img class="pay-logo" src="images/tamara-logo.webp" alt="Tamara" height="17" /><img class="pay-logo" src="images/tabby-logo.webp" alt="Tabby" height="17" /></span></span> <span class="installment-price" data-ar="من <strong>369.75</strong> ر.س / شهر" data-en="from <strong>369.75</strong> SAR / mo">من <strong>369.75</strong> ر.س / شهر</span></p>                  <button class="btn btn-brand" type="button" data-add data-ar="أضف إلى السلة" data-en="Add to cart">أضف إلى السلة</button>
+                  <p class="installments"><span class="installment-main"><span data-ar="4 دفعات بدون فوائد —" data-en="4 interest-free payments —">4 دفعات بدون فوائد —</span> <span class="pay-logos"><img class="pay-logo" src="images/tamara-logo.webp" alt="Tamara" height="17" /><img class="pay-logo" src="images/tabby-logo.webp" alt="Tabby" height="17" /></span></span> <span class="installment-price"><span data-ar="من" data-en="from">من</span> <strong>369.75</strong> <span class="riyal-symbol" aria-label="SAR"><svg viewBox="0 0 1124.14 1256.39" focusable="false"><path d="M699.62,1113.02h0c-20.06,44.48-33.32,92.75-38.4,143.37l424.51-90.24c20.06-44.47,33.31-92.75,38.4-143.37l-424.51,90.24Z"/><path d="M1085.73,895.8c20.06-44.47,33.32-92.75,38.4-143.37l-330.68,70.33v-135.2l292.27-62.11c20.06-44.47,33.32-92.75,38.4-143.37l-330.68,70.27V66.13c-50.67,28.45-95.67,66.32-132.25,110.99v403.35l-132.25,28.11V0c-50.67,28.44-95.67,66.32-132.25,110.99v525.69l-295.91,62.88c-20.06,44.47-33.33,92.75-38.42,143.37l334.33-71.05v170.26l-358.3,76.14c-20.06,44.47-33.32,92.75-38.4,143.37l375.04-79.7c30.53-6.35,56.77-24.4,73.83-49.24l68.78-101.97v-.02c7.14-10.55,11.3-23.27,11.3-36.97v-149.98l132.25-28.11v270.4l424.53-90.28Z"/></svg></span> <span data-ar="/ شهر" data-en="/ mo">/ شهر</span></span></p>                  <button class="btn btn-brand" type="button" data-add data-ar="أضف إلى السلة" data-en="Add to cart">أضف إلى السلة</button>
                 </div>
               </article>
               <!-- 7 Gas cooker -->
@@ -1703,11 +1731,11 @@
                   <h3 class="product-title" data-ar="فرن غاز 5 عيون · 90×60 سم · أمان كامل · ستيل" data-en="5-burner gas cooker · 90×60 cm · Full safety · Steel">فرن غاز 5 عيون · 90×60 سم · أمان كامل · ستيل</h3>
                   <div class="rating">★★★★☆ <span class="count">(73)</span></div>
                   <div class="price-block">
-                    <div class="price-now">1,299 <span data-ar="ر.س" data-en="SAR">ر.س</span></div>
+                    <div class="price-now">1,299 <span class="riyal-symbol" aria-label="SAR"><svg viewBox="0 0 1124.14 1256.39" focusable="false"><path d="M699.62,1113.02h0c-20.06,44.48-33.32,92.75-38.4,143.37l424.51-90.24c20.06-44.47,33.31-92.75,38.4-143.37l-424.51,90.24Z"/><path d="M1085.73,895.8c20.06-44.47,33.32-92.75,38.4-143.37l-330.68,70.33v-135.2l292.27-62.11c20.06-44.47,33.32-92.75,38.4-143.37l-330.68,70.27V66.13c-50.67,28.45-95.67,66.32-132.25,110.99v403.35l-132.25,28.11V0c-50.67,28.44-95.67,66.32-132.25,110.99v525.69l-295.91,62.88c-20.06,44.47-33.33,92.75-38.42,143.37l334.33-71.05v170.26l-358.3,76.14c-20.06,44.47-33.32,92.75-38.4,143.37l375.04-79.7c30.53-6.35,56.77-24.4,73.83-49.24l68.78-101.97v-.02c7.14-10.55,11.3-23.27,11.3-36.97v-149.98l132.25-28.11v270.4l424.53-90.28Z"/></svg></span></div>
                     <div class="price-was"><s>1,584</s> <span class="save" data-ar="وفر 285" data-en="Save 285">وفر 285</span></div>
                   </div>
                   <p class="vat-note" data-ar="شامل الضريبة" data-en="VAT inclusive">شامل الضريبة</p>
-                  <p class="installments"><span class="installment-main"><span data-ar="4 دفعات بدون فوائد —" data-en="4 interest-free payments —">4 دفعات بدون فوائد —</span> <span class="pay-logos"><img class="pay-logo" src="images/tamara-logo.webp" alt="Tamara" height="17" /><img class="pay-logo" src="images/tabby-logo.webp" alt="Tabby" height="17" /></span></span> <span class="installment-price" data-ar="من <strong>299.75</strong> ر.س / شهر" data-en="from <strong>299.75</strong> SAR / mo">من <strong>299.75</strong> ر.س / شهر</span></p>                  <button class="btn btn-brand" type="button" data-add data-ar="أضف إلى السلة" data-en="Add to cart">أضف إلى السلة</button>
+                  <p class="installments"><span class="installment-main"><span data-ar="4 دفعات بدون فوائد —" data-en="4 interest-free payments —">4 دفعات بدون فوائد —</span> <span class="pay-logos"><img class="pay-logo" src="images/tamara-logo.webp" alt="Tamara" height="17" /><img class="pay-logo" src="images/tabby-logo.webp" alt="Tabby" height="17" /></span></span> <span class="installment-price"><span data-ar="من" data-en="from">من</span> <strong>299.75</strong> <span class="riyal-symbol" aria-label="SAR"><svg viewBox="0 0 1124.14 1256.39" focusable="false"><path d="M699.62,1113.02h0c-20.06,44.48-33.32,92.75-38.4,143.37l424.51-90.24c20.06-44.47,33.31-92.75,38.4-143.37l-424.51,90.24Z"/><path d="M1085.73,895.8c20.06-44.47,33.32-92.75,38.4-143.37l-330.68,70.33v-135.2l292.27-62.11c20.06-44.47,33.32-92.75,38.4-143.37l-330.68,70.27V66.13c-50.67,28.45-95.67,66.32-132.25,110.99v403.35l-132.25,28.11V0c-50.67,28.44-95.67,66.32-132.25,110.99v525.69l-295.91,62.88c-20.06,44.47-33.33,92.75-38.42,143.37l334.33-71.05v170.26l-358.3,76.14c-20.06,44.47-33.32,92.75-38.4,143.37l375.04-79.7c30.53-6.35,56.77-24.4,73.83-49.24l68.78-101.97v-.02c7.14-10.55,11.3-23.27,11.3-36.97v-149.98l132.25-28.11v270.4l424.53-90.28Z"/></svg></span> <span data-ar="/ شهر" data-en="/ mo">/ شهر</span></span></p>                  <button class="btn btn-brand" type="button" data-add data-ar="أضف إلى السلة" data-en="Add to cart">أضف إلى السلة</button>
                 </div>
               </article>
               <!-- 8 Fridge -->
@@ -1721,11 +1749,11 @@
                   <h3 class="product-title" data-ar="ثلاجة عامودي إنفرتر · 21.1 قدم³" data-en="Upright inverter fridge · 21.1 cu ft">ثلاجة عامودي إنفرتر · 21.1 قدم³</h3>
                   <div class="rating">★★★★★ <span class="count">(142)</span></div>
                   <div class="price-block">
-                    <div class="price-now">2,699 <span data-ar="ر.س" data-en="SAR">ر.س</span></div>
+                    <div class="price-now">2,699 <span class="riyal-symbol" aria-label="SAR"><svg viewBox="0 0 1124.14 1256.39" focusable="false"><path d="M699.62,1113.02h0c-20.06,44.48-33.32,92.75-38.4,143.37l424.51-90.24c20.06-44.47,33.31-92.75,38.4-143.37l-424.51,90.24Z"/><path d="M1085.73,895.8c20.06-44.47,33.32-92.75,38.4-143.37l-330.68,70.33v-135.2l292.27-62.11c20.06-44.47,33.32-92.75,38.4-143.37l-330.68,70.27V66.13c-50.67,28.45-95.67,66.32-132.25,110.99v403.35l-132.25,28.11V0c-50.67,28.44-95.67,66.32-132.25,110.99v525.69l-295.91,62.88c-20.06,44.47-33.33,92.75-38.42,143.37l334.33-71.05v170.26l-358.3,76.14c-20.06,44.47-33.32,92.75-38.4,143.37l375.04-79.7c30.53-6.35,56.77-24.4,73.83-49.24l68.78-101.97v-.02c7.14-10.55,11.3-23.27,11.3-36.97v-149.98l132.25-28.11v270.4l424.53-90.28Z"/></svg></span></div>
                     <div class="price-was"><s>2,999</s> <span class="save" data-ar="وفر 300" data-en="Save 300">وفر 300</span></div>
                   </div>
                   <p class="vat-note" data-ar="شامل الضريبة" data-en="VAT inclusive">شامل الضريبة</p>
-                  <p class="installments"><span class="installment-main"><span data-ar="4 دفعات بدون فوائد —" data-en="4 interest-free payments —">4 دفعات بدون فوائد —</span> <span class="pay-logos"><img class="pay-logo" src="images/tamara-logo.webp" alt="Tamara" height="17" /><img class="pay-logo" src="images/tabby-logo.webp" alt="Tabby" height="17" /></span></span> <span class="installment-price" data-ar="من <strong>679.75</strong> ر.س / شهر" data-en="from <strong>679.75</strong> SAR / mo">من <strong>679.75</strong> ر.س / شهر</span></p>                  <button class="btn btn-brand" type="button" data-add data-ar="أضف إلى السلة" data-en="Add to cart">أضف إلى السلة</button>
+                  <p class="installments"><span class="installment-main"><span data-ar="4 دفعات بدون فوائد —" data-en="4 interest-free payments —">4 دفعات بدون فوائد —</span> <span class="pay-logos"><img class="pay-logo" src="images/tamara-logo.webp" alt="Tamara" height="17" /><img class="pay-logo" src="images/tabby-logo.webp" alt="Tabby" height="17" /></span></span> <span class="installment-price"><span data-ar="من" data-en="from">من</span> <strong>679.75</strong> <span class="riyal-symbol" aria-label="SAR"><svg viewBox="0 0 1124.14 1256.39" focusable="false"><path d="M699.62,1113.02h0c-20.06,44.48-33.32,92.75-38.4,143.37l424.51-90.24c20.06-44.47,33.31-92.75,38.4-143.37l-424.51,90.24Z"/><path d="M1085.73,895.8c20.06-44.47,33.32-92.75,38.4-143.37l-330.68,70.33v-135.2l292.27-62.11c20.06-44.47,33.32-92.75,38.4-143.37l-330.68,70.27V66.13c-50.67,28.45-95.67,66.32-132.25,110.99v403.35l-132.25,28.11V0c-50.67,28.44-95.67,66.32-132.25,110.99v525.69l-295.91,62.88c-20.06,44.47-33.33,92.75-38.42,143.37l334.33-71.05v170.26l-358.3,76.14c-20.06,44.47-33.32,92.75-38.4,143.37l375.04-79.7c30.53-6.35,56.77-24.4,73.83-49.24l68.78-101.97v-.02c7.14-10.55,11.3-23.27,11.3-36.97v-149.98l132.25-28.11v270.4l424.53-90.28Z"/></svg></span> <span data-ar="/ شهر" data-en="/ mo">/ شهر</span></span></p>                  <button class="btn btn-brand" type="button" data-add data-ar="أضف إلى السلة" data-en="Add to cart">أضف إلى السلة</button>
                 </div>
               </article>
             </div>
@@ -1983,11 +2011,11 @@
                   <h3 class="product-title" data-ar="غلاية زجاجية بلمسة نحاسية" data-en="Glass kettle with copper accent">غلاية زجاجية بلمسة نحاسية</h3>
                   <div class="rating">★★★★☆ <span class="count">(77)</span></div>
                   <div class="price-block">
-                    <div class="price-now">119 <span data-ar="ر.س" data-en="SAR">ر.س</span></div>
+                    <div class="price-now">119 <span class="riyal-symbol" aria-label="SAR"><svg viewBox="0 0 1124.14 1256.39" focusable="false"><path d="M699.62,1113.02h0c-20.06,44.48-33.32,92.75-38.4,143.37l424.51-90.24c20.06-44.47,33.31-92.75,38.4-143.37l-424.51,90.24Z"/><path d="M1085.73,895.8c20.06-44.47,33.32-92.75,38.4-143.37l-330.68,70.33v-135.2l292.27-62.11c20.06-44.47,33.32-92.75,38.4-143.37l-330.68,70.27V66.13c-50.67,28.45-95.67,66.32-132.25,110.99v403.35l-132.25,28.11V0c-50.67,28.44-95.67,66.32-132.25,110.99v525.69l-295.91,62.88c-20.06,44.47-33.33,92.75-38.42,143.37l334.33-71.05v170.26l-358.3,76.14c-20.06,44.47-33.32,92.75-38.4,143.37l375.04-79.7c30.53-6.35,56.77-24.4,73.83-49.24l68.78-101.97v-.02c7.14-10.55,11.3-23.27,11.3-36.97v-149.98l132.25-28.11v270.4l424.53-90.28Z"/></svg></span></div>
                     <div class="price-was"><s>159</s> <span class="save" data-ar="وفر 40" data-en="Save 40">وفر 40</span></div>
                   </div>
                   <p class="vat-note" data-ar="شامل الضريبة" data-en="VAT inclusive">شامل الضريبة</p>
-                  <p class="installments"><span class="installment-main"><span data-ar="4 دفعات بدون فوائد —" data-en="4 interest-free payments —">4 دفعات بدون فوائد —</span> <span class="pay-logos"><img class="pay-logo" src="images/tamara-logo.webp" alt="Tamara" height="17" /><img class="pay-logo" src="images/tabby-logo.webp" alt="Tabby" height="17" /></span></span> <span class="installment-price" data-ar="من <strong>22.75</strong> ر.س / شهر" data-en="from <strong>22.75</strong> SAR / mo">من <strong>22.75</strong> ر.س / شهر</span></p>                  <button class="btn btn-brand" type="button" data-add data-ar="أضف إلى السلة" data-en="Add to cart">أضف إلى السلة</button>
+                  <p class="installments"><span class="installment-main"><span data-ar="4 دفعات بدون فوائد —" data-en="4 interest-free payments —">4 دفعات بدون فوائد —</span> <span class="pay-logos"><img class="pay-logo" src="images/tamara-logo.webp" alt="Tamara" height="17" /><img class="pay-logo" src="images/tabby-logo.webp" alt="Tabby" height="17" /></span></span> <span class="installment-price"><span data-ar="من" data-en="from">من</span> <strong>22.75</strong> <span class="riyal-symbol" aria-label="SAR"><svg viewBox="0 0 1124.14 1256.39" focusable="false"><path d="M699.62,1113.02h0c-20.06,44.48-33.32,92.75-38.4,143.37l424.51-90.24c20.06-44.47,33.31-92.75,38.4-143.37l-424.51,90.24Z"/><path d="M1085.73,895.8c20.06-44.47,33.32-92.75,38.4-143.37l-330.68,70.33v-135.2l292.27-62.11c20.06-44.47,33.32-92.75,38.4-143.37l-330.68,70.27V66.13c-50.67,28.45-95.67,66.32-132.25,110.99v403.35l-132.25,28.11V0c-50.67,28.44-95.67,66.32-132.25,110.99v525.69l-295.91,62.88c-20.06,44.47-33.33,92.75-38.42,143.37l334.33-71.05v170.26l-358.3,76.14c-20.06,44.47-33.32,92.75-38.4,143.37l375.04-79.7c30.53-6.35,56.77-24.4,73.83-49.24l68.78-101.97v-.02c7.14-10.55,11.3-23.27,11.3-36.97v-149.98l132.25-28.11v270.4l424.53-90.28Z"/></svg></span> <span data-ar="/ شهر" data-en="/ mo">/ شهر</span></span></p>                  <button class="btn btn-brand" type="button" data-add data-ar="أضف إلى السلة" data-en="Add to cart">أضف إلى السلة</button>
                 </div>
               </article>
               <article class="product-card">
@@ -2000,11 +2028,11 @@
                   <h3 class="product-title" data-ar="خلاط يدوي مع خطافات عجن" data-en="Hand mixer with dough hooks">خلاط يدوي مع خطافات عجن</h3>
                   <div class="rating">★★★★☆ <span class="count">(61)</span></div>
                   <div class="price-block">
-                    <div class="price-now">179 <span data-ar="ر.س" data-en="SAR">ر.س</span></div>
+                    <div class="price-now">179 <span class="riyal-symbol" aria-label="SAR"><svg viewBox="0 0 1124.14 1256.39" focusable="false"><path d="M699.62,1113.02h0c-20.06,44.48-33.32,92.75-38.4,143.37l424.51-90.24c20.06-44.47,33.31-92.75,38.4-143.37l-424.51,90.24Z"/><path d="M1085.73,895.8c20.06-44.47,33.32-92.75,38.4-143.37l-330.68,70.33v-135.2l292.27-62.11c20.06-44.47,33.32-92.75,38.4-143.37l-330.68,70.27V66.13c-50.67,28.45-95.67,66.32-132.25,110.99v403.35l-132.25,28.11V0c-50.67,28.44-95.67,66.32-132.25,110.99v525.69l-295.91,62.88c-20.06,44.47-33.33,92.75-38.42,143.37l334.33-71.05v170.26l-358.3,76.14c-20.06,44.47-33.32,92.75-38.4,143.37l375.04-79.7c30.53-6.35,56.77-24.4,73.83-49.24l68.78-101.97v-.02c7.14-10.55,11.3-23.27,11.3-36.97v-149.98l132.25-28.11v270.4l424.53-90.28Z"/></svg></span></div>
                     <div class="price-was"><s>209</s> <span class="save" data-ar="وفر 30" data-en="Save 30">وفر 30</span></div>
                   </div>
                   <p class="vat-note" data-ar="شامل الضريبة" data-en="VAT inclusive">شامل الضريبة</p>
-                  <p class="installments"><span class="installment-main"><span data-ar="4 دفعات بدون فوائد —" data-en="4 interest-free payments —">4 دفعات بدون فوائد —</span> <span class="pay-logos"><img class="pay-logo" src="images/tamara-logo.webp" alt="Tamara" height="17" /><img class="pay-logo" src="images/tabby-logo.webp" alt="Tabby" height="17" /></span></span> <span class="installment-price" data-ar="من <strong>25.75</strong> ر.س / شهر" data-en="from <strong>25.75</strong> SAR / mo">من <strong>25.75</strong> ر.س / شهر</span></p>                  <button class="btn btn-brand" type="button" data-add data-ar="أضف إلى السلة" data-en="Add to cart">أضف إلى السلة</button>
+                  <p class="installments"><span class="installment-main"><span data-ar="4 دفعات بدون فوائد —" data-en="4 interest-free payments —">4 دفعات بدون فوائد —</span> <span class="pay-logos"><img class="pay-logo" src="images/tamara-logo.webp" alt="Tamara" height="17" /><img class="pay-logo" src="images/tabby-logo.webp" alt="Tabby" height="17" /></span></span> <span class="installment-price"><span data-ar="من" data-en="from">من</span> <strong>25.75</strong> <span class="riyal-symbol" aria-label="SAR"><svg viewBox="0 0 1124.14 1256.39" focusable="false"><path d="M699.62,1113.02h0c-20.06,44.48-33.32,92.75-38.4,143.37l424.51-90.24c20.06-44.47,33.31-92.75,38.4-143.37l-424.51,90.24Z"/><path d="M1085.73,895.8c20.06-44.47,33.32-92.75,38.4-143.37l-330.68,70.33v-135.2l292.27-62.11c20.06-44.47,33.32-92.75,38.4-143.37l-330.68,70.27V66.13c-50.67,28.45-95.67,66.32-132.25,110.99v403.35l-132.25,28.11V0c-50.67,28.44-95.67,66.32-132.25,110.99v525.69l-295.91,62.88c-20.06,44.47-33.33,92.75-38.42,143.37l334.33-71.05v170.26l-358.3,76.14c-20.06,44.47-33.32,92.75-38.4,143.37l375.04-79.7c30.53-6.35,56.77-24.4,73.83-49.24l68.78-101.97v-.02c7.14-10.55,11.3-23.27,11.3-36.97v-149.98l132.25-28.11v270.4l424.53-90.28Z"/></svg></span> <span data-ar="/ شهر" data-en="/ mo">/ شهر</span></span></p>                  <button class="btn btn-brand" type="button" data-add data-ar="أضف إلى السلة" data-en="Add to cart">أضف إلى السلة</button>
                 </div>
               </article>
               <article class="product-card">
@@ -2017,11 +2045,11 @@
                   <h3 class="product-title" data-ar="محضرة قهوة بالتنقيط · حتى 15 كوب" data-en="Drip coffee maker · up to 15 cups">محضرة قهوة بالتنقيط · حتى 15 كوب</h3>
                   <div class="rating">★★★★★ <span class="count">(110)</span></div>
                   <div class="price-block">
-                    <div class="price-now">229 <span data-ar="ر.س" data-en="SAR">ر.س</span></div>
+                    <div class="price-now">229 <span class="riyal-symbol" aria-label="SAR"><svg viewBox="0 0 1124.14 1256.39" focusable="false"><path d="M699.62,1113.02h0c-20.06,44.48-33.32,92.75-38.4,143.37l424.51-90.24c20.06-44.47,33.31-92.75,38.4-143.37l-424.51,90.24Z"/><path d="M1085.73,895.8c20.06-44.47,33.32-92.75,38.4-143.37l-330.68,70.33v-135.2l292.27-62.11c20.06-44.47,33.32-92.75,38.4-143.37l-330.68,70.27V66.13c-50.67,28.45-95.67,66.32-132.25,110.99v403.35l-132.25,28.11V0c-50.67,28.44-95.67,66.32-132.25,110.99v525.69l-295.91,62.88c-20.06,44.47-33.33,92.75-38.42,143.37l334.33-71.05v170.26l-358.3,76.14c-20.06,44.47-33.32,92.75-38.4,143.37l375.04-79.7c30.53-6.35,56.77-24.4,73.83-49.24l68.78-101.97v-.02c7.14-10.55,11.3-23.27,11.3-36.97v-149.98l132.25-28.11v270.4l424.53-90.28Z"/></svg></span></div>
                     <div class="price-was"><s>273</s> <span class="save" data-ar="وفر 44" data-en="Save 44">وفر 44</span></div>
                   </div>
                   <p class="vat-note" data-ar="شامل الضريبة" data-en="VAT inclusive">شامل الضريبة</p>
-                  <p class="installments"><span class="installment-main"><span data-ar="4 دفعات بدون فوائد —" data-en="4 interest-free payments —">4 دفعات بدون فوائد —</span> <span class="pay-logos"><img class="pay-logo" src="images/tamara-logo.webp" alt="Tamara" height="17" /><img class="pay-logo" src="images/tabby-logo.webp" alt="Tabby" height="17" /></span></span> <span class="installment-price" data-ar="من <strong>42.75</strong> ر.س / شهر" data-en="from <strong>42.75</strong> SAR / mo">من <strong>42.75</strong> ر.س / شهر</span></p>                  <button class="btn btn-brand" type="button" data-add data-ar="أضف إلى السلة" data-en="Add to cart">أضف إلى السلة</button>
+                  <p class="installments"><span class="installment-main"><span data-ar="4 دفعات بدون فوائد —" data-en="4 interest-free payments —">4 دفعات بدون فوائد —</span> <span class="pay-logos"><img class="pay-logo" src="images/tamara-logo.webp" alt="Tamara" height="17" /><img class="pay-logo" src="images/tabby-logo.webp" alt="Tabby" height="17" /></span></span> <span class="installment-price"><span data-ar="من" data-en="from">من</span> <strong>42.75</strong> <span class="riyal-symbol" aria-label="SAR"><svg viewBox="0 0 1124.14 1256.39" focusable="false"><path d="M699.62,1113.02h0c-20.06,44.48-33.32,92.75-38.4,143.37l424.51-90.24c20.06-44.47,33.31-92.75,38.4-143.37l-424.51,90.24Z"/><path d="M1085.73,895.8c20.06-44.47,33.32-92.75,38.4-143.37l-330.68,70.33v-135.2l292.27-62.11c20.06-44.47,33.32-92.75,38.4-143.37l-330.68,70.27V66.13c-50.67,28.45-95.67,66.32-132.25,110.99v403.35l-132.25,28.11V0c-50.67,28.44-95.67,66.32-132.25,110.99v525.69l-295.91,62.88c-20.06,44.47-33.33,92.75-38.42,143.37l334.33-71.05v170.26l-358.3,76.14c-20.06,44.47-33.32,92.75-38.4,143.37l375.04-79.7c30.53-6.35,56.77-24.4,73.83-49.24l68.78-101.97v-.02c7.14-10.55,11.3-23.27,11.3-36.97v-149.98l132.25-28.11v270.4l424.53-90.28Z"/></svg></span> <span data-ar="/ شهر" data-en="/ mo">/ شهر</span></span></p>                  <button class="btn btn-brand" type="button" data-add data-ar="أضف إلى السلة" data-en="Add to cart">أضف إلى السلة</button>
                 </div>
               </article>
               <article class="product-card">
@@ -2035,11 +2063,11 @@
                   <h3 class="product-title" data-ar="شاشة LED 43 بوصة · Full HD" data-en="43-inch LED TV · Full HD">شاشة LED 43 بوصة · Full HD</h3>
                   <div class="rating">★★★★☆ <span class="count">(48)</span></div>
                   <div class="price-block">
-                    <div class="price-now">1,149 <span data-ar="ر.س" data-en="SAR">ر.س</span></div>
+                    <div class="price-now">1,149 <span class="riyal-symbol" aria-label="SAR"><svg viewBox="0 0 1124.14 1256.39" focusable="false"><path d="M699.62,1113.02h0c-20.06,44.48-33.32,92.75-38.4,143.37l424.51-90.24c20.06-44.47,33.31-92.75,38.4-143.37l-424.51,90.24Z"/><path d="M1085.73,895.8c20.06-44.47,33.32-92.75,38.4-143.37l-330.68,70.33v-135.2l292.27-62.11c20.06-44.47,33.32-92.75,38.4-143.37l-330.68,70.27V66.13c-50.67,28.45-95.67,66.32-132.25,110.99v403.35l-132.25,28.11V0c-50.67,28.44-95.67,66.32-132.25,110.99v525.69l-295.91,62.88c-20.06,44.47-33.33,92.75-38.42,143.37l334.33-71.05v170.26l-358.3,76.14c-20.06,44.47-33.32,92.75-38.4,143.37l375.04-79.7c30.53-6.35,56.77-24.4,73.83-49.24l68.78-101.97v-.02c7.14-10.55,11.3-23.27,11.3-36.97v-149.98l132.25-28.11v270.4l424.53-90.28Z"/></svg></span></div>
                     <div class="price-was"><s>1,399</s> <span class="save" data-ar="وفر 250" data-en="Save 250">وفر 250</span></div>
                   </div>
                   <p class="vat-note" data-ar="شامل الضريبة" data-en="VAT inclusive">شامل الضريبة</p>
-                  <p class="installments"><span class="installment-main"><span data-ar="4 دفعات بدون فوائد —" data-en="4 interest-free payments —">4 دفعات بدون فوائد —</span> <span class="pay-logos"><img class="pay-logo" src="images/tamara-logo.webp" alt="Tamara" height="17" /><img class="pay-logo" src="images/tabby-logo.webp" alt="Tabby" height="17" /></span></span> <span class="installment-price" data-ar="من <strong>284.75</strong> ر.س / شهر" data-en="from <strong>284.75</strong> SAR / mo">من <strong>284.75</strong> ر.س / شهر</span></p>                   
+                  <p class="installments"><span class="installment-main"><span data-ar="4 دفعات بدون فوائد —" data-en="4 interest-free payments —">4 دفعات بدون فوائد —</span> <span class="pay-logos"><img class="pay-logo" src="images/tamara-logo.webp" alt="Tamara" height="17" /><img class="pay-logo" src="images/tabby-logo.webp" alt="Tabby" height="17" /></span></span> <span class="installment-price"><span data-ar="من" data-en="from">من</span> <strong>284.75</strong> <span class="riyal-symbol" aria-label="SAR"><svg viewBox="0 0 1124.14 1256.39" focusable="false"><path d="M699.62,1113.02h0c-20.06,44.48-33.32,92.75-38.4,143.37l424.51-90.24c20.06-44.47,33.31-92.75,38.4-143.37l-424.51,90.24Z"/><path d="M1085.73,895.8c20.06-44.47,33.32-92.75,38.4-143.37l-330.68,70.33v-135.2l292.27-62.11c20.06-44.47,33.32-92.75,38.4-143.37l-330.68,70.27V66.13c-50.67,28.45-95.67,66.32-132.25,110.99v403.35l-132.25,28.11V0c-50.67,28.44-95.67,66.32-132.25,110.99v525.69l-295.91,62.88c-20.06,44.47-33.33,92.75-38.42,143.37l334.33-71.05v170.26l-358.3,76.14c-20.06,44.47-33.32,92.75-38.4,143.37l375.04-79.7c30.53-6.35,56.77-24.4,73.83-49.24l68.78-101.97v-.02c7.14-10.55,11.3-23.27,11.3-36.97v-149.98l132.25-28.11v270.4l424.53-90.28Z"/></svg></span> <span data-ar="/ شهر" data-en="/ mo">/ شهر</span></span></p>                   
                   <button class="btn btn-brand" type="button" data-add data-ar="أضف إلى السلة" data-en="Add to cart">أضف إلى السلة</button>
                 </div>
               </article>
@@ -2067,7 +2095,7 @@
             <img src="images/imgi_504_HMTCLSAC18100-2.png" alt="Homy split AC" loading="lazy" />
             <div class="deal-card-body">
               <h3 data-ar="مكيف سبليت هومي 18100 وحدة" data-en="Homy 18100 BTU split AC">مكيف سبليت هومي 18100 وحدة</h3>
-              <div class="deal-price"><strong>1,599 <span data-ar="ر.س" data-en="SAR">ر.س</span></strong><s>1,999</s></div>
+              <div class="deal-price"><strong>1,599 <span class="riyal-symbol" aria-label="SAR"><svg viewBox="0 0 1124.14 1256.39" focusable="false"><path d="M699.62,1113.02h0c-20.06,44.48-33.32,92.75-38.4,143.37l424.51-90.24c20.06-44.47,33.31-92.75,38.4-143.37l-424.51,90.24Z"/><path d="M1085.73,895.8c20.06-44.47,33.32-92.75,38.4-143.37l-330.68,70.33v-135.2l292.27-62.11c20.06-44.47,33.32-92.75,38.4-143.37l-330.68,70.27V66.13c-50.67,28.45-95.67,66.32-132.25,110.99v403.35l-132.25,28.11V0c-50.67,28.44-95.67,66.32-132.25,110.99v525.69l-295.91,62.88c-20.06,44.47-33.33,92.75-38.42,143.37l334.33-71.05v170.26l-358.3,76.14c-20.06,44.47-33.32,92.75-38.4,143.37l375.04-79.7c30.53-6.35,56.77-24.4,73.83-49.24l68.78-101.97v-.02c7.14-10.55,11.3-23.27,11.3-36.97v-149.98l132.25-28.11v270.4l424.53-90.28Z"/></svg></span></strong><s>1,999</s></div>
               <div class="deal-meter" aria-hidden="true"><span style="width:68%"></span></div>
               <p class="deal-left" data-ar="متبقي 32%" data-en="32% left">متبقي 32%</p>
               <button class="btn btn-brand" type="button" data-add data-ar="أضف إلى السلة" data-en="Add to cart">أضف إلى السلة</button>
@@ -2077,7 +2105,7 @@
             <img src="images/imgi_304_FAWMTM150GIHDD.png" alt="Fisher washer" loading="lazy" />
             <div class="deal-card-body">
               <h3 data-ar="غسالة فيشر تحميل علوي إنفرتر" data-en="Fisher top-load inverter washer">غسالة فيشر تحميل علوي إنفرتر</h3>
-              <div class="deal-price"><strong>1,399 <span data-ar="ر.س" data-en="SAR">ر.س</span></strong><s>1,645</s></div>
+              <div class="deal-price"><strong>1,399 <span class="riyal-symbol" aria-label="SAR"><svg viewBox="0 0 1124.14 1256.39" focusable="false"><path d="M699.62,1113.02h0c-20.06,44.48-33.32,92.75-38.4,143.37l424.51-90.24c20.06-44.47,33.31-92.75,38.4-143.37l-424.51,90.24Z"/><path d="M1085.73,895.8c20.06-44.47,33.32-92.75,38.4-143.37l-330.68,70.33v-135.2l292.27-62.11c20.06-44.47,33.32-92.75,38.4-143.37l-330.68,70.27V66.13c-50.67,28.45-95.67,66.32-132.25,110.99v403.35l-132.25,28.11V0c-50.67,28.44-95.67,66.32-132.25,110.99v525.69l-295.91,62.88c-20.06,44.47-33.33,92.75-38.42,143.37l334.33-71.05v170.26l-358.3,76.14c-20.06,44.47-33.32,92.75-38.4,143.37l375.04-79.7c30.53-6.35,56.77-24.4,73.83-49.24l68.78-101.97v-.02c7.14-10.55,11.3-23.27,11.3-36.97v-149.98l132.25-28.11v270.4l424.53-90.28Z"/></svg></span></strong><s>1,645</s></div>
               <div class="deal-meter" aria-hidden="true"><span style="width:45%"></span></div>
               <p class="deal-left" data-ar="متبقي 55%" data-en="55% left">متبقي 55%</p>
               <button class="btn btn-brand" type="button" data-add data-ar="أضف إلى السلة" data-en="Add to cart">أضف إلى السلة</button>
@@ -2087,7 +2115,7 @@
             <img src="images/imgi_639_KGW9JATSOL000.png" alt="Kelvinator cooker" loading="lazy" />
             <div class="deal-card-body">
               <h3 data-ar="فرن غاز كلفينيتور 5 عيون" data-en="Kelvinator 5-burner gas cooker">فرن غاز كلفينيتور 5 عيون</h3>
-              <div class="deal-price"><strong>1,299 <span data-ar="ر.س" data-en="SAR">ر.س</span></strong><s>1,584</s></div>
+              <div class="deal-price"><strong>1,299 <span class="riyal-symbol" aria-label="SAR"><svg viewBox="0 0 1124.14 1256.39" focusable="false"><path d="M699.62,1113.02h0c-20.06,44.48-33.32,92.75-38.4,143.37l424.51-90.24c20.06-44.47,33.31-92.75,38.4-143.37l-424.51,90.24Z"/><path d="M1085.73,895.8c20.06-44.47,33.32-92.75,38.4-143.37l-330.68,70.33v-135.2l292.27-62.11c20.06-44.47,33.32-92.75,38.4-143.37l-330.68,70.27V66.13c-50.67,28.45-95.67,66.32-132.25,110.99v403.35l-132.25,28.11V0c-50.67,28.44-95.67,66.32-132.25,110.99v525.69l-295.91,62.88c-20.06,44.47-33.33,92.75-38.42,143.37l334.33-71.05v170.26l-358.3,76.14c-20.06,44.47-33.32,92.75-38.4,143.37l375.04-79.7c30.53-6.35,56.77-24.4,73.83-49.24l68.78-101.97v-.02c7.14-10.55,11.3-23.27,11.3-36.97v-149.98l132.25-28.11v270.4l424.53-90.28Z"/></svg></span></strong><s>1,584</s></div>
               <div class="deal-meter" aria-hidden="true"><span style="width:80%"></span></div>
               <p class="deal-left" data-ar="متبقي 20%" data-en="20% left">متبقي 20%</p>
               <button class="btn btn-brand" type="button" data-add data-ar="أضف إلى السلة" data-en="Add to cart">أضف إلى السلة</button>
@@ -2950,8 +2978,15 @@
       return Number(n).toLocaleString("en-US");
     }
 
-    function currencyLabel() {
-      return isAr() ? "ر.س" : "SAR";
+    function riyalSymbol() {
+      return (
+        '<span class="riyal-symbol" aria-label="SAR">' +
+          '<svg viewBox="0 0 1124.14 1256.39" focusable="false">' +
+            '<path d="M699.62,1113.02h0c-20.06,44.48-33.32,92.75-38.4,143.37l424.51-90.24c20.06-44.47,33.31-92.75,38.4-143.37l-424.51,90.24Z"/>' +
+            '<path d="M1085.73,895.8c20.06-44.47,33.32-92.75,38.4-143.37l-330.68,70.33v-135.2l292.27-62.11c20.06-44.47,33.32-92.75,38.4-143.37l-330.68,70.27V66.13c-50.67,28.45-95.67,66.32-132.25,110.99v403.35l-132.25,28.11V0c-50.67,28.44-95.67,66.32-132.25,110.99v525.69l-295.91,62.88c-20.06,44.47-33.33,92.75-38.42,143.37l334.33-71.05v170.26l-358.3,76.14c-20.06,44.47-33.32,92.75-38.4,143.37l375.04-79.7c30.53-6.35,56.77-24.4,73.83-49.24l68.78-101.97v-.02c7.14-10.55,11.3-23.27,11.3-36.97v-149.98l132.25-28.11v270.4l424.53-90.28Z"/>' +
+          "</svg>" +
+        "</span>"
+      );
     }
 
     function setFormMsg(ar, en) {
@@ -3060,8 +3095,7 @@
               "<h3 class=\"product-title\" data-ar=\"" + p.name.ar + "\" data-en=\"" + p.name.en + "\">" + t(p.name) + "</h3>" +
               "<div class=\"rating\">" + p.rating + " <span class=\"count\">(" + p.reviews + ")</span></div>" +
               "<div class=\"price-block\">" +
-                "<div class=\"price-now\">" + fmt(p.price) +
-                  " <span data-ar=\"ر.س\" data-en=\"SAR\">" + currencyLabel() + "</span></div>" +
+                "<div class=\"price-now\">" + fmt(p.price) + " " + riyalSymbol() + "</div>" +
               "</div>" +
               "<button class=\"btn btn-brand\" type=\"button\" data-add-product data-product-id=\"" + p.id + "\" data-ar=\"أضف إلى السلة\" data-en=\"Add to cart\">" +
                 (lang === "ar" ? "أضف إلى السلة" : "Add to cart") +
